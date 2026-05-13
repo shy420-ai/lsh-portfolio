@@ -446,8 +446,18 @@
       color: #999;
       padding: 0 0 20px;
     }
-    .case-ab-card-img {
+    .case-ab-media-link {
+      display: block;
       flex: 1;
+      min-height: 380px;
+      max-height: 440px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .case-ab-media-link:hover { opacity: 0.85; }
+    .case-ab-card-img {
+      width: 100%;
+      height: 100%;
       min-height: 380px;
       max-height: 440px;
       background-color: transparent;
@@ -456,7 +466,8 @@
       background-repeat: no-repeat;
     }
     .case-ab-card-video {
-      flex: 1;
+      width: 100%;
+      height: 100%;
       min-height: 380px;
       max-height: 440px;
       display: flex;
@@ -984,7 +995,9 @@
           <div class="case-ab-card">
             <div class="case-ab-card-title">Chill~한 아리수 캠페인</div>
             <div class="case-ab-card-sub">정적 이미지 · 단순 참여형</div>
-            <div class="case-ab-card-img" style="background-image: url('case01-event-before.jpg');"></div>
+            <a class="case-ab-media-link" href="https://www.instagram.com/p/DFMo6aAvJbe/" target="_blank" rel="noopener" aria-label="Instagram 원본 게시글 열기">
+              <div class="case-ab-card-img" style="background-image: url('case01-event-before.jpg');"></div>
+            </a>
             <div class="case-ab-card-stats">
               <div class="case-ab-stat"><div class="lab">공감</div><div class="val">373</div></div>
               <div class="case-ab-stat"><div class="lab">댓글</div><div class="val">117</div></div>
@@ -1006,10 +1019,12 @@
           </div>
           <div class="case-ab-card">
             <div class="case-ab-card-title">아리수 어때요? · 삼행시 캠페인</div>
-            <div class="case-ab-card-sub">참여 인터랙션 · 자발적 공유 유도</div>
-            <div class="case-ab-card-video">
-              <video src="case01-event-after.mp4" autoplay muted loop playsinline preload="metadata"></video>
-            </div>
+            <div class="case-ab-card-sub">릴스 영상 · 참여형 정보 도달</div>
+            <a class="case-ab-media-link" href="https://www.instagram.com/reel/DRbqIrhEuWt/" target="_blank" rel="noopener" aria-label="Instagram 원본 릴 열기">
+              <div class="case-ab-card-video">
+                <video src="case01-event-after.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              </div>
+            </a>
             <div class="case-ab-card-stats">
               <div class="case-ab-stat is-after"><div class="lab">공감</div><div class="val">1,064</div></div>
               <div class="case-ab-stat is-after"><div class="lab">댓글</div><div class="val">1,167</div></div>
