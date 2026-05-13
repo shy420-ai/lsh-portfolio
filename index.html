@@ -655,6 +655,163 @@
       .cost-row { grid-template-columns: 1fr; gap: 18px; }
       .cost-vs { padding: 0; }
     }
+
+    /* ── Case · Conversion Design (01-3) ────────────────────────── */
+    .case-conversion {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 72px;
+      padding: 40px 0 100px;
+      align-items: start;
+    }
+    .cc-eyebrow {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      color: #c0392b;
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 28px;
+      letter-spacing: 0.01em;
+    }
+    .bar-chart {
+      height: 360px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      align-items: end;
+    }
+    .bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .bar-label {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .bar-num {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 28px;
+      color: #444;
+      margin-bottom: 14px;
+      transition: opacity 0.6s 1.0s ease-out;
+      opacity: 0;
+    }
+    .bar-num-after {
+      font-size: 48px;
+      color: #c0392b;
+      letter-spacing: -0.02em;
+    }
+    .bar-chart.animate-in .bar-num { opacity: 1; }
+    .bar-fill {
+      width: 100%;
+      max-width: 180px;
+      background: #e8dcce;
+      transform-origin: bottom;
+      transform: scaleY(0);
+      transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bar-2024 { height: 50px; }
+    .bar-2025 { height: 280px; background: #c0392b; }
+    .bar-chart.animate-in .bar-fill { transform: scaleY(1); }
+    .bar-sublabel {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+    }
+    .cc-callout {
+      background: #fadbd6;
+      border-left: 4px solid #c0392b;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .cc-callout-num {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+      color: #c0392b;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .cc-callout-num span { font-size: 22px; margin-left: 2px; }
+    .cc-callout-text { font-size: 14px; color: #222; line-height: 1.5; }
+    .cc-callout-text .muted { color: #888; font-size: 12.5px; display: block; margin-top: 2px; }
+
+    .cc-strategy-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      line-height: 1.4;
+    }
+    .cc-strategy-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: ccs;
+    }
+    .cc-strategy-list li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      padding: 16px 0;
+      border-bottom: 1px dashed #ddd;
+      align-items: baseline;
+      counter-increment: ccs;
+    }
+    .cc-strategy-list li:first-child { padding-top: 0; border-top: 0; }
+    .cc-strategy-list li::before {
+      content: counter(ccs, decimal-leading-zero);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: #c0392b;
+      letter-spacing: 0.04em;
+    }
+    .cc-strategy-head {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #111;
+    }
+    .cc-strategy-body {
+      font-size: 13.5px;
+      color: #666;
+      line-height: 1.65;
+    }
+    .cc-hypothesis {
+      background: #f6f6f6;
+      padding: 18px 22px;
+      margin-top: 26px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #333;
+      border-radius: 3px;
+    }
+    .cc-hypothesis .lbl {
+      font-weight: 700;
+      color: #111;
+      margin-right: 6px;
+    }
+    .cc-hypothesis em {
+      font-style: normal;
+      color: #c0392b;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .case-conversion { grid-template-columns: 1fr; gap: 48px; padding-bottom: 60px; }
+    }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -1041,6 +1198,7 @@
         </div>
       </div>
 
+      <!-- (01-3 섹션은 case-ab-result 아래로 이동됨 — case-ab-result 다음 블록 참조) -->
       <!-- ── Insight + Budget 통합 블록 ─────────────────────────── -->
       <div class="case-ab-result">
         <p class="result-lead">
@@ -1071,6 +1229,69 @@
         <p class="result-summary">
           예산은 <em>20% 절감</em>했지만 인터랙션(공감·댓글·공유) 총합은 <em>524 → 2,318</em>로 4.4배 증가. 인터랙션당 비용 <em>₩1,193 → ₩216</em>으로 <em>5.5배 효율 개선</em>.
         </p>
+      </div>
+
+      <!-- ── 01-3 Conversion Design: 만족도 조사 ────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">01-3</span>
+          <span class="ch-title">만족도 조사 — 후킹 카피 + 다중 진입 동선 설계</span>
+        </div>
+        <span class="ch-tag">Conversion Design</span>
+      </div>
+      <div class="case-conversion">
+        <div class="cc-left">
+          <h4 class="cc-eyebrow">전년 대비 응답 증가</h4>
+          <div class="bar-chart">
+            <div class="bar-col">
+              <div class="bar-label">전년 (2024)</div>
+              <div class="bar-num">1,000</div>
+              <div class="bar-fill bar-2024"></div>
+              <div class="bar-sublabel">기존 행정형 메시지</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-label">2025 (재설계 후)</div>
+              <div class="bar-num bar-num-after">6,000</div>
+              <div class="bar-fill bar-2025"></div>
+              <div class="bar-sublabel">후킹 카피 + 다중 진입</div>
+            </div>
+          </div>
+          <div class="cc-callout">
+            <span class="cc-callout-num">6<span>×</span></span>
+            <span class="cc-callout-text">전년 대비 응답자 6배 증가<span class="muted">(1,000명 → 6,000명)</span></span>
+          </div>
+          <a class="case-ab-media-link" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 캠페인 인스타 게시물 열기" style="margin-top: 28px; min-height: 280px; max-height: 380px;">
+            <div class="case-ab-card-img" style="background-image: url('case01-survey.jpg'); min-height: 280px; max-height: 380px;"></div>
+          </a>
+        </div>
+
+        <div class="cc-right">
+          <h4 class="cc-eyebrow">Strategy</h4>
+          <h3 class="cc-strategy-title">행정 톤 → 후킹 메시지 + 다중 진입 동선</h3>
+          <ol class="cc-strategy-list">
+            <li>
+              <div>
+                <div class="cc-strategy-head">강력한 후킹 카피 전면 배치</div>
+                <div class="cc-strategy-body">"상품권 100명 쏜다!" 등 행정형 설명 대신 참여 동기 극대화 메시지</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="cc-strategy-head">다중 진입 동선 설계</div>
+                <div class="cc-strategy-body">이미지 내 QR · 프로필 링크트리 · 스토리 링크 — 3개 채널 연동</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="cc-strategy-head">Instagram 링크 제약 우회</div>
+                <div class="cc-strategy-body">게시글에 외부 링크 불가한 플랫폼 제약 — 인입 경로 다각화로 해결</div>
+              </div>
+            </li>
+          </ol>
+          <div class="cc-hypothesis">
+            <span class="lbl">가설:</span>공공기관 설문의 낮은 응답률은 <em>"왜 응답해야 하는지"의 메시지 부재</em> + <em>진입 마찰</em>에서 비롯. 두 변수를 동시에 조정해 응답률 극대화.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1168,6 +1389,24 @@
     // Initial load — respect hash
     const initial = location.hash.slice(1) || 'cover'
     if (initial !== 'cover') go(initial)
+
+    // Bar chart 등장 애니메이션 (IntersectionObserver)
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('animate-in')
+      })
+    }, { threshold: 0.3 })
+    document.querySelectorAll('.bar-chart').forEach((el) => barObserver.observe(el))
+
+    // 페이지 전환 시 차트 리셋 → 재진입 시 다시 애니메이션
+    const originalGo = go
+    go = function (name) {
+      document.querySelectorAll('.bar-chart').forEach((el) => el.classList.remove('animate-in'))
+      originalGo(name)
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.page.active .bar-chart').forEach((el) => el.classList.add('animate-in'))
+      })
+    }
   </script>
 </body>
 </html>
