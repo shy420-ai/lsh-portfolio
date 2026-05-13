@@ -268,14 +268,47 @@
       margin-top: 2px;
     }
 
-    /* ── Case · Rebrand 디테일 섹션 (case-grid 아래) ─────────────── */
+    /* ── Case · Chapter sub-header (01-1 등) ────────────────────── */
+    .case-chapter {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 14px;
+      margin-top: 80px;
+      border-bottom: 1.5px solid #000;
+    }
+    .case-chapter .ch-num {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      color: #c0392b;
+      margin-right: 18px;
+      letter-spacing: 0.04em;
+    }
+    .case-chapter .ch-title {
+      font-size: 17px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .case-chapter .ch-tag {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #888;
+      padding: 6px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
     .case-rebrand {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 72px;
-      padding: 64px 0 120px;
-      border-top: 1.5px solid #000;
-      margin-top: 24px;
+      padding: 40px 0 120px;
     }
     .case-rebrand-img {
       background: #f6f6f6;
@@ -622,7 +655,14 @@
         </div>
       </div>
 
-      <!-- ── Why rebranding? (스크롤 다운 시 노출) ───────────────── -->
+      <!-- ── 01-1 Visual Identity: Why rebranding? ──────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">01-1</span>
+          <span class="ch-title">Instagram 피드 브랜드 재정의</span>
+        </div>
+        <span class="ch-tag">Visual Identity</span>
+      </div>
       <div class="case-rebrand">
         <div class="case-rebrand-img">
           <img src="case01-feed.jpg" alt="Aritsu 인스타그램 피드 BEFORE / AFTER" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;BEFORE / AFTER&lt;/div&gt;'">
