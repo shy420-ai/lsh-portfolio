@@ -212,14 +212,87 @@
     .pager a:hover { color: #000; }
     .pager .sep { color: #ddd; }
 
+    /* ── About ─────────────────────────────────────────────────── */
+    .about {
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      max-width: 1280px;
+      width: 100%;
+      margin: 60px auto 0;
+      align-items: start;
+    }
+    .about-photo {
+      aspect-ratio: 3 / 4;
+      background: #e8e8e8;
+      background-image: url('photo.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+    }
+    .about-content h2 {
+      font-size: clamp(56px, 9vw, 120px);
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      margin-bottom: 28px;
+    }
+    .about-tagline {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .about-bio {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 32px;
+    }
+    .about-section {
+      margin-bottom: 24px;
+    }
+    .about-section h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+    .about-section dl {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 6px 16px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .about-section dt {
+      color: #000;
+      font-weight: 400;
+    }
+    .about-section dd { color: #000; }
+    .about-section p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #000;
+    }
+    .about-contact dl { grid-template-columns: 64px 1fr; }
+
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 900px) {
       .page { padding: 32px 24px; }
       .case-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
       .contents-list a { grid-template-columns: 40px 1fr auto; gap: 16px; }
+      .about-wrap { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+      .about-photo { aspect-ratio: 4 / 3; }
     }
     @media (max-width: 500px) {
       .case-grid { grid-template-columns: 1fr; }
+      .about-section dl { grid-template-columns: 100px 1fr; }
     }
   </style>
 </head>
@@ -248,6 +321,11 @@
       <h2>Contents</h2>
     </div>
     <div class="contents-list">
+      <a href="javascript:go('about')">
+        <span class="num">00</span>
+        <span class="title">About Me</span>
+        <span class="arrow">→</span>
+      </a>
       <a href="javascript:go('01')">
         <span class="num">01</span>
         <span class="title">———</span>
@@ -263,6 +341,54 @@
         <span class="title">———</span>
         <span class="arrow">→</span>
       </a>
+    </div>
+  </section>
+
+  <!-- ── About Me ──────────────────────────────────────────────── -->
+  <section class="page about" data-page="about">
+    <div class="topbar">
+      <a href="javascript:go('contents')">← Contents</a>
+      <span>About</span>
+    </div>
+    <div class="about-wrap">
+      <div class="about-photo"></div>
+      <div class="about-content">
+        <h2>ABOUT ME</h2>
+        <p class="about-tagline">마케터이지만 SaaS를 직접 만들고, 그 안의 데이터를 분석합니다.</p>
+        <p class="about-bio">
+          콘텐츠 마케팅 실무를 B2C·B2B·공공기관에서 쌓았고,<br>
+          직전 프로젝트에서는 신규 트위터 채널을 1주 만에 3,500 팔로워로 성장(오가닉, CAC ₩0)시켰습니다.<br>
+          현재는 여성 ADHD 사용자를 위한 PWA를 풀스택으로 빌드해 2주 만에 유저 270명을 확보했고,<br>
+          Firebase·자체 분석 대시보드로 사용자 데이터를 측정하며 운영 중입니다.
+        </p>
+
+        <div class="about-section">
+          <h3>SOFTWARES</h3>
+          <dl>
+            <dt>AI Tools</dt><dd>Claude Code · Midjourney</dd>
+            <dt>Marketing</dt><dd>GA · Naver SA</dd>
+            <dt>Image / Video</dt><dd>Canva · CapCut</dd>
+            <dt>Workflow</dt><dd>Notion · Slack</dd>
+          </dl>
+        </div>
+
+        <div class="about-section">
+          <h3>EXPERIENCE / CERTIFICATE</h3>
+          <p>
+            Hanyang University<br>
+            Similar LAB · KC2 · Smartdong (계약직 3건, 약 10개월)<br>
+            컴퓨터 활용능력 1급 · TOEIC 900 · TOEIC Speaking AL (2023)
+          </p>
+        </div>
+
+        <div class="about-section about-contact">
+          <h3>CONTACT</h3>
+          <dl>
+            <dt>Phone</dt><dd>010-5859-2129</dd>
+            <dt>E-mail</dt><dd>shy420@naver.com</dd>
+          </dl>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -332,7 +458,7 @@
 
   <script>
     // Page order for prev/next navigation.
-    const ORDER = ['cover', 'contents', '01', '02', '03']
+    const ORDER = ['cover', 'contents', 'about', '01', '02', '03']
 
     function go(name) {
       document.querySelectorAll('.page').forEach((p) => {
@@ -340,7 +466,7 @@
       })
       // Pager only on case pages
       const pager = document.getElementById('pager')
-      const isCase = ['01', '02', '03'].includes(name)
+      const isCase = ['01', '02', '03', 'about'].includes(name)
       pager.classList.toggle('hidden', !isCase)
       // Update URL hash for shareable links + browser history
       if (location.hash !== '#' + name) {
