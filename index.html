@@ -227,15 +227,16 @@
       max-width: 1280px;
       width: 100%;
       margin: 60px auto 0;
-      align-items: start;
+      align-items: stretch;
     }
     .about-photo {
-      aspect-ratio: 3 / 4;
       background: #e8e8e8;
       background-image: url('photo.jpg');
       background-size: cover;
       background-position: center;
       width: 100%;
+      min-height: 100%;
+      /* Grid 가 우측 콘텐츠 높이까지 자동으로 늘려줌. */
     }
     .about-content h2 {
       font-size: clamp(56px, 9vw, 120px);
@@ -312,7 +313,7 @@
       .case-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
       .contents-list a { grid-template-columns: 40px 1fr auto; gap: 16px; }
       .about-wrap { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
-      .about-photo { aspect-ratio: 4 / 3; }
+      .about-photo { aspect-ratio: 4 / 3; min-height: 0; }
     }
     @media (max-width: 500px) {
       .case-grid { grid-template-columns: 1fr; }
