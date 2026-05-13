@@ -258,32 +258,53 @@
       margin-bottom: 32px;
     }
     .about-section {
-      margin-bottom: 24px;
+      margin-bottom: 44px;
+    }
+    .about-section .sec-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      border-bottom: 1.5px solid #000;
     }
     .about-section h3 {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.15em;
-      margin-bottom: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+    .about-section .sec-num {
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 400;
+      color: #aaa;
+      letter-spacing: 0.05em;
     }
     .about-section dl {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 6px 16px;
-      font-size: 14px;
+      grid-template-columns: 140px 1fr;
+      gap: 10px 28px;
+      font-size: 14.5px;
       line-height: 1.7;
     }
     .about-section dt {
+      font-style: italic;
+      color: #999;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+    .about-section dd {
       color: #000;
       font-weight: 400;
     }
-    .about-section dd { color: #000; }
     .about-section p {
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 14.5px;
+      line-height: 1.85;
       color: #000;
     }
-    .about-contact dl { grid-template-columns: 64px 1fr; }
+    .about-contact dl { grid-template-columns: 80px 1fr; }
 
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -366,7 +387,10 @@
         </p>
 
         <div class="about-section">
-          <h3>SOFTWARES</h3>
+          <div class="sec-head">
+            <h3>Softwares</h3>
+            <span class="sec-num">01</span>
+          </div>
           <dl>
             <dt>AI Tools</dt><dd>Claude Code · Midjourney</dd>
             <dt>Marketing</dt><dd>GA · Naver SA</dd>
@@ -376,7 +400,10 @@
         </div>
 
         <div class="about-section">
-          <h3>EXPERIENCE / CERTIFICATE</h3>
+          <div class="sec-head">
+            <h3>Experience / Certificate</h3>
+            <span class="sec-num">02</span>
+          </div>
           <p>
             Hanyang University<br>
             Similar LAB · KC2 · Smartdong (계약직 3건, 약 10개월)<br>
@@ -385,7 +412,10 @@
         </div>
 
         <div class="about-section about-contact">
-          <h3>CONTACT</h3>
+          <div class="sec-head">
+            <h3>Contact</h3>
+            <span class="sec-num">03</span>
+          </div>
           <dl>
             <dt>Phone</dt><dd>010-5859-2129</dd>
             <dt>E-mail</dt><dd>shy420@naver.com</dd>
