@@ -205,6 +205,63 @@
       color: #ccc;
       font-style: italic;
     }
+    .case-cell .body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #222;
+    }
+    .case-cell .body ol {
+      list-style: none;
+      padding: 0;
+      counter-reset: c;
+    }
+    .case-cell .body ol li {
+      counter-increment: c;
+      padding-left: 22px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .case-cell .body ol li::before {
+      content: counter(c);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 12px;
+      color: #c0392b;
+      letter-spacing: 0.05em;
+    }
+    .kpi-stack { display: flex; flex-direction: column; gap: 14px; }
+    .kpi-item { border-top: 2px solid #c0392b; padding-top: 8px; }
+    .kpi-label {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #c0392b;
+      margin-bottom: 4px;
+    }
+    .kpi-num {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 30px;
+      color: #c0392b;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .kpi-num span { font-size: 16px; margin-left: 2px; }
+    .kpi-sub {
+      font-size: 11.5px;
+      color: #555;
+      line-height: 1.4;
+    }
+    .kpi-sub .delta {
+      display: block;
+      color: #888;
+      font-size: 11px;
+      margin-top: 2px;
+    }
 
     /* ── Footer Pager ─────────────────────────────────────────── */
     .pager {
@@ -367,7 +424,7 @@
       </a>
       <a href="javascript:go('01')">
         <span class="num">01</span>
-        <span class="title">———</span>
+        <span class="title">서울 아리수 SNS 통합 운영</span>
         <span class="arrow">→</span>
       </a>
       <a href="javascript:go('02')">
@@ -440,21 +497,54 @@
     </div>
   </section>
 
-  <!-- ── 2 · Case 01 (blank template) ──────────────────────────── -->
+  <!-- ── 2 · Case 01 · 서울 아리수 SNS 통합 운영 ──────────────────── -->
   <section class="page case" data-page="01">
     <div class="topbar">
       <a href="javascript:go('contents')">← Contents</a>
       <span>01 / 03</span>
     </div>
     <div style="margin-top: 80px;">
-      <div class="case-meta">Case 01</div>
-      <h3 class="case-title">———</h3>
-      <p class="case-subtitle">———</p>
+      <div class="case-meta">Case 01 · Public Sector</div>
+      <h3 class="case-title">서울 아리수 SNS 통합 운영</h3>
+      <p class="case-subtitle">4채널 브랜드 환경 재정의로 음용 신뢰 구축</p>
       <div class="case-grid">
-        <div class="case-cell"><h4>Context</h4><div class="placeholder">상황</div></div>
-        <div class="case-cell"><h4>Insight</h4><div class="placeholder">인사이트</div></div>
-        <div class="case-cell"><h4>Action</h4><div class="placeholder">실행</div></div>
-        <div class="case-cell"><h4>Result</h4><div class="placeholder">성과</div></div>
+        <div class="case-cell">
+          <h4>Context</h4>
+          <div class="body">시민의 수돗물 음용 신뢰 구축이 목표인 공공 프로젝트. 위생적 의구심이 핵심 진입 장벽이었고, 단순 정보 전달로는 인식 전환이 일어나지 않는 상황. 4채널이 톤·레이아웃 제각각으로 운영되며 브랜드 환경 자체가 신뢰감을 깎고 있었음.</div>
+        </div>
+        <div class="case-cell">
+          <h4>Insight</h4>
+          <div class="body">신뢰는 데이터의 양이 아니라 '환경'에서 형성된다. 비주얼이 흩어져 있으면 수질 정보를 아무리 쌓아도 안심으로 이어지지 않음. 정보 발화 주체를 기관에서 시민으로 이양했을 때 신뢰가 자발적으로 만들어진다는 가설.</div>
+        </div>
+        <div class="case-cell">
+          <h4>Action</h4>
+          <div class="body">
+            <ol>
+              <li>비주얼 통일 — 4채널 콘텐츠 톤·레이아웃·컬러 표준화로 '공공기관다운 신뢰 환경' 구축</li>
+              <li>양방향 전환 — 시민이 직접 질문하고 답변받는 참여형 포맷 도입, 정보 주체를 기관에서 시민으로 이양</li>
+            </ol>
+          </div>
+        </div>
+        <div class="case-cell">
+          <h4>Result</h4>
+          <div class="kpi-stack">
+            <div class="kpi-item">
+              <div class="kpi-label">Engagement</div>
+              <div class="kpi-num">2.85<span>×</span></div>
+              <div class="kpi-sub">이벤트 콘텐츠 공감수<span class="delta">373 → 1,064</span></div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-label">Comments</div>
+              <div class="kpi-num">9.97<span>×</span></div>
+              <div class="kpi-sub">이벤트 콘텐츠 댓글수<span class="delta">117 → 1,167</span></div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-label">Survey</div>
+              <div class="kpi-num">6.0<span>×</span></div>
+              <div class="kpi-sub">만족도 조사 응답자<span class="delta">1,000 → 6,000명</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
