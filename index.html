@@ -809,60 +809,56 @@
       .case-conversion { grid-template-columns: 1fr; gap: 48px; padding-bottom: 60px; }
     }
 
-    /* ── Live Campaign Preview (실제 게시물 카드) ─────────────── */
-    .case-live-campaign {
+    /* ── Live Campaign Mini (그래프 위 컴팩트 카드) ─────────────── */
+    .cc-live-mini {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 56px;
-      padding: 40px 0 100px;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
       align-items: center;
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e5e5e5;
     }
-    .lc-meta { padding-right: 24px; }
-    .lc-eyebrow {
+    .lc-thumb-mini {
       display: block;
+      transition: opacity 0.2s, transform 0.4s ease-out;
+    }
+    .lc-thumb-mini:hover { opacity: 0.92; transform: translateY(-2px); }
+    .lc-thumb-mini img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+    .cc-live-meta { display: flex; flex-direction: column; gap: 8px; }
+    .cc-live-eyebrow {
       font-family: 'Libre Bodoni', serif;
       font-style: italic;
+      font-size: 17px;
       color: #c0392b;
-      font-size: 19px;
       font-weight: 500;
-      margin-bottom: 14px;
     }
-    .lc-title {
-      display: block;
-      font-size: 18px;
+    .cc-live-title {
+      font-size: 14px;
       font-weight: 700;
-      margin-bottom: 22px;
       line-height: 1.4;
+      color: #111;
     }
-    .lc-link {
-      display: inline-block;
+    .cc-live-link {
+      align-self: flex-start;
+      margin-top: 6px;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 900;
-      font-size: 12px;
-      letter-spacing: 0.18em;
+      font-size: 10px;
+      letter-spacing: 0.2em;
       color: #c0392b;
       text-decoration: none;
-      padding: 10px 0;
-      border-top: 1.5px solid #c0392b;
+      padding-bottom: 3px;
       border-bottom: 1.5px solid #c0392b;
       transition: opacity 0.2s;
     }
-    .lc-link:hover { opacity: 0.65; }
-    .lc-thumb {
-      display: block;
-      max-width: 420px;
-      transition: opacity 0.2s, transform 0.4s ease-out;
-    }
-    .lc-thumb:hover { opacity: 0.92; transform: translateY(-2px); }
-    .lc-thumb img {
-      width: 100%;
-      height: auto;
-      display: block;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-    }
+    .cc-live-link:hover { opacity: 0.65; }
     @media (max-width: 900px) {
-      .case-live-campaign { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 60px; }
-      .lc-thumb { max-width: 320px; margin: 0 auto; }
+      .cc-live-mini { grid-template-columns: 110px 1fr; gap: 16px; }
     }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
@@ -1293,6 +1289,16 @@
       </div>
       <div class="case-conversion">
         <div class="cc-left">
+          <div class="cc-live-mini">
+            <a class="lc-thumb-mini" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 인스타 게시물 열기">
+              <img src="case01-survey.jpg" alt="아리수 SNS 만족도 조사 인스타그램 게시물 미리보기">
+            </a>
+            <div class="cc-live-meta">
+              <span class="cc-live-eyebrow">Live Campaign</span>
+              <span class="cc-live-title">아리수 SNS 만족도 조사<br>인스타그램 게시물</span>
+              <a class="cc-live-link" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener">실제 게시물 ↗</a>
+            </div>
+          </div>
           <h4 class="cc-eyebrow">전년 대비 응답 증가</h4>
           <div class="bar-chart">
             <div class="bar-label">전년 (2024)</div>
@@ -1339,17 +1345,6 @@
         </div>
       </div>
 
-      <!-- ── 01-3 Live Campaign Preview ─────────────────────────── -->
-      <div class="case-live-campaign">
-        <div class="lc-meta">
-          <span class="lc-eyebrow">Live Campaign</span>
-          <span class="lc-title">아리수 SNS 만족도 조사 — 인스타그램 게시물</span>
-          <a class="lc-link" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener">실제 게시물 열기 ↗</a>
-        </div>
-        <a class="lc-thumb" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 인스타 게시물 열기">
-          <img src="case01-survey.jpg" alt="아리수 SNS 만족도 조사 인스타그램 게시물 미리보기">
-        </a>
-      </div>
     </div>
   </section>
 
