@@ -552,6 +552,97 @@
       font-style: normal;
       font-weight: 700;
     }
+
+    /* ── Cost Efficiency 블록 ───────────────────────────────────── */
+    .case-ab-cost {
+      margin: 24px 0 60px;
+      padding: 28px 0 32px;
+      border-top: 1.5px solid #000;
+      border-bottom: 1.5px solid #000;
+    }
+    .cost-head {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: #999;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+    .cost-row {
+      display: grid;
+      grid-template-columns: 1fr 110px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .cost-tag {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .cost-after .cost-tag { color: #c0392b; }
+    .cost-amount {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 30px;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .cost-after .cost-amount { color: #c0392b; }
+    .cost-breakdown {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+    .cost-breakdown li {
+      list-style: none;
+      padding-left: 12px;
+      position: relative;
+    }
+    .cost-breakdown li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #999;
+    }
+    .cost-vs { text-align: center; padding-top: 12px; }
+    .cost-delta {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 26px;
+      color: #c0392b;
+      line-height: 1;
+    }
+    .cost-delta-sub {
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .cost-summary {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #222;
+    }
+    .cost-summary em {
+      font-style: normal;
+      color: #c0392b;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .cost-row { grid-template-columns: 1fr; gap: 18px; }
+      .cost-vs { padding: 0; }
+    }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -938,6 +1029,37 @@
 
       <div class="case-ab-insight">
         <span class="lbl">Insight —</span>정적 이미지 + 단순 응모형 → <em>사용자 창작·인터랙션 유도형</em>으로 포맷 전환. 댓글 인터랙션이 약 10배 증가하며 <em>오가닉 도달 확장 구조</em> 확보.
+      </div>
+
+      <!-- ── 예산 효율 비교 ─────────────────────────────────────── -->
+      <div class="case-ab-cost">
+        <div class="cost-head">Budget Efficiency</div>
+        <div class="cost-row">
+          <div class="cost-before">
+            <div class="cost-tag">BEFORE 경품 예산</div>
+            <div class="cost-amount">₩625,000</div>
+            <ul class="cost-breakdown">
+              <li>LG 가습기 ₩300,000 · 1명</li>
+              <li>신세계 이마트 ₩30,000권 · 5명 (₩150,000)</li>
+              <li>스타벅스 아메리카노 T 깊티 · 35명 (≈₩175,000)</li>
+            </ul>
+          </div>
+          <div class="cost-vs">
+            <div class="cost-delta">−20%</div>
+            <div class="cost-delta-sub">예산</div>
+          </div>
+          <div class="cost-after">
+            <div class="cost-tag">AFTER 이벤트 예산</div>
+            <div class="cost-amount">₩500,000</div>
+            <ul class="cost-breakdown">
+              <li>사용자 창작 인터랙션형 캠페인</li>
+              <li>경품 단가 ↓ · 콘텐츠 기획 중심 배분</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cost-summary">
+          예산은 <em>20% 절감</em>했지만 인터랙션(공감·댓글·공유) 총합은 <em>524 → 2,318</em>로 4.4배 증가. 인터랙션당 비용 <em>₩1,193 → ₩216</em>으로 <em>5.5배 효율 개선</em>.
+        </div>
       </div>
     </div>
   </section>
