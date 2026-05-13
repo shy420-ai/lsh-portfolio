@@ -253,8 +253,15 @@
       color: #c0392b;
       letter-spacing: 0.05em;
     }
-    .kpi-stack { display: flex; flex-direction: column; gap: 14px; }
-    .kpi-item { border-top: 2px solid #c0392b; padding-top: 8px; }
+    .kpi-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .kpi-item { border-top: 2px solid #c0392b; padding-top: 10px; }
+    @media (max-width: 700px) {
+      .kpi-stack { grid-template-columns: 1fr; gap: 14px; }
+    }
     .kpi-label {
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 900;
