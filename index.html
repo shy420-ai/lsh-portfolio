@@ -809,51 +809,25 @@
       .case-conversion { grid-template-columns: 1fr; gap: 48px; padding-bottom: 60px; }
     }
 
-    /* ── Live Campaign Mini (BEFORE/AFTER 썸네일 + 메타) ───────── */
+    /* ── Live Campaign Mini (합성 BEFORE/AFTER + 메타) ─────────── */
     .cc-live-mini {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
       margin-bottom: 36px;
       padding-bottom: 28px;
       border-bottom: 1px solid #e5e5e5;
     }
-    .cc-live-thumbs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .cc-live-thumb {
+    .cc-live-composite {
       display: block;
-      text-decoration: none;
-      color: inherit;
+      transition: opacity 0.2s, transform 0.4s ease-out;
     }
-    .cc-live-thumb img {
+    .cc-live-composite:hover { opacity: 0.92; transform: translateY(-2px); }
+    .cc-live-composite img {
       width: 100%;
       display: block;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      background: #f5f5f5;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
-    .cc-live-tag {
-      display: block;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-weight: 900;
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
-      color: #999;
-      margin-bottom: 8px;
-    }
-    .cc-live-tag.is-after { color: #c0392b; }
-    .cc-live-cap-mini {
-      display: block;
-      font-size: 11.5px;
-      color: #888;
-      margin-top: 8px;
-    }
-    .cc-live-thumb.is-after { transition: opacity 0.2s, transform 0.4s ease-out; }
-    .cc-live-thumb.is-after:hover { opacity: 0.92; transform: translateY(-2px); }
     .cc-live-meta { display: flex; flex-direction: column; gap: 4px; }
     .cc-live-eyebrow {
       font-family: 'Libre Bodoni', serif;
@@ -865,9 +839,22 @@
     .cc-live-title {
       font-size: 13.5px;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.5;
       color: #111;
     }
+    .cc-live-inline-link {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c0392b;
+      text-decoration: none;
+      margin-left: 8px;
+      padding-bottom: 1px;
+      border-bottom: 1.5px solid #c0392b;
+      transition: opacity 0.2s;
+    }
+    .cc-live-inline-link:hover { opacity: 0.65; }
 
     /* RIGHT 컬럼 세로 끝맞춤 — 가설 박스를 바닥으로 푸시 */
     .cc-right { display: flex; flex-direction: column; }
@@ -1302,21 +1289,12 @@
       <div class="case-conversion">
         <div class="cc-left">
           <div class="cc-live-mini">
-            <div class="cc-live-thumbs">
-              <div class="cc-live-thumb">
-                <span class="cc-live-tag">BEFORE</span>
-                <img src="case01-survey-before.jpg" alt="기존 행정형 공공기관 만족도 조사 레퍼런스">
-                <span class="cc-live-cap-mini">기존 행정형 레퍼런스</span>
-              </div>
-              <a class="cc-live-thumb is-after" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="재설계 만족도 조사 게시물 열기">
-                <span class="cc-live-tag is-after">AFTER</span>
-                <img src="case01-survey.jpg" alt="아리수 SNS 만족도 조사 인스타그램 게시물">
-                <span class="cc-live-cap-mini">재설계 게시물 ↗</span>
-              </a>
-            </div>
+            <a class="cc-live-composite" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 BEFORE/AFTER 비교 — 인스타 게시물 열기">
+              <img src="case01-survey-layout.jpg" alt="공공기관 만족도 조사 BEFORE / AFTER 비교 — 좌측 기존 행정형 레퍼런스 2종, 우측 재설계 아리수 SNS 만족도 조사 게시물">
+            </a>
             <div class="cc-live-meta">
               <span class="cc-live-eyebrow">Live Campaign</span>
-              <span class="cc-live-title">아리수 SNS 만족도 조사 — 인스타그램 게시물</span>
+              <span class="cc-live-title">아리수 SNS 만족도 조사 — 인스타그램 게시물 <a class="cc-live-inline-link" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener">실제 게시물 ↗</a></span>
             </div>
           </div>
           <h4 class="cc-eyebrow">전년 대비 응답 증가</h4>
