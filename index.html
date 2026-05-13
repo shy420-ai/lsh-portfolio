@@ -388,6 +388,136 @@
       .case-rebrand { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 80px; }
     }
 
+    /* ── Case · A/B 비교 섹션 ─────────────────────────────────── */
+    .case-ab {
+      display: grid;
+      grid-template-columns: 1fr 110px 1fr;
+      gap: 24px;
+      padding: 32px 0 0;
+      align-items: stretch;
+    }
+    .case-ab-col { display: flex; flex-direction: column; }
+    .case-ab-tag {
+      display: inline-block;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      padding: 5px 11px;
+      border-radius: 4px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .case-ab-tag.before { background: #f0f0f0; color: #888; }
+    .case-ab-tag.after { background: #fadbd6; color: #c0392b; }
+    .case-ab-col-header { margin-bottom: 12px; display: flex; align-items: center; }
+    .case-ab-col-label { font-size: 13px; color: #555; }
+    .case-ab-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .case-ab-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 22px 22px 4px;
+    }
+    .case-ab-card-sub {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #999;
+      padding: 0 22px 16px;
+    }
+    .case-ab-card-img {
+      flex: 1;
+      min-height: 320px;
+      background-color: #f5f5f5;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .case-ab-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      padding: 14px 14px 18px;
+    }
+    .case-ab-stat {
+      background: #f6f6f6;
+      border-radius: 6px;
+      padding: 10px 0 12px;
+      text-align: center;
+    }
+    .case-ab-stat.is-after { background: #fdebe7; }
+    .case-ab-stat .lab {
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+    .case-ab-stat.is-after .lab { color: #c0392b; }
+    .case-ab-stat .val {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 19px;
+      color: #222;
+    }
+    .case-ab-stat.is-after .val { color: #c0392b; }
+    .case-ab-arrows {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+    .case-ab-arrow { text-align: center; }
+    .case-ab-arrow .lab {
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
+    }
+    .case-ab-arrow .val {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: #27ae60;
+      margin-bottom: 4px;
+    }
+    .case-ab-arrow .sym {
+      display: inline-block;
+      color: #c0392b;
+      font-size: 13px;
+    }
+    .case-ab-insight {
+      background: #111;
+      color: #f4f4f4;
+      padding: 16px 22px;
+      margin-top: 22px;
+      margin-bottom: 60px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      border-radius: 6px;
+    }
+    .case-ab-insight .lbl {
+      font-style: italic;
+      color: #f1c40f;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    .case-ab-insight em {
+      color: #e67e22;
+      font-style: normal;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .case-ab { grid-template-columns: 1fr; gap: 16px; }
+      .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 10px 0; }
+    }
+
     /* ── Footer Pager ─────────────────────────────────────────── */
     .pager {
       position: fixed;
@@ -713,6 +843,60 @@
             </ul>
           </div>
         </div>
+      </div>
+
+      <!-- ── 01-2 A/B Result: 이벤트 포맷 전환 ────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">01-2</span>
+          <span class="ch-title">이벤트 포맷 전환 — 참여 전환 구조 고도화</span>
+        </div>
+        <span class="ch-tag">A/B Result</span>
+      </div>
+      <div class="case-ab">
+        <div class="case-ab-col">
+          <div class="case-ab-col-header">
+            <span class="case-ab-tag before">BEFORE</span>
+            <span class="case-ab-col-label">기존 참여형 이벤트</span>
+          </div>
+          <div class="case-ab-card">
+            <div class="case-ab-card-title">Chill~한 아리수 캠페인</div>
+            <div class="case-ab-card-sub">정적 이미지 · 단순 참여형</div>
+            <div class="case-ab-card-img" style="background-image: url('case01-event-before.jpg');"></div>
+            <div class="case-ab-card-stats">
+              <div class="case-ab-stat"><div class="lab">공감</div><div class="val">373</div></div>
+              <div class="case-ab-stat"><div class="lab">댓글</div><div class="val">117</div></div>
+              <div class="case-ab-stat"><div class="lab">공유</div><div class="val">34</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-ab-arrows">
+          <div class="case-ab-arrow"><div class="lab">공감</div><div class="val">+2.85×</div><span class="sym">→</span></div>
+          <div class="case-ab-arrow"><div class="lab">댓글</div><div class="val">+9.97×</div><span class="sym">→</span></div>
+          <div class="case-ab-arrow"><div class="lab">공유</div><div class="val">+2.56×</div><span class="sym">→</span></div>
+        </div>
+
+        <div class="case-ab-col">
+          <div class="case-ab-col-header">
+            <span class="case-ab-tag after">AFTER</span>
+            <span class="case-ab-col-label">사용자 창작 유도형</span>
+          </div>
+          <div class="case-ab-card">
+            <div class="case-ab-card-title">아리수 어때요? · 삼행시 캠페인</div>
+            <div class="case-ab-card-sub">참여 인터랙션 · 자발적 공유 유도</div>
+            <div class="case-ab-card-img" style="background-image: url('case01-event-after.jpg');"></div>
+            <div class="case-ab-card-stats">
+              <div class="case-ab-stat is-after"><div class="lab">공감</div><div class="val">1,064</div></div>
+              <div class="case-ab-stat is-after"><div class="lab">댓글</div><div class="val">1,167</div></div>
+              <div class="case-ab-stat is-after"><div class="lab">공유</div><div class="val">87</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-ab-insight">
+        <span class="lbl">Insight —</span>정적 이미지 + 단순 응모형 → <em>사용자 창작·인터랙션 유도형</em>으로 포맷 전환. 댓글 인터랙션이 약 10배 증가하며 <em>오가닉 도달 확장 구조</em> 확보.
       </div>
     </div>
   </section>
