@@ -268,6 +268,77 @@
       margin-top: 2px;
     }
 
+    /* ── Case · Rebrand 디테일 섹션 (case-grid 아래) ─────────────── */
+    .case-rebrand {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      padding: 64px 0 120px;
+      border-top: 1.5px solid #000;
+      margin-top: 24px;
+    }
+    .case-rebrand-img {
+      background: #f6f6f6;
+      border-radius: 10px;
+      overflow: hidden;
+      align-self: start;
+    }
+    .case-rebrand-img img { width: 100%; display: block; }
+    .case-rebrand-img .ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      color: #aaa;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+    }
+    .case-rebrand h3.why {
+      font-style: italic;
+      font-size: 24px;
+      color: #c0392b;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .case-rebrand .block {
+      margin-bottom: 32px;
+      padding-left: 16px;
+      border-left: 3px solid #c0392b;
+    }
+    .case-rebrand .block h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .case-rebrand .block ul {
+      list-style: none;
+      padding: 0;
+      font-size: 14.5px;
+      line-height: 1.95;
+      color: #222;
+    }
+    .case-rebrand .block ul li {
+      padding-left: 14px;
+      position: relative;
+    }
+    .case-rebrand .block ul li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      top: -2px;
+      font-weight: 900;
+      color: #c0392b;
+      font-size: 18px;
+    }
+    @media (max-width: 900px) {
+      .case-rebrand { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 80px; }
+    }
+
     /* ── Footer Pager ─────────────────────────────────────────── */
     .pager {
       position: fixed;
@@ -547,6 +618,34 @@
               <div class="kpi-num">6.0<span>×</span></div>
               <div class="kpi-sub">만족도 조사 응답자<span class="delta">1,000 → 6,000명</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Why rebranding? (스크롤 다운 시 노출) ───────────────── -->
+      <div class="case-rebrand">
+        <div class="case-rebrand-img">
+          <img src="case01-feed.jpg" alt="Aritsu 인스타그램 피드 BEFORE / AFTER" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;BEFORE / AFTER&lt;/div&gt;'">
+        </div>
+        <div class="case-rebrand-text">
+          <h3 class="why">Why rebranding?</h3>
+          <div class="block">
+            <h4>진단 — 기존 피드의 문제</h4>
+            <ul>
+              <li>콘텐츠 유형·비주얼 톤 혼재</li>
+              <li>실사·일러스트·카드뉴스 무작위 배치</li>
+              <li>피드 단위에서 '아리수' 정체성 부재</li>
+              <li>공공기관 인식: "신뢰감 낮음 · 싸구려 인상"</li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>전략 — 브랜드 재정의</h4>
+            <ul>
+              <li>피드 전체 비주얼 톤 재정의</li>
+              <li>콘텐츠 카테고리 분류: 정보성 · 이벤트성 · 홍보성</li>
+              <li>레이아웃 규칙 + 업로드 주기 시스템화</li>
+              <li>일관된 비주얼 → 신뢰감 ↑ → engagement ↑</li>
+            </ul>
           </div>
         </div>
       </div>
