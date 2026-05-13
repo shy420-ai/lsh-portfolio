@@ -389,53 +389,66 @@
       .case-rebrand { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 80px; }
     }
 
-    /* ── Case · A/B 비교 섹션 ─────────────────────────────────── */
+    /* ── Case · A/B 비교 (Editorial Mono) ──────────────────────── */
     .case-ab {
       display: grid;
-      grid-template-columns: 1fr 110px 1fr;
-      gap: 24px;
-      padding: 32px 0 0;
+      grid-template-columns: 1fr 90px 1fr;
+      gap: 32px;
+      padding: 36px 0 0;
       align-items: stretch;
     }
     .case-ab-col { display: flex; flex-direction: column; }
+    .case-ab-col-header {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
     .case-ab-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 900;
       font-size: 10px;
-      letter-spacing: 0.2em;
-      padding: 5px 11px;
-      border-radius: 4px;
-      margin-right: 10px;
-      vertical-align: middle;
+      letter-spacing: 0.28em;
+      color: #999;
+      background: transparent;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
     }
-    .case-ab-tag.before { background: #f0f0f0; color: #888; }
-    .case-ab-tag.after { background: #fadbd6; color: #c0392b; }
-    .case-ab-col-header { margin-bottom: 12px; display: flex; align-items: center; }
+    .case-ab-tag::before {
+      content: '';
+      width: 18px;
+      height: 1.5px;
+      background: currentColor;
+    }
+    .case-ab-tag.after { color: #c0392b; }
     .case-ab-col-label { font-size: 13px; color: #555; }
     .case-ab-card {
-      background: #fff;
-      border-radius: 10px;
-      border: 1px solid #e8e8e8;
-      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
     .case-ab-card-title {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
-      padding: 22px 22px 4px;
+      padding: 0 0 4px;
+      line-height: 1.35;
     }
     .case-ab-card-sub {
       font-size: 12.5px;
       font-style: italic;
       color: #999;
-      padding: 0 22px 16px;
+      padding: 0 0 20px;
     }
     .case-ab-card-img {
       flex: 1;
-      min-height: 320px;
+      min-height: 340px;
       background-color: #f5f5f5;
       background-size: cover;
       background-position: center;
@@ -444,79 +457,91 @@
     .case-ab-card-stats {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      padding: 14px 14px 18px;
+      gap: 24px;
+      padding: 18px 0 0;
+      margin-top: 20px;
+      border-top: 1.5px solid #000;
     }
     .case-ab-stat {
-      background: #f6f6f6;
-      border-radius: 6px;
-      padding: 10px 0 12px;
-      text-align: center;
+      background: transparent;
+      padding: 0;
+      text-align: left;
     }
-    .case-ab-stat.is-after { background: #fdebe7; }
     .case-ab-stat .lab {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
       font-size: 10px;
-      color: #888;
-      letter-spacing: 0.08em;
-      margin-bottom: 3px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 6px;
     }
     .case-ab-stat.is-after .lab { color: #c0392b; }
     .case-ab-stat .val {
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 900;
-      font-size: 19px;
-      color: #222;
+      font-size: 22px;
+      color: #111;
+      letter-spacing: -0.01em;
     }
     .case-ab-stat.is-after .val { color: #c0392b; }
     .case-ab-arrows {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 24px;
+      gap: 36px;
     }
     .case-ab-arrow { text-align: center; }
     .case-ab-arrow .lab {
       font-size: 10px;
+      letter-spacing: 0.2em;
       color: #888;
-      letter-spacing: 0.1em;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
     }
     .case-ab-arrow .val {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-weight: 900;
-      font-size: 16px;
-      color: #27ae60;
-      margin-bottom: 4px;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: #c0392b;
+      line-height: 1;
     }
     .case-ab-arrow .sym {
-      display: inline-block;
-      color: #c0392b;
-      font-size: 13px;
+      display: block;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 6px;
     }
     .case-ab-insight {
-      background: #111;
-      color: #f4f4f4;
-      padding: 16px 22px;
-      margin-top: 22px;
+      background: transparent;
+      color: #111;
+      padding: 22px 0 0;
+      margin-top: 28px;
       margin-bottom: 60px;
-      font-size: 13.5px;
-      line-height: 1.7;
-      border-radius: 6px;
+      font-size: 15.5px;
+      line-height: 1.85;
+      border-radius: 0;
+      border-top: 1.5px solid #000;
+      display: block;
     }
     .case-ab-insight .lbl {
       font-style: italic;
-      color: #f1c40f;
-      font-weight: 500;
-      margin-right: 10px;
+      font-family: 'Libre Bodoni', serif;
+      font-weight: 400;
+      color: #c0392b;
+      margin-right: 14px;
+      font-size: 18px;
+      letter-spacing: 0.01em;
     }
     .case-ab-insight em {
-      color: #e67e22;
+      color: #c0392b;
       font-style: normal;
       font-weight: 700;
     }
     @media (max-width: 900px) {
-      .case-ab { grid-template-columns: 1fr; gap: 16px; }
-      .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 10px 0; }
+      .case-ab { grid-template-columns: 1fr; gap: 24px; }
+      .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
     }
 
     /* ── Footer Pager ─────────────────────────────────────────── */
