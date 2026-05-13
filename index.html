@@ -6,20 +6,34 @@
   <title>2026 · LEE SEOUNG HYEON Marketing Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
     body {
-      /* Libre Bodoni 가 영문에만 글리프 있어서 한글은 자동으로 Pretendard 로 폴백.
-         브라우저가 글리프 별로 매칭 — 한 줄 안에서 영문은 serif, 한글은 sans-serif. */
+      /* 페이지 제목(MARKETING/PORTFOLIO/ABOUT ME)은 Libre Bodoni 이태릭.
+         한글 본문은 Pretendard. 일반 영어 라벨/메타는 .en-label 로 Noto Sans KR Black. */
       font-family: 'Libre Bodoni', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       background: #fff;
       color: #000;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       overflow: hidden;
+    }
+
+    /* ── 일반 영어 텍스트: Noto Sans CJK KR Black ───────────────── */
+    .topbar, .topbar a,
+    .hero-top, .hero-bottom,
+    .contents-header .label,
+    .contents-list .num, .contents-list .title, .contents-list .arrow,
+    .case-meta, .case-cell h4,
+    .about-section h3, .about-section .sec-num,
+    .about-section dt, .about-section dd,
+    .pager, .pager a {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-style: normal;
     }
 
     /* ── Page System ──────────────────────────────────────────── */
@@ -408,7 +422,7 @@
           <p>
             Hanyang University<br>
             Similar LAB · KC2 · Smartdong (계약직 3건, 약 10개월)<br>
-            컴퓨터 활용능력 1급 · TOEIC 900 · TOEIC Speaking AL (2023)
+            컴퓨터 활용능력 1급 · TOEIC 930 · TOEIC Speaking AL (2023)
           </p>
         </div>
 
