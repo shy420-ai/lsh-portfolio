@@ -683,18 +683,19 @@
       row-gap: 12px;
       margin-bottom: 28px;
     }
+    /* overlay 는 grid 자식이 아니라 chart wrapper 의 absolute child — auto-flow 흐트러뜨리지 않음 */
+    .cc-left { position: relative; }
     .bar-chart-overlay {
-      grid-column: 1;
-      grid-row: 3;
-      align-self: start;
-      justify-self: stretch;
+      position: absolute;
+      top: 90px;      /* 라벨 + 숫자 행 아래에 자리 */
+      left: 0;
+      width: calc(50% - 18px);  /* 좌측 컬럼 1개 폭 (column-gap 36/2 = 18 차감) */
+      max-width: 220px;
       z-index: 2;
       display: block;
       text-decoration: none;
       color: inherit;
       transition: opacity 0.2s, transform 0.4s ease-out;
-      max-width: 220px;
-      margin: 0 auto;
     }
     .bar-chart-overlay:hover { opacity: 0.92; transform: translateY(-3px); }
     .overlay-eyebrow {
