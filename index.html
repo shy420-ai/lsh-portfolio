@@ -1021,6 +1021,8 @@
       align-items: baseline;
     }
     .case-blog-legend li:first-child { border-top: 1.5px solid #000; padding-top: 18px; }
+    /* 안전망: wrapper div 가 grid col 2 내에서 정상 폭 확보하도록 */
+    .case-blog-legend li > div { min-width: 0; width: 100%; }
     .case-blog-legend li::before {
       content: counter(blogleg, decimal-leading-zero);
       font-family: 'Libre Bodoni', serif;
