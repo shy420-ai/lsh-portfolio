@@ -923,9 +923,10 @@
     }
     .cc-live-inline-link:hover { opacity: 0.65; }
 
-    /* RIGHT 컬럼 세로 끝맞춤 — 가설 박스를 바닥으로 푸시 */
+    /* RIGHT 컬럼 세로 흐름 — Strategy → 가설 → Live Campaign 이미지 자연스럽게 흘리고
+       Live Campaign 을 바닥에 푸시해서 좌측 차트와 세로 길이 매칭. */
     .cc-right { display: flex; flex-direction: column; }
-    .cc-hypothesis { margin-top: auto; }
+    .cc-right .cc-live-mini { margin-top: auto; padding-top: 24px; border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -1357,14 +1358,6 @@
         <div class="cc-left">
           <h4 class="cc-eyebrow">전년 대비 응답 증가</h4>
           <div class="bar-chart">
-            <a class="bar-chart-overlay" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 BEFORE/AFTER 비교 인스타 게시물 열기">
-              <div class="overlay-eyebrow">Live Campaign · BEFORE / AFTER</div>
-              <img src="case01-survey-layout.jpg" alt="공공기관 만족도 조사 BEFORE/AFTER 비교 — 좌측 타 공공기관 행정형 레퍼런스 2종, 우측 재설계 아리수 SNS 만족도 조사 게시물">
-              <div class="overlay-cap">
-                <span class="overlay-cap-left">← 타 공공기관 레퍼런스</span>
-                <span class="overlay-cap-right">아리수 재설계 ↗</span>
-              </div>
-            </a>
             <div class="bar-label">전년 (2024)</div>
             <div class="bar-label">2025 (재설계 후)</div>
             <div class="bar-num">1,000</div>
@@ -1405,6 +1398,27 @@
           </ol>
           <div class="cc-hypothesis">
             <span class="lbl">가설:</span>공공기관 설문의 낮은 응답률은 <em>"왜 응답해야 하는지"의 메시지 부재</em> + <em>진입 마찰</em>에서 비롯. 두 변수를 동시에 조정해 응답률 극대화.
+          </div>
+
+          <!-- Live Campaign — Strategy 아래에 넣어서 좌측 차트와 세로 길이 맞춤 -->
+          <div class="cc-live-mini">
+            <div class="cc-live-composite-labels">
+              <div class="composite-label">
+                <span class="cc-live-tag">BEFORE</span>
+                <span class="composite-cap">타 공공기관 만족도 조사 레퍼런스</span>
+              </div>
+              <div class="composite-label is-after">
+                <span class="cc-live-tag is-after">AFTER</span>
+                <span class="composite-cap">아리수 SNS 만족도 조사 (재설계) ↗</span>
+              </div>
+            </div>
+            <a class="cc-live-composite" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 BEFORE/AFTER 비교 인스타 게시물 열기">
+              <img src="case01-survey-layout.jpg" alt="공공기관 만족도 조사 BEFORE/AFTER 비교 — 좌측 타 공공기관 행정형 레퍼런스 2종, 우측 재설계 아리수 SNS 만족도 조사 게시물">
+            </a>
+            <div class="cc-live-meta">
+              <span class="cc-live-eyebrow">Live Campaign</span>
+              <span class="cc-live-title">아리수 SNS 만족도 조사 — 인스타그램 게시물 <a class="cc-live-inline-link" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener">실제 게시물 ↗</a></span>
+            </div>
           </div>
         </div>
       </div>
