@@ -1110,12 +1110,13 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.06);
       border: 1px solid #eee;
     }
-    .bench-conclusion {
+    .bench-conclusion p {
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.75;
       color: #222;
-      margin: 0;
+      margin: 0 0 6px;
     }
+    .bench-conclusion p:last-child { margin-bottom: 0; }
     .bench-conclusion em {
       font-style: normal;
       font-weight: 700;
@@ -1928,7 +1929,11 @@
         <div class="bench-examples">
           <div class="bench-examples-label">Benchmark Examples</div>
           <img src="case02-benchmark.jpg" alt="벤치마킹한 네임드 직장인 페르소나 계정 — 엑셀로 월루하는 직장인 @excelionmaster, 직장인 짤봇 @ilovework_true_">
-          <p class="bench-conclusion">직장인 페르소나가 꾸준히 높은 공감과 인기를 얻는 패턴을 확인. 광고대행사 마케터는 직장인의 확장된 정체성 — 같은 공감 회로를 활용 가능하다고 판단해 <em>'벼랑끝의 마케터'</em> 컨셉을 채택.</p>
+          <div class="bench-conclusion">
+            <p>직장인 페르소나가 꾸준히 높은 공감과 인기를 얻는 패턴을 확인.</p>
+            <p>광고대행사 마케터는 직장인의 확장된 정체성 — 같은 공감 회로를 활용 가능하다고 판단.</p>
+            <p><em>'벼랑끝의 마케터'</em> 컨셉을 채택.</p>
+          </div>
         </div>
       </div>
 
