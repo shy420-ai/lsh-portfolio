@@ -1187,11 +1187,12 @@
     /* ── 02-4 Organic Diffusion ───────────────────────────────── */
     .case-diffusion {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
       padding: 24px 0 80px;
       align-items: start;
     }
+    .diffusion-left { display: flex; flex-direction: column; gap: 32px; }
     .diffusion-text p {
       font-size: 15px;
       line-height: 1.85;
@@ -1204,10 +1205,10 @@
       font-weight: 700;
       color: #c0392b;
     }
-    .diffusion-tweets {
+    .diffusion-replies {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 22px;
     }
     .tweet-card {
       display: block;
@@ -1239,15 +1240,10 @@
       margin-top: 8px;
       font-style: italic;
     }
-    .tweet-replies {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .tweet-replies .tweet-card { display: flex; flex-direction: column; }
+    .diffusion-right { position: sticky; top: 20px; }
     @media (max-width: 900px) {
       .case-diffusion { grid-template-columns: 1fr; gap: 32px; }
-      .tweet-replies { grid-template-columns: 1fr; }
+      .diffusion-right { position: static; }
     }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
@@ -1930,18 +1926,13 @@
         <span class="ch-tag">Organic Diffusion</span>
       </div>
       <div class="case-diffusion">
-        <div class="diffusion-text">
-          <p>이벤트 구조 자체가 광고가 되는 메커니즘이 작동했다. <em>10초 그림 그리기 + 인용 RT</em> 라는 형식이 응모 행위를 곧 콘텐츠로 전환시킨다.</p>
-          <p>그렇게 깔린 인용 RT 가 비참여자의 타임라인에 노출되면, 그 트윗을 본 사용자들이 댓글로 자연스럽게 후기를 공유하기 시작한다 — "나 이거 먹어봤는데 맛있더라", "꼭 먹어볼게요" 같은 자발적 추천이 따라온다.</p>
-          <p>이건 트위터 인터페이스 특성에 기반한 결과다. 인용 RT 는 오가닉 확산력이 강하고, 댓글 스레드는 친구끼리 대화하듯 친밀해서 광고를 광고로 안 느끼게 한다. 광고비 0원으로 <em>유저가 유저에게 말하는 자연 확산 구조</em>가 만들어진 이유.</p>
-        </div>
-        <div class="diffusion-tweets">
-          <a class="tweet-card tweet-event" href="#" onclick="return false" aria-label="이벤트 원본 트윗">
-            <span class="tweet-tag">EVENT POST</span>
-            <img src="case02-tweet-event.jpg" alt="이벤트 원본 트윗 — 10초 그림 그리기 + 인용 RT, 134 RT · 11만 노출">
-            <span class="tweet-cap">이벤트 원본 — 134 RT · 11만 노출</span>
-          </a>
-          <div class="tweet-replies">
+        <div class="diffusion-left">
+          <div class="diffusion-text">
+            <p>이벤트 구조 자체가 광고가 되는 메커니즘이 작동했다. <em>10초 그림 그리기 + 인용 RT</em> 라는 형식이 응모 행위를 곧 콘텐츠로 전환시킨다.</p>
+            <p>그렇게 깔린 인용 RT 가 비참여자의 타임라인에 노출되면, 그 트윗을 본 사용자들이 댓글로 자연스럽게 후기를 공유하기 시작한다 — "나 이거 먹어봤는데 맛있더라", "꼭 먹어볼게요" 같은 자발적 추천이 따라온다.</p>
+            <p>이건 트위터 인터페이스 특성에 기반한 결과다. 인용 RT 는 오가닉 확산력이 강하고, 댓글 스레드는 친구끼리 대화하듯 친밀해서 광고를 광고로 안 느끼게 한다. 광고비 0원으로 <em>유저가 유저에게 말하는 자연 확산 구조</em>가 만들어진 이유.</p>
+          </div>
+          <div class="diffusion-replies">
             <a class="tweet-card tweet-reply" href="#" onclick="return false">
               <span class="tweet-tag is-after">USER REPLY</span>
               <img src="case02-tweet-reply1.jpg" alt="비참여자의 자발적 후기 — '나 이거 먹어봤는데 맛있더라'">
@@ -1958,6 +1949,13 @@
               <span class="tweet-cap">자발적 시식 의향</span>
             </a>
           </div>
+        </div>
+        <div class="diffusion-right">
+          <a class="tweet-card tweet-event" href="#" onclick="return false" aria-label="이벤트 원본 트윗">
+            <span class="tweet-tag">EVENT POST</span>
+            <img src="case02-tweet-event.jpg" alt="이벤트 원본 트윗 — 10초 그림 그리기 + 인용 RT, 134 RT · 11만 노출">
+            <span class="tweet-cap">이벤트 원본 — 134 RT · 11만 노출</span>
+          </a>
         </div>
       </div>
     </div>
