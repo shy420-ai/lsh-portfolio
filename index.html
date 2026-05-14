@@ -1084,6 +1084,46 @@
     }
     .bench-head { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 4px; }
     .bench-body { font-size: 13.5px; color: #666; line-height: 1.65; }
+    .bench-examples {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5e5;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .bench-examples-label {
+      grid-column: 1 / -1;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #999;
+      margin-bottom: -6px;
+    }
+    .bench-examples img {
+      width: 100%;
+      max-width: 340px;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      border: 1px solid #eee;
+    }
+    .bench-conclusion {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #222;
+      margin: 0;
+    }
+    .bench-conclusion em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    @media (max-width: 700px) {
+      .bench-examples { grid-template-columns: 1fr; gap: 18px; }
+    }
 
     /* ── 02-3 Positioning · 앞광고 계정 ─────────────────────────── */
     .case-concept { padding: 24px 0 80px; }
@@ -1885,6 +1925,11 @@
             </div>
           </li>
         </ol>
+        <div class="bench-examples">
+          <div class="bench-examples-label">Benchmark Examples</div>
+          <img src="case02-benchmark.jpg" alt="벤치마킹한 네임드 직장인 페르소나 계정 — 엑셀로 월루하는 직장인 @excelionmaster, 직장인 짤봇 @ilovework_true_">
+          <p class="bench-conclusion">직장인 페르소나가 꾸준히 높은 공감과 인기를 얻는 패턴을 확인. 광고대행사 마케터는 직장인의 확장된 정체성 — 같은 공감 회로를 활용 가능하다고 판단해 <em>'벼랑끝의 마케터'</em> 컨셉을 채택.</p>
+        </div>
       </div>
 
       <!-- ── 02-3 Positioning: '앞광고 계정' 차별화 컨셉 ───────────── -->
