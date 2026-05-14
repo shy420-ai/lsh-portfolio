@@ -963,6 +963,10 @@
       margin: 0;
       padding: 0;
     }
+    .blog-img-wrap {
+      position: relative;
+      display: block;
+    }
     .case-blog-figure img {
       width: 100%;
       height: auto;
@@ -970,12 +974,64 @@
       border-radius: 6px;
       box-shadow: 0 8px 28px rgba(0,0,0,0.08);
     }
+    .blog-num {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #c0392b;
+      color: #fff;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(192,57,43,0.35);
+      z-index: 2;
+    }
+    /* annotated 이미지 기준 4 포인트 좌표 (이미지 비율 1068x506 가정, % 위치) */
+    .blog-n1 { top: 18%; left: 11%; }   /* 인기 콘텐츠 */
+    .blog-n2 { top: 47%; left: 42%; }   /* YouTube / Instagram */
+    .blog-n3 { top: 73%; left: 65%; }   /* SNS 채널 아이콘 */
+    .blog-n4 { top: 90%; left: 72%; }   /* 카테고리 아이콘 */
     .case-blog-figure figcaption {
       margin-top: 12px;
       font-size: 12.5px;
       color: #888;
       font-style: italic;
     }
+    .case-blog-legend {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      counter-reset: blogleg;
+      display: grid;
+      gap: 14px;
+    }
+    .case-blog-legend li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      align-items: baseline;
+      gap: 14px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #333;
+    }
+    .blog-leg-num {
+      display: inline-flex;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #c0392b;
+      color: #fff;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      align-items: center;
+      justify-content: center;
+    }
+    .case-blog-legend strong { color: #111; font-weight: 700; margin-right: 4px; }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -1484,9 +1540,21 @@
           <li>사용자의 탐색 부담을 줄이고 콘텐츠 소비 흐름을 강화하는 데 초점</li>
         </ul>
         <figure class="case-blog-figure">
-          <img src="case01-blog.jpg" alt="블로그 PC 화면 섹션별 설계 — 인기 콘텐츠 링크 영역, 유튜브·인스타 주요 글 영역, SNS 채널 바로가기 아이콘, 블로그 주요 카테고리 바로가기 아이콘">
+          <div class="blog-img-wrap">
+            <img src="case01-blog.jpg" alt="블로그 PC 화면 — 인기 콘텐츠·유튜브·인스타·SNS 채널·카테고리 동선 설계">
+            <span class="blog-num blog-n1">1</span>
+            <span class="blog-num blog-n2">2</span>
+            <span class="blog-num blog-n3">3</span>
+            <span class="blog-num blog-n4">4</span>
+          </div>
           <figcaption>&lt; 블로그 PC 화면 · 섹션별 동선 설계 &gt;</figcaption>
         </figure>
+        <ol class="case-blog-legend">
+          <li><span class="blog-leg-num">1</span><span><strong>인기 콘텐츠 영역</strong> — 주요 블로그글 바로가기 링크 연동</span></li>
+          <li><span class="blog-leg-num">2</span><span><strong>YouTube / Instagram 주요 글</strong> — 영상·SNS 콘텐츠를 블로그에서 그대로 소비</span></li>
+          <li><span class="blog-leg-num">3</span><span><strong>SNS 채널 바로가기 아이콘</strong> — 홈·인스타·네이버 채널·페이스북 원클릭 이동</span></li>
+          <li><span class="blog-leg-num">4</span><span><strong>블로그 주요 카테고리 아이콘</strong> — 아리수 어때요·아리수 월드·아리수 TV·이벤트·캠페인</span></li>
+        </ol>
       </div>
 
     </div>
