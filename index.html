@@ -927,6 +927,55 @@
        Live Campaign 을 바닥에 푸시해서 좌측 차트와 세로 길이 매칭. */
     .cc-right { display: flex; flex-direction: column; }
     .cc-right .cc-live-mini { margin-top: auto; padding-top: 24px; border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    /* ── 01-4 Content Hub: 블로그 ─────────────────────────────────── */
+    .case-blog {
+      padding: 36px 0 100px;
+    }
+    .case-blog-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: #222;
+    }
+    .case-blog-bullets li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .case-blog-bullets li::before {
+      content: '■';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #c0392b;
+      font-size: 10px;
+      line-height: 1.9;
+    }
+    .case-blog-bullets em {
+      font-style: normal;
+      font-weight: 800;
+      color: #111;
+    }
+    .case-blog-figure {
+      margin: 0;
+      padding: 0;
+    }
+    .case-blog-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+    .case-blog-figure figcaption {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #888;
+      font-style: italic;
+    }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -1400,6 +1449,7 @@
             <span class="lbl">가설:</span>공공기관 설문의 낮은 응답률은 <em>"왜 응답해야 하는지"의 메시지 부재</em> + <em>진입 마찰</em>에서 비롯. 두 변수를 동시에 조정해 응답률 극대화.
           </div>
 
+          <!-- 박을 자리 표시: cc-live-mini 는 그대로 남기되 아래 01-4 가 들어가기 전 마지막 블록 -->
           <!-- Live Campaign — Strategy 아래에 넣어서 좌측 차트와 세로 길이 맞춤 -->
           <div class="cc-live-mini">
             <div class="cc-live-composite-labels">
@@ -1417,6 +1467,26 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- ── 01-4 Content Hub: 블로그 통합 동선 설계 ──────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">01-4</span>
+          <span class="ch-title">블로그 통합 동선 설계 — 콘텐츠 허브화</span>
+        </div>
+        <span class="ch-tag">Content Hub</span>
+      </div>
+      <div class="case-blog">
+        <ul class="case-blog-bullets">
+          <li>블로그를 단순 게시 공간이 아닌 <em>콘텐츠 허브</em>로 활용</li>
+          <li>주요 카테고리와 SNS 채널을 <em>유기적으로 연결하는 UI 구조</em> 개선안 기획</li>
+          <li>사용자의 탐색 부담을 줄이고 <em>콘텐츠 소비 흐름</em>을 강화하는 데 초점</li>
+        </ul>
+        <figure class="case-blog-figure">
+          <img src="case01-blog.jpg" alt="블로그 PC 화면 섹션별 설계 — 인기 콘텐츠 링크 영역, 유튜브·인스타 주요 글 영역, SNS 채널 바로가기 아이콘, 블로그 주요 카테고리 바로가기 아이콘">
+          <figcaption>&lt; 블로그 PC 화면 · 섹션별 동선 설계 &gt;</figcaption>
+        </figure>
       </div>
 
     </div>
