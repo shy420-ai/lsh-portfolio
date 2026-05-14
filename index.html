@@ -966,7 +966,21 @@
     .blog-img-wrap {
       position: relative;
       display: block;
+      transition: opacity 0.2s, transform 0.4s ease-out;
     }
+    .blog-img-wrap:hover { opacity: 0.94; transform: translateY(-2px); }
+    .blog-naver-link {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #c0392b;
+      text-decoration: none;
+      margin-left: 6px;
+      padding-bottom: 1px;
+      border-bottom: 1.5px solid #c0392b;
+    }
+    .blog-naver-link:hover { opacity: 0.7; }
     .case-blog-figure img {
       width: 100%;
       height: auto;
@@ -1226,10 +1240,10 @@
         <h2>ABOUT ME</h2>
         <p class="about-tagline">마케터이지만 SaaS를 직접 만들고, 그 안의 데이터를 분석합니다.</p>
         <p class="about-bio">
-          콘텐츠 마케팅 실무를 B2C·B2B·공공기관에서 쌓았고,<br>
+          콘텐츠 마케팅 실무를 B2C · B2B · 공공기관에서 쌓았고,<br>
           직전 프로젝트에서는 신규 트위터 채널을 1주 만에 3,500 팔로워로 성장(오가닉, CAC ₩0)시켰습니다.<br>
           현재는 여성 ADHD 사용자를 위한 PWA를 풀스택으로 빌드해 2주 만에 유저 270명을 확보했고,<br>
-          Firebase·자체 분석 대시보드로 사용자 데이터를 측정하며 운영 중입니다.
+          Firebase · 자체 분석 대시보드로 사용자 데이터를 측정하며 운영 중입니다.
         </p>
 
         <div class="about-section">
@@ -1287,7 +1301,7 @@
           <div class="body">
             <p>시민의 수돗물 음용 신뢰 구축이 목표인 공공 프로젝트.</p>
             <p>위생적 의구심이 핵심 진입 장벽이었고, 단순 정보 전달로는 인식 전환이 일어나지 않는 상황.</p>
-            <p>4채널이 톤·레이아웃 제각각으로 운영되며 브랜드 환경 자체가 신뢰감을 깎고 있었음.</p>
+            <p>4채널이 톤 · 레이아웃 제각각으로 운영되며 브랜드 환경 자체가 신뢰감을 깎고 있었음.</p>
           </div>
         </div>
         <div class="case-cell">
@@ -1302,7 +1316,7 @@
           <h4>Action</h4>
           <div class="body">
             <ol>
-              <li>비주얼 통일 — 4채널 콘텐츠 톤·레이아웃·컬러 표준화로 '공공기관다운 신뢰 환경' 구축</li>
+              <li>비주얼 통일 — 4채널 콘텐츠 톤 · 레이아웃 · 컬러 표준화로 '공공기관다운 신뢰 환경' 구축</li>
               <li>양방향 전환 — 시민이 직접 질문하고 답변받는 참여형 포맷 도입, 정보 주체를 기관에서 시민으로 이양</li>
             </ol>
           </div>
@@ -1346,8 +1360,8 @@
           <div class="block">
             <h4>진단 — 기존 피드의 문제</h4>
             <ul>
-              <li>콘텐츠 유형·비주얼 톤 혼재</li>
-              <li>실사·일러스트·카드뉴스 무작위 배치</li>
+              <li>콘텐츠 유형 · 비주얼 톤 혼재</li>
+              <li>실사 · 일러스트 · 카드뉴스 무작위 배치</li>
               <li>피드 단위에서 '아리수' 정체성 부재</li>
             </ul>
           </div>
@@ -1422,7 +1436,7 @@
       <!-- ── Insight + Budget 통합 블록 ─────────────────────────── -->
       <div class="case-ab-result">
         <p class="result-lead">
-          <span class="lbl">Insight —</span>정적 이미지 + 단순 응모형 → <em>사용자 창작·인터랙션 유도형</em>으로 포맷 전환. 댓글 인터랙션이 약 10배 증가하며 <em>오가닉 도달 확장 구조</em> 확보.
+          <span class="lbl">Insight —</span>정적 이미지 + 단순 응모형 → <em>사용자 창작 · 인터랙션 유도형</em>으로 포맷 전환. 댓글 인터랙션이 약 10배 증가하며 <em>오가닉 도달 확장 구조</em> 확보.
         </p>
         <div class="cost-row">
           <div class="cost-before">
@@ -1447,7 +1461,7 @@
           </div>
         </div>
         <p class="result-summary">
-          예산은 <em>20% 절감</em>했지만 인터랙션(공감·댓글·공유) 총합은 <em>524 → 2,318</em>로 4.4배 증가. 인터랙션당 비용 <em>₩1,193 → ₩216</em>으로 <em>5.5배 효율 개선</em>.
+          예산은 <em>20% 절감</em>했지만 인터랙션(공감 · 댓글 · 공유) 총합은 <em>524 → 2,318</em>로 4.4배 증가. 인터랙션당 비용 <em>₩1,193 → ₩216</em>으로 <em>5.5배 효율 개선</em>.
         </p>
       </div>
 
@@ -1540,19 +1554,19 @@
           <li>사용자의 탐색 부담을 줄이고 콘텐츠 소비 흐름을 강화하는 데 초점</li>
         </ul>
         <figure class="case-blog-figure">
-          <div class="blog-img-wrap">
-            <img src="case01-blog.jpg" alt="블로그 PC 화면 — 인기 콘텐츠·유튜브·인스타·SNS 채널·카테고리 동선 설계">
+          <a class="blog-img-wrap" href="https://blog.naver.com/i-arisu-u" target="_blank" rel="noopener" aria-label="아리수 공식 블로그 열기">
+            <img src="case01-blog.jpg" alt="블로그 PC 화면 — 인기 콘텐츠 · 유튜브 · 인스타 · SNS 채널 · 카테고리 동선 설계">
             <span class="blog-num blog-n1">1</span>
             <span class="blog-num blog-n2">2</span>
             <span class="blog-num blog-n3">3</span>
             <span class="blog-num blog-n4">4</span>
-          </div>
-          <figcaption>&lt; 블로그 PC 화면 · 섹션별 동선 설계 &gt;</figcaption>
+          </a>
+          <figcaption>&lt; 블로그 PC 화면 · 섹션별 동선 설계 &gt; · <a class="blog-naver-link" href="https://blog.naver.com/i-arisu-u" target="_blank" rel="noopener">실제 블로그 열기 ↗</a></figcaption>
         </figure>
         <ol class="case-blog-legend">
           <li><span class="blog-leg-num">1</span><span><strong>인기 콘텐츠 영역</strong> — 주요 블로그글 바로가기 링크 연동</span></li>
-          <li><span class="blog-leg-num">2</span><span><strong>YouTube / Instagram 주요 글</strong> — 영상·SNS 콘텐츠를 블로그에서 그대로 소비</span></li>
-          <li><span class="blog-leg-num">3</span><span><strong>SNS 채널 바로가기 아이콘</strong> — 홈·인스타·네이버 채널·페이스북 원클릭 이동</span></li>
+          <li><span class="blog-leg-num">2</span><span><strong>YouTube / Instagram 주요 글</strong> — 영상 · SNS 콘텐츠를 블로그에서 그대로 소비</span></li>
+          <li><span class="blog-leg-num">3</span><span><strong>SNS 채널 바로가기 아이콘</strong> — 홈 · 인스타 · 네이버 채널 · 페이스북 원클릭 이동</span></li>
           <li><span class="blog-leg-num">4</span><span><strong>블로그 주요 카테고리 아이콘</strong> — 아리수 어때요·아리수 월드·아리수 TV·이벤트·캠페인</span></li>
         </ol>
       </div>
