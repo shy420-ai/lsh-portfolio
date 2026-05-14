@@ -1043,6 +1043,144 @@
       color: #666;
       line-height: 1.65;
     }
+
+    /* ── 02-2 Benchmarking ─────────────────────────────────────── */
+    .case-bench { padding: 24px 0 60px; }
+    .bench-eyebrow {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 500;
+      color: #c0392b;
+      margin-bottom: 22px;
+    }
+    .bench-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: benchnum;
+    }
+    .bench-list li {
+      counter-increment: benchnum;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px dashed #ddd;
+      align-items: baseline;
+    }
+    .bench-list li:first-child { border-top: 1.5px solid #000; padding-top: 18px; }
+    .bench-list li > div { min-width: 0; width: 100%; }
+    .bench-list li::before {
+      content: counter(benchnum, decimal-leading-zero);
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 16px;
+      color: #c0392b;
+      letter-spacing: 0.02em;
+    }
+    .bench-head { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 4px; }
+    .bench-body { font-size: 13.5px; color: #666; line-height: 1.65; }
+
+    /* ── 02-3 Positioning · 앞광고 계정 ─────────────────────────── */
+    .case-concept { padding: 24px 0 80px; }
+    .concept-eyebrow {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 500;
+      color: #c0392b;
+      margin-bottom: 8px;
+    }
+    .concept-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 22px;
+      color: #111;
+    }
+    .concept-insight {
+      background: #fafafa;
+      border-left: 3px solid #c0392b;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .concept-insight-label {
+      display: block;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #c0392b;
+      margin-bottom: 8px;
+    }
+    .concept-insight p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #222;
+    }
+    .concept-compare {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .compare-card {
+      padding: 20px 18px;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .compare-before { background: #f1f1f1; }
+    .compare-after { background: #fdebe7; border: 1.5px solid #c0392b; }
+    .compare-tag {
+      display: block;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .compare-after .compare-tag { color: #c0392b; }
+    .compare-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #333;
+    }
+    .compare-after .compare-text { color: #111; }
+    .compare-text strong { font-weight: 800; font-size: 16px; }
+    .compare-arrow {
+      text-align: center;
+      color: #c0392b;
+      font-size: 22px;
+      font-weight: 900;
+    }
+    .concept-diff {
+      background: #111;
+      color: #f4f4f4;
+      padding: 14px 20px;
+      font-size: 13px;
+      line-height: 1.7;
+      border-radius: 4px;
+    }
+    .diff-label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      color: #f1c40f;
+      font-weight: 500;
+      margin-right: 4px;
+    }
+    .concept-diff em {
+      font-style: normal;
+      color: #e67e22;
+      font-weight: 700;
+    }
+    @media (max-width: 700px) {
+      .concept-compare { grid-template-columns: 1fr; gap: 10px; }
+      .compare-arrow { transform: rotate(90deg); padding: 6px 0; }
+    }
     @media (max-width: 900px) {
       .case-ab { grid-template-columns: 1fr; gap: 24px; }
       .case-ab-arrows { flex-direction: row; justify-content: space-around; padding: 12px 0; gap: 12px; }
@@ -1647,6 +1785,69 @@
               <div class="kpi-sub">팔로워 1인 획득 비용<span class="delta">유료 광고 미집행</span></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- ── 02-2 Benchmarking: 프로필 설계 ───────────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">02-2</span>
+          <span class="ch-title">프로필 설계 — 네임드 계정 벤치마킹</span>
+        </div>
+        <span class="ch-tag">Benchmarking</span>
+      </div>
+      <div class="case-bench">
+        <div class="bench-eyebrow">Step 3 — Benchmarking</div>
+        <ol class="bench-list">
+          <li>
+            <div>
+              <div class="bench-head">동종 컨셉 네임드 계정 리스트업</div>
+              <div class="bench-body">마케터 · 직장인 카테고리에서 구독비율 높은 계정 선별</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="bench-head">공통 패턴 분석</div>
+              <div class="bench-body">프로필 사진 톤 · 소개글 구조 · 핀고정 트윗 형식의 공통점 추출</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="bench-head">패턴 차용 + 본 계정 차별점 결합</div>
+              <div class="bench-body">검증된 구조 활용하되 페르소나 (마케터 + 취준 + 자기관리) 는 본 계정만의 정체성</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- ── 02-3 Positioning: '앞광고 계정' 차별화 컨셉 ───────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">02-3</span>
+          <span class="ch-title">차별화 컨셉 — '앞광고 계정'</span>
+        </div>
+        <span class="ch-tag">Positioning</span>
+      </div>
+      <div class="case-concept">
+        <div class="concept-eyebrow">Step 4 — Unique Concept</div>
+        <h4 class="concept-title">'앞광고 계정' — 플랫폼 반감 역이용</h4>
+        <div class="concept-insight">
+          <span class="concept-insight-label">Platform Insight</span>
+          <p>트위터 사용자 정서: 뒷광고 · 인플루언서 마케팅에 강한 반감 — 광고 콘텐츠 자체보다 '숨겨진 광고'를 신뢰 훼손으로 인식.</p>
+        </div>
+        <div class="concept-compare">
+          <div class="compare-card compare-before">
+            <span class="compare-tag">기존 접근</span>
+            <div class="compare-text">단순 브랜드 계정<br>또는 대행사 계정</div>
+          </div>
+          <span class="compare-arrow" aria-hidden>→</span>
+          <div class="compare-card compare-after">
+            <span class="compare-tag">선정 컨셉</span>
+            <div class="compare-text"><strong>'앞광고 계정'</strong><br>광고임을 투명하게 공개</div>
+          </div>
+        </div>
+        <div class="concept-diff">
+          <span class="diff-label">Differentiation —</span> 단순 브랜드 계정 · 대행사 계정과도 분리. 반감을 역이용한 <em>신뢰 자산 구축</em>이 핵심 차별점.
         </div>
       </div>
     </div>
