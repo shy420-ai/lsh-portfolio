@@ -635,8 +635,16 @@
       background: linear-gradient(90deg, #c0392b, #e85541);
       border-radius: 3px;
     }
-    .cycle-example {
+    .cycle-example-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
       margin: 16px 0;
+    }
+    @media (max-width: 700px) {
+      .cycle-example-grid { grid-template-columns: 1fr; }
+    }
+    .cycle-example {
       padding: 14px;
       background: #fafafa;
       border: 1px solid #ececec;
@@ -2498,9 +2506,15 @@
             <span class="cycle-section-label">실행</span>
             <span class="cycle-num-text">매일 개발 진행 상황을 트위터에 공유 → 사용자 반응(리트윗·답글·DM) 을 가설 검증 데이터로 활용 → 같은 날 수정해 다시 올린다. (빠른 한 사이클)</span>
           </div>
-          <div class="cycle-example">
-            <div class="cycle-example-label">실제 공유 사례 — 66 일 습관 챌린지 + 캘린더 기능 공개</div>
-            <img src="case03-build-public.jpg" alt="개발 과정 트위터 공유 예시 — 66일 습관 챌린지 + 캘린더 기능" loading="lazy">
+          <div class="cycle-example-grid">
+            <div class="cycle-example">
+              <div class="cycle-example-label">실제 공유 사례 — 66 일 습관 챌린지 + 캘린더 기능 공개</div>
+              <img src="case03-build-public.jpg" alt="개발 과정 트위터 공유 예시 — 66일 습관 챌린지 + 캘린더 기능" loading="lazy">
+            </div>
+            <div class="cycle-example">
+              <div class="cycle-example-label">해당 트윗 인게이지먼트</div>
+              <img src="case03-tweet-engagement.jpg" alt="트윗 분석 — 노출 14만, 좋아요 917, RT 225, 댓글 19, 참여 6,183" loading="lazy">
+            </div>
           </div>
           <div class="cycle-kpi-row">
             <div class="cycle-kpi-card">
@@ -2511,7 +2525,7 @@
             <div class="cycle-kpi-card">
               <div class="cycle-kpi-label">단일 트윗 노출</div>
               <div class="cycle-kpi-num">14<span>만</span></div>
-              <div class="cycle-kpi-sub">참여 6,177 · 자세히 보기 1,011</div>
+              <div class="cycle-kpi-sub">참여 6,183 · 자세히 보기 1,017</div>
             </div>
           </div>
         </div>
