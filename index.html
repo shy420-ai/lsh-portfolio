@@ -341,22 +341,22 @@
     /* ── Case 03 · Product Surface Mockup ─────────────────────────── */
     .mockup-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
       padding: 48px 0 80px;
     }
-    @media (max-width: 900px) {
-      .mockup-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) {
+      .mockup-grid { grid-template-columns: 1fr; }
     }
     .mockup-cell {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 24px;
     }
     .phone-frame {
       width: 100%;
-      max-width: 220px;
+      max-width: 360px;
       aspect-ratio: 9 / 17;
       background: #1a1a1a;
       border-radius: 28px;
@@ -390,16 +390,14 @@
     }
     .phone-screen iframe {
       position: absolute;
-      top: 20px; left: 0; right: 0; bottom: 0;
-      width: 100%;
-      height: calc(100% - 20px);
+      top: 20px; left: 0;
       border: 0;
       border-radius: 0 0 20px 20px;
-      transform: scale(0.5);
+      transform: scale(0.7);
       transform-origin: top left;
-      /* 폰 화면 사이즈에 맞게 iframe 크기 늘리고 0.5 로 scale — 모바일 view 처럼 표시 */
-      width: 200%;
-      height: calc(200% - 40px);
+      /* 폰 화면 사이즈에 맞게 iframe 크기 늘리고 scale — 모바일 view 처럼 표시 */
+      width: calc(100% / 0.7);
+      height: calc((100% - 20px) / 0.7);
     }
     .mock-tab-header {
       font-family: 'Libre Bodoni', serif;
