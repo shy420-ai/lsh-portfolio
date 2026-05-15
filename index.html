@@ -499,13 +499,11 @@
     /* ── Case 03 · 마케팅 사이클 카드 ──────────────────────────────── */
     .cycle-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      padding: 48px 0 80px;
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 48px 0 24px;
     }
-    @media (max-width: 900px) {
-      .cycle-grid { grid-template-columns: 1fr; }
-    }
+    .cycle-grid + .case-chapter { margin-top: 24px; }
     .cycle-card {
       background: #fff;
       border: 1.5px solid #e6e6e6;
@@ -2452,82 +2450,88 @@
 
       </div>
 
-      <!-- ── 03-2 마케팅 사이클 — 사이클 01 · 02 ─────────────────── -->
+      <!-- ── 03-2 사이클 01 — 개발 공유 마케팅 ─────────────────────── -->
       <div class="case-chapter">
         <div>
           <span class="ch-num">03-2</span>
-          <span class="ch-title">마케팅 사이클 — Build in Public + Retention Lever</span>
+          <span class="ch-title">개발 과정을 공유한다 — 콘텐츠 + 시장 검증을 한 번에</span>
         </div>
-        <span class="ch-tag">Marketing Loop</span>
+        <span class="ch-tag">사이클 01</span>
       </div>
       <div class="cycle-grid">
-
         <div class="cycle-card">
-          <div class="cycle-head">
-            <span class="cycle-num">사이클 01</span>
-            <span class="cycle-tag">마케팅 · BUILD IN PUBLIC</span>
-          </div>
-          <div class="cycle-title">빌드 인 퍼블릭 마케팅 — 가장 강한 사례</div>
           <div class="cycle-section">
-            <span class="cycle-section-label">현상</span>
-            <span class="cycle-num-text">광고 예산 <strong>₩0</strong> · 가입 채널 없음 · ADHD 앱 신규</span>
+            <span class="cycle-section-label">상황</span>
+            <span class="cycle-num-text">광고비 <strong>0 원</strong>, 가입 유도 채널 없음, 신규 ADHD 앱.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">데이터</span>
+            <span class="cycle-num-text">내 트위터 계정 <strong>팔로워 2,780</strong> 보유 · ADHD 관련 콘텐츠 평균 노출 5 천 ~ 1 만 도달.</span>
           </div>
           <div class="cycle-section insight">
             <span class="cycle-section-label">인사이트</span>
-            <span class="cycle-num-text">본인 트위터 <strong>2,780 팔로워</strong>가 즉시 도달 가능한 자산. 개발 과정 공유 자체가 콘텐츠인 사이클을 설계하면 <em>시장 검증 + 마케팅 동시</em> 가능.</span>
+            <span class="cycle-num-text">이미 도달 가능한 자산이 있다. <em>개발 과정 자체를 콘텐츠로</em> 만들면, 사용자 반응이 곧 *기능 가설을 검증할 데이터* 가 된다. 마케팅·제품 두 가지를 한 번에.</span>
           </div>
           <div class="cycle-section">
             <span class="cycle-section-label">실행</span>
-            <span class="cycle-num-text">매일 개발 진행 트위터 공유 → 사용자 반응을 <em>기능 가설 검증 데이터</em>로 활용 → 같은 날 수정 후 재공유 (빠른 사이클)</span>
+            <span class="cycle-num-text">매일 개발 진행 상황을 트위터에 공유 → 사용자 반응(리트윗·답글·DM) 을 가설 검증 데이터로 활용 → 같은 날 수정해 다시 올린다. (빠른 한 사이클)</span>
           </div>
           <div class="cycle-kpi-row">
             <div class="cycle-kpi-card">
               <div class="cycle-kpi-label">2 주 커뮤니티</div>
               <div class="cycle-kpi-num">360<span>명</span></div>
-              <div class="cycle-kpi-sub">광고비 ₩0 · organic</div>
+              <div class="cycle-kpi-sub">광고비 0 원 · 트위터 단일 채널</div>
             </div>
             <div class="cycle-kpi-card">
-              <div class="cycle-kpi-label">트위터 노출 (단일 트윗 기준)</div>
+              <div class="cycle-kpi-label">단일 트윗 노출</div>
               <div class="cycle-kpi-num">14<span>만</span></div>
-              <div class="cycle-kpi-sub">참여 6,177 · 세부정보 펼치기 1,011</div>
+              <div class="cycle-kpi-sub">참여 6,177 · 자세히 보기 1,011</div>
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- ── 03-3 사이클 02 — 유지율 결정 동선 발견 ───────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">03-3</span>
+          <span class="ch-title">데이터로 발견한 유지율의 가장 큰 동선 — 친구탭</span>
+        </div>
+        <span class="ch-tag">사이클 02</span>
+      </div>
+      <div class="cycle-grid">
         <div class="cycle-card">
-          <div class="cycle-head">
-            <span class="cycle-num">사이클 02</span>
-            <span class="cycle-tag">RETENTION · NETWORK</span>
-          </div>
-          <div class="cycle-title">친구 추가 동선 강화 — 도입률·효과 역설</div>
           <div class="cycle-section">
-            <span class="cycle-section-label">현상</span>
-            <span class="cycle-num-text">친구탭 도입률 <strong>18.9 %</strong> (낮음) — 우선순위 후순위 인식</span>
+            <span class="cycle-section-label">상황</span>
+            <span class="cycle-num-text">친구탭이 후순위 기능으로 인식됨 — 사용률 <strong>18.9 %</strong> 에 머물러 있다.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">데이터</span>
+            <span class="cycle-num-text">가입 시기별로 나눠 사용자 행동을 들여다봤다. 친구 1 명 이상 보유한 사용자의 휴면률이 <strong>0 %</strong> — 친구 없는 사용자 휴면률(평균 20.8 %) 과 격차가 압도적.</span>
           </div>
           <div class="cycle-section insight">
             <span class="cycle-section-label">인사이트</span>
-            <span class="cycle-num-text">코호트 분석 결과 친구 보유자 휴면률 <strong>0 %</strong>. 도입률·효과의 역설 — <em>친구탭이 전체 retention 의 가장 큰 lever</em>.</span>
+            <span class="cycle-num-text">사용률이 낮지만 효과는 가장 큰 *역설 기능*. <em>친구탭이 사실상 유지율을 결정짓는 가장 큰 동선</em>이었다. 채용한 마케팅 자원 우선순위를 바꿔야 한다는 결론.</span>
           </div>
           <div class="cycle-section">
-            <span class="cycle-section-label">실행</span>
-            <span class="cycle-num-text">(예정) 가입 직후 친구 코드 입력 동선을 마케팅 캠페인보다 <em>우선 강화</em>. 친구 추가 인센티브 + ADHD 매칭 시스템.</span>
+            <span class="cycle-section-label">실행 (예정)</span>
+            <span class="cycle-num-text">가입 직후 친구 코드 입력 동선을 다른 마케팅 캠페인보다 <em>먼저</em> 강화. 친구 추가 보상 + ADHD 사용자끼리 자동 매칭 시스템 추가.</span>
           </div>
           <div class="cycle-kpi-row">
             <div class="cycle-kpi-card">
-              <div class="cycle-kpi-label">친구 도입률 (예상)</div>
+              <div class="cycle-kpi-label">친구탭 사용률 목표</div>
               <div class="cycle-kpi-num">35<span>%+</span></div>
               <div class="cycle-bar"><div class="cycle-bar-fill" style="width:35%"></div></div>
-              <div class="cycle-kpi-sub">18.9 % → 35 %+ 목표</div>
+              <div class="cycle-kpi-sub">현재 18.9 % → 35 %+</div>
             </div>
             <div class="cycle-kpi-card">
-              <div class="cycle-kpi-label">휴면률 (예상)</div>
+              <div class="cycle-kpi-label">전체 휴면률 목표</div>
               <div class="cycle-kpi-num">10<span>%</span></div>
               <div class="cycle-bar"><div class="cycle-bar-fill" style="width:90%; background:linear-gradient(90deg,#444,#888);"></div></div>
-              <div class="cycle-kpi-sub">20.8 % → 10 % 목표</div>
+              <div class="cycle-kpi-sub">현재 20.8 % → 10 %</div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
