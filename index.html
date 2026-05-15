@@ -2922,11 +2922,11 @@
         </div>
       </div>
 
-      <!-- ── 03-4 사이클 03 — Power Law 발견 ──────────────────────── -->
+      <!-- ── 03-4 사이클 03 — 빈집이 가장 큰 누수 ──────────────────── -->
       <div class="case-chapter">
         <div>
           <span class="ch-num">03-4</span>
-          <span class="ch-title">사용자 깊이 분포에서 Power Law 발견 — 단일 최대 개선 변수</span>
+          <span class="ch-title">사용자 깊이 분포 — 빈집이 가장 큰 누수, 단일 최대 개선 변수</span>
         </div>
         <span class="ch-tag">사이클 03</span>
       </div>
@@ -2934,7 +2934,7 @@
         <div class="cycle-card">
           <div class="cycle-glossary">
             <span class="cycle-glossary-label">빈집</span>
-            <span class="cycle-glossary-body">가입 후 어떤 탭에도 데이터를 1개도 만들지 않은 사용자. 가입은 했지만 *제품 표면을 한 번도 만지지 않은* 그룹.</span>
+            <span class="cycle-glossary-body">가입 후 어떤 탭에도 데이터를 1 개도 만들지 않은 사용자. 가입은 했지만 <em>제품을 한 번도 써 보지 않은</em> 그룹.</span>
           </div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">01</span>상황</span>
@@ -2944,25 +2944,25 @@
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">02</span>데이터</span>
             <div>
-              <span class="cycle-num-text">활용 탭 수 기준 5 단계로 분류했더니, 빈집·light 가 절반 이상. Power Law (양극단) 분포.</span>
+              <span class="cycle-num-text">사용자별 <em>활용한 탭 수</em> 를 기준으로 5 단계 분류 — 양극단 (빈집 + 가벼움) 이 절반 이상.</span>
               <div class="inline-bars">
-                <div class="inline-bar-row"><span class="inline-label">power</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:8%"></div></div><span class="inline-value">8 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">heavy</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:15%"></div></div><span class="inline-value">15 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">medium</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:25%"></div></div><span class="inline-value">25 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">light</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:20%"></div></div><span class="inline-value">20 %</span></div>
-                <div class="inline-bar-row last"><span class="inline-label">빈집</span><div class="inline-bar-track"><div class="inline-bar-fill" style="width:32%"></div></div><span class="inline-value">32 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">최활성 (6 탭+)</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:8%"></div></div><span class="inline-value">8 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">활성 (4 ~ 5 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:15%"></div></div><span class="inline-value">15 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">중간 (2 ~ 3 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:25%"></div></div><span class="inline-value">25 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">가벼움 (1 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:20%"></div></div><span class="inline-value">20 %</span></div>
+                <div class="inline-bar-row last"><span class="inline-label">빈집 (0 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill" style="width:32%"></div></div><span class="inline-value">32 %</span></div>
               </div>
             </div>
           </div>
           <div class="cycle-connector">분포의 가장 큰 누수가 어디 있는지 명확해졌다</div>
           <div class="cycle-section insight">
             <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
-            <span class="cycle-num-text">빈집 84 명 중 절반만 light 로 끌어올려도 활성 사용자 <strong>+20 %</strong> — <em>단일 최대 개선 변수</em>. 다른 어떤 기능 개선보다 이게 우선이다.</span>
+            <span class="cycle-num-text">빈집 84 명 중 절반만 한 탭이라도 써 보게 만들어도 활성 사용자 <strong>+20 %</strong> — <em>단일 최대 개선 변수</em>. 다른 어떤 기능 개선보다 이게 우선이다.</span>
           </div>
           <div class="cycle-connector">진입 직후 빈집을 light 로 변환하는 동선을 설계했다</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">04</span>액션</span>
-            <span class="cycle-num-text">(예정) 온보딩 첫 단계에 블록 1 개 강제 생성 + 첫 화면 예시 카드 미리 채움. 가입 직후 *제품 표면을 무조건 한 번 만지게* 만드는 흐름.</span>
+            <span class="cycle-num-text">(예정) 온보딩 첫 단계에 블록 1 개 강제 생성 + 첫 화면 예시 카드 미리 채움. 가입 직후 <em>제품을 무조건 한 번 써 보게</em> 만드는 흐름.</span>
           </div>
         </div>
       </div>
@@ -2979,7 +2979,7 @@
         <div class="cycle-card">
           <div class="cycle-glossary">
             <span class="cycle-glossary-label">정보탭</span>
-            <span class="cycle-glossary-body">큐레이션된 ADHD 노하우 + 다른 사용자 활용 사례를 모은 콘텐츠 탭. 사용자가 *제품의 가치를 명시적으로 발견하는* 동선.</span>
+            <span class="cycle-glossary-body">큐레이션된 ADHD 노하우 + 다른 사용자 활용 사례를 모은 콘텐츠 탭. 사용자가 <em>제품의 가치를 명시적으로 발견하는</em> 동선.</span>
           </div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">01</span>상황</span>
@@ -3013,7 +3013,7 @@
           <div class="cycle-connector">이 격차가 의미하는 게 뭔지 정리했다</div>
           <div class="cycle-section insight">
             <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
-            <span class="cycle-num-text">정보탭 진입 자체가 <em>retention 의 강한 트리거</em>. 콘텐츠가 사용자의 *가치 발견 순간* 을 만든다. 진입 동선을 강화하면 전체 retention 끌어올림.</span>
+            <span class="cycle-num-text">정보탭 진입 자체가 <em>유지율을 끌어올리는 강한 트리거</em>. 콘텐츠가 사용자의 <em>가치 발견 순간</em> 을 만든다. 진입 동선을 강화하면 전체 활성률 상승.</span>
           </div>
           <div class="cycle-connector">진입 유도 동선을 다른 탭과 결합해 설계했다</div>
           <div class="cycle-section">
