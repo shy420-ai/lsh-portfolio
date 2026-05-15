@@ -2252,11 +2252,11 @@
           <div class="phone-frame">
             <div class="phone-screen">
               <div class="mock-tab-header">건강</div>
-              <div class="mock-row accent"><span>콘서타 18mg</span><span class="check">✓ 08:30</span></div>
-              <div class="mock-row accent"><span>아빌리파이 1mg</span><span class="check">✓ 08:30</span></div>
-              <div class="mock-row"><span>메디키넷 20mg</span><span class="pending">⌛ 14:00</span></div>
-              <div class="mock-row"><span>인데놀 10mg</span><span class="pending">PRN</span></div>
-              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">오늘 복용 2 / 4</div>
+              <div class="mock-row accent pill-row pill-done" onclick="togglePill(this)" style="cursor:pointer"><span>콘서타 18mg</span><span class="check">✓ 08:30</span></div>
+              <div class="mock-row accent pill-row pill-done" onclick="togglePill(this)" style="cursor:pointer"><span>아빌리파이 1mg</span><span class="check">✓ 08:30</span></div>
+              <div class="mock-row pill-row" onclick="togglePill(this)" style="cursor:pointer"><span>메디키넷 20mg</span><span class="pending">⌛ 14:00</span></div>
+              <div class="mock-row pill-row" onclick="togglePill(this)" style="cursor:pointer"><span>인데놀 10mg</span><span class="pending">PRN</span></div>
+              <div class="pill-counter" style="margin-top:auto; font-size:8px; color:#999; text-align:center;">오늘 복용 2 / 4</div>
             </div>
           </div>
           <div class="mockup-caption">
@@ -2269,7 +2269,7 @@
           <div class="phone-frame">
             <div class="phone-screen">
               <div class="mock-tab-header">일기</div>
-              <div class="mock-bgm">🎵 lo-fi 비 오는 카페 ⏸</div>
+              <div class="mock-bgm bgm-row playing" onclick="toggleBgm(this)" style="cursor:pointer">🎵 lo-fi 비 오는 카페 <span class="bgm-icon">⏸</span></div>
               <div class="mock-block">
                 <div class="label">W · Wish</div>
                 <div>오늘 운동 30 분</div>
@@ -2426,6 +2426,31 @@
       requestAnimationFrame(() => {
         document.querySelectorAll('.page.active .bar-chart').forEach((el) => el.classList.add('animate-in'))
       })
+    }
+
+    // Case 03 mockup — 인터랙티브 토글
+    function togglePill(row) {
+      const isDone = row.classList.toggle('pill-done')
+      row.classList.toggle('accent', isDone)
+      const status = row.querySelector('.check, .pending')
+      if (isDone) {
+        status.className = 'check'
+        status.textContent = '✓ 방금'
+      } else {
+        status.className = 'pending'
+        status.textContent = '⌛'
+      }
+      // 카운터 업데이트
+      const screen = row.closest('.phone-screen')
+      const done = screen.querySelectorAll('.pill-done').length
+      const total = screen.querySelectorAll('.pill-row').length
+      const counter = screen.querySelector('.pill-counter')
+      if (counter) counter.textContent = `오늘 복용 ${done} / ${total}`
+    }
+    function toggleBgm(row) {
+      const playing = row.classList.toggle('playing')
+      const icon = row.querySelector('.bgm-icon')
+      icon.textContent = playing ? '⏸' : '▶'
     }
   </script>
 </body>
