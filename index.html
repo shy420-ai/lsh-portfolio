@@ -496,6 +496,148 @@
       line-height: 1.55;
     }
 
+    /* ── Case 03 · 마케팅 사이클 카드 ──────────────────────────────── */
+    .cycle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 48px 0 80px;
+    }
+    @media (max-width: 900px) {
+      .cycle-grid { grid-template-columns: 1fr; }
+    }
+    .cycle-card {
+      background: #fff;
+      border: 1.5px solid #e6e6e6;
+      border-top: 3px solid #c0392b;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cycle-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cycle-num {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #c0392b;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .cycle-tag {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      color: #888;
+      padding: 4px 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    .cycle-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+    .cycle-section {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      font-size: 12.5px;
+      line-height: 1.65;
+    }
+    .cycle-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 0.04em;
+    }
+    .cycle-section.insight {
+      padding: 14px 16px;
+      background: #fdf3f1;
+      border-left: 2px solid #c0392b;
+      grid-template-columns: 56px 1fr;
+    }
+    .cycle-section.insight .cycle-section-label {
+      color: #c0392b;
+    }
+    .cycle-num-text strong, .cycle-num-text em {
+      color: #c0392b;
+      font-style: normal;
+      font-weight: 700;
+    }
+    .cycle-kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+    .cycle-kpi-row.one-col {
+      grid-template-columns: 1fr 1fr;
+    }
+    .cycle-kpi-card {
+      border: 1.5px dashed #c0392b;
+      padding: 14px 16px;
+      border-radius: 2px;
+      background: #fff;
+    }
+    .cycle-kpi-card.placeholder {
+      border-style: dashed;
+      border-color: #ccc;
+      background: #f5f5f5;
+      color: #888;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .cycle-kpi-label {
+      font-size: 10px;
+      color: #888;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .cycle-kpi-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: #c0392b;
+      line-height: 1;
+    }
+    .cycle-kpi-num span {
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 2px;
+    }
+    .cycle-kpi-sub {
+      font-size: 9.5px;
+      color: #888;
+      margin-top: 6px;
+      letter-spacing: 0.02em;
+    }
+    .cycle-bar {
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .cycle-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #c0392b, #e85541);
+      border-radius: 3px;
+    }
+
     /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
     .case-rebrand {
       display: grid;
@@ -2305,6 +2447,80 @@
           <div class="mockup-caption">
             <div class="mockup-label">그룹 탭</div>
             <div class="mockup-desc">동료 인증 바디더블링 — 혼자 못 하는 ADHD 코어 욕구 충족</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── 03-2 마케팅 사이클 — 사이클 01 · 02 ─────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">03-2</span>
+          <span class="ch-title">마케팅 사이클 — Build in Public + Retention Lever</span>
+        </div>
+        <span class="ch-tag">Marketing Loop</span>
+      </div>
+      <div class="cycle-grid">
+
+        <div class="cycle-card">
+          <div class="cycle-head">
+            <span class="cycle-num">사이클 01</span>
+            <span class="cycle-tag">마케팅 · BUILD IN PUBLIC</span>
+          </div>
+          <div class="cycle-title">빌드 인 퍼블릭 마케팅 — 가장 강한 사례</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">현상</span>
+            <span class="cycle-num-text">광고 예산 <strong>₩0</strong> · 가입 채널 없음 · ADHD 앱 신규</span>
+          </div>
+          <div class="cycle-section insight">
+            <span class="cycle-section-label">인사이트</span>
+            <span class="cycle-num-text">본인 트위터 <strong>2,780 팔로워</strong>가 즉시 도달 가능한 자산. 개발 과정 공유 자체가 콘텐츠인 사이클을 설계하면 <em>시장 검증 + 마케팅 동시</em> 가능.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">실행</span>
+            <span class="cycle-num-text">매일 개발 진행 트위터 공유 → 사용자 반응을 <em>기능 가설 검증 데이터</em>로 활용 → 같은 날 수정 후 재공유 (빠른 사이클)</span>
+          </div>
+          <div class="cycle-kpi-row">
+            <div class="cycle-kpi-card">
+              <div class="cycle-kpi-label">2 주 결과</div>
+              <div class="cycle-kpi-num">360<span>명</span></div>
+              <div class="cycle-kpi-sub">커뮤니티 · 광고비 ₩0</div>
+            </div>
+            <div class="cycle-kpi-card placeholder">[ Analytics 캡쳐 ]</div>
+          </div>
+        </div>
+
+        <div class="cycle-card">
+          <div class="cycle-head">
+            <span class="cycle-num">사이클 02</span>
+            <span class="cycle-tag">RETENTION · NETWORK</span>
+          </div>
+          <div class="cycle-title">친구 추가 동선 강화 — 도입률·효과 역설</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">현상</span>
+            <span class="cycle-num-text">친구탭 도입률 <strong>18.9 %</strong> (낮음) — 우선순위 후순위 인식</span>
+          </div>
+          <div class="cycle-section insight">
+            <span class="cycle-section-label">인사이트</span>
+            <span class="cycle-num-text">코호트 분석 결과 친구 보유자 휴면률 <strong>0 %</strong>. 도입률·효과의 역설 — <em>친구탭이 전체 retention 의 가장 큰 lever</em>.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label">실행</span>
+            <span class="cycle-num-text">(예정) 가입 직후 친구 코드 입력 동선을 마케팅 캠페인보다 <em>우선 강화</em>. 친구 추가 인센티브 + ADHD 매칭 시스템.</span>
+          </div>
+          <div class="cycle-kpi-row">
+            <div class="cycle-kpi-card">
+              <div class="cycle-kpi-label">친구 도입률 (예상)</div>
+              <div class="cycle-kpi-num">35<span>%+</span></div>
+              <div class="cycle-bar"><div class="cycle-bar-fill" style="width:35%"></div></div>
+              <div class="cycle-kpi-sub">18.9 % → 35 %+ 목표</div>
+            </div>
+            <div class="cycle-kpi-card">
+              <div class="cycle-kpi-label">휴면률 (예상)</div>
+              <div class="cycle-kpi-num">10<span>%</span></div>
+              <div class="cycle-bar"><div class="cycle-bar-fill" style="width:90%; background:linear-gradient(90deg,#444,#888);"></div></div>
+              <div class="cycle-kpi-sub">20.8 % → 10 % 목표</div>
+            </div>
           </div>
         </div>
 
