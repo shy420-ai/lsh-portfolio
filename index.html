@@ -386,6 +386,20 @@
       padding: 28px 12px 12px;
       box-sizing: border-box;
       gap: 6px;
+      position: relative;
+    }
+    .phone-screen iframe {
+      position: absolute;
+      top: 20px; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: calc(100% - 20px);
+      border: 0;
+      border-radius: 0 0 20px 20px;
+      transform: scale(0.5);
+      transform-origin: top left;
+      /* 폰 화면 사이즈에 맞게 iframe 크기 늘리고 0.5 로 scale — 모바일 view 처럼 표시 */
+      width: 200%;
+      height: calc(200% - 40px);
     }
     .mock-tab-header {
       font-family: 'Libre Bodoni', serif;
@@ -2251,12 +2265,7 @@
         <div class="mockup-cell">
           <div class="phone-frame">
             <div class="phone-screen">
-              <div class="mock-tab-header">건강</div>
-              <div class="mock-row accent pill-row pill-done" onclick="togglePill(this)" style="cursor:pointer"><span>콘서타 18mg</span><span class="check">✓ 08:30</span></div>
-              <div class="mock-row accent pill-row pill-done" onclick="togglePill(this)" style="cursor:pointer"><span>아빌리파이 1mg</span><span class="check">✓ 08:30</span></div>
-              <div class="mock-row pill-row" onclick="togglePill(this)" style="cursor:pointer"><span>메디키넷 20mg</span><span class="pending">⌛ 14:00</span></div>
-              <div class="mock-row pill-row" onclick="togglePill(this)" style="cursor:pointer"><span>인데놀 10mg</span><span class="pending">PRN</span></div>
-              <div class="pill-counter" style="margin-top:auto; font-size:8px; color:#999; text-align:center;">오늘 복용 2 / 4</div>
+              <iframe src="https://shy420-ai.github.io/focus-flow/?preview=1&view=habit" title="건강 탭" loading="lazy"></iframe>
             </div>
           </div>
           <div class="mockup-caption">
@@ -2268,20 +2277,7 @@
         <div class="mockup-cell">
           <div class="phone-frame">
             <div class="phone-screen">
-              <div class="mock-tab-header">일기</div>
-              <div class="mock-bgm bgm-row playing" onclick="toggleBgm(this)" style="cursor:pointer">🎵 lo-fi 비 오는 카페 <span class="bgm-icon">⏸</span></div>
-              <div class="mock-block">
-                <div class="label">W · Wish</div>
-                <div>오늘 운동 30 분</div>
-              </div>
-              <div class="mock-block">
-                <div class="label">O · Obstacle</div>
-                <div>퇴근 후 침대로 직행</div>
-              </div>
-              <div class="mock-block">
-                <div class="label">P · Plan</div>
-                <div>운동복부터 갈아입기</div>
-              </div>
+              <iframe src="https://shy420-ai.github.io/focus-flow/?preview=1&view=mood" title="일기 탭" loading="lazy"></iframe>
             </div>
           </div>
           <div class="mockup-caption">
@@ -2293,20 +2289,7 @@
         <div class="mockup-cell">
           <div class="phone-frame">
             <div class="phone-screen">
-              <div class="mock-tab-header">정보</div>
-              <div class="mock-block">
-                <div class="label">⭐ 시작 장벽 낮추기</div>
-                <div>5 분만 — 끝나도 그만 OK</div>
-              </div>
-              <div class="mock-block">
-                <div class="label">💊 약 골든타임</div>
-                <div>복용 후 30 분 안에 시작</div>
-              </div>
-              <div class="mock-block">
-                <div class="label">📷 활용 사례</div>
-                <div>"오늘 처음 책상 정리 했어요"</div>
-              </div>
-              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">큐레이션 노하우 + 사용자 글</div>
+              <iframe src="https://shy420-ai.github.io/focus-flow/?preview=1&view=tips" title="정보 탭" loading="lazy"></iframe>
             </div>
           </div>
           <div class="mockup-caption">
@@ -2318,30 +2301,7 @@
         <div class="mockup-cell">
           <div class="phone-frame">
             <div class="phone-screen">
-              <div class="mock-tab-header">애드업 1 기</div>
-              <div class="mock-chat-row">
-                <div class="mock-chat-avatar">행</div>
-                <div class="mock-chat-body">
-                  <div class="mock-chat-nick">행복하고파</div>
-                  <div class="mock-chat-msg">오늘 라이노 작업 30 분 ✓</div>
-                  <div class="mock-chat-photo">📷 인증샷</div>
-                </div>
-              </div>
-              <div class="mock-chat-row">
-                <div class="mock-chat-avatar">사</div>
-                <div class="mock-chat-body">
-                  <div class="mock-chat-nick">사과</div>
-                  <div class="mock-chat-msg">책상 정리 끝!</div>
-                </div>
-              </div>
-              <div class="mock-chat-row">
-                <div class="mock-chat-avatar">기</div>
-                <div class="mock-chat-body">
-                  <div class="mock-chat-nick">기니</div>
-                  <div class="mock-chat-msg">운동복 갈아입었어요</div>
-                </div>
-              </div>
-              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">멤버 8 · 오늘 ✓ 3</div>
+              <iframe src="https://shy420-ai.github.io/focus-flow/?preview=1&view=team" title="그룹 탭" loading="lazy"></iframe>
             </div>
           </div>
           <div class="mockup-caption">
