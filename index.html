@@ -609,6 +609,103 @@
     .cycle-glossary-body {
       color: #555;
     }
+    /* 인사이트 박스 안에 작은 인라인 막대 차트 */
+    .inline-bars {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .inline-bar-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 40px;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+    }
+    .inline-label {
+      font-family: monospace;
+      color: #666;
+      letter-spacing: 0.02em;
+    }
+    .inline-bar-row.last .inline-label,
+    .inline-bar-row.last .inline-value {
+      color: #c0392b;
+      font-weight: 800;
+    }
+    .inline-bar-track {
+      height: 12px;
+      background: #f0e0dc;
+      overflow: hidden;
+    }
+    .inline-bar-fill {
+      height: 100%;
+      background: #c0392b;
+      transition: width 0.5s ease;
+    }
+    .inline-bar-fill.muted { background: #d8b1aa; }
+    .inline-bar-fill.medium { background: #cf6f64; }
+    .inline-value {
+      text-align: right;
+      font-weight: 700;
+      color: #555;
+    }
+    /* VS 비교 — 두 큰 막대 차트 */
+    .vs-chart {
+      margin-top: 16px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 2px;
+      position: relative;
+    }
+    .vs-chart-bars {
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr;
+      align-items: end;
+      gap: 0;
+      height: 120px;
+    }
+    .vs-bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+    }
+    .vs-bar-value {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .vs-bar {
+      width: 60%;
+      min-width: 80px;
+      background: #aaa;
+    }
+    .vs-bar.left { background: #9ea0a3; }
+    .vs-bar.right { background: linear-gradient(180deg, #e85541, #c0392b); }
+    .vs-middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      color: #c0392b;
+      font-size: 18px;
+    }
+    .vs-labels {
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr;
+      margin-top: 8px;
+      font-size: 10.5px;
+      color: #888;
+    }
+    .vs-labels span { text-align: center; }
+    .vs-labels .vs-left { color: #888; }
+    .vs-labels .vs-right { color: #c0392b; font-weight: 700; }
     .cycle-connector::before {
       content: '↓';
       font-style: normal;
@@ -2821,6 +2918,107 @@
             </div>
 
             <div class="cohort-note">출처 — 자체 분석 패널 (PortfolioAnalyticsPanel) 실측치. 2026-05-15 기준. friends 배열 길이 ≥ 1 · discoverable=true 기준 집계.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 03-4 사이클 03 — Power Law 발견 ──────────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">03-4</span>
+          <span class="ch-title">사용자 깊이 분포에서 Power Law 발견 — 단일 최대 개선 변수</span>
+        </div>
+        <span class="ch-tag">사이클 03</span>
+      </div>
+      <div class="cycle-grid">
+        <div class="cycle-card">
+          <div class="cycle-glossary">
+            <span class="cycle-glossary-label">빈집</span>
+            <span class="cycle-glossary-body">가입 후 어떤 탭에도 데이터를 1개도 만들지 않은 사용자. 가입은 했지만 *제품 표면을 한 번도 만지지 않은* 그룹.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">01</span>상황</span>
+            <span class="cycle-num-text">사용자 <strong>31.8 %</strong> 가 데이터 하나도 만들지 않고 떠남 — 가장 큰 누수.</span>
+          </div>
+          <div class="cycle-connector">사용자 깊이별 분포가 어떻게 나뉘는지 들여다봤다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">02</span>데이터</span>
+            <div>
+              <span class="cycle-num-text">활용 탭 수 기준 5 단계로 분류했더니, 빈집·light 가 절반 이상. Power Law (양극단) 분포.</span>
+              <div class="inline-bars">
+                <div class="inline-bar-row"><span class="inline-label">power</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:8%"></div></div><span class="inline-value">8 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">heavy</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:15%"></div></div><span class="inline-value">15 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">medium</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:25%"></div></div><span class="inline-value">25 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">light</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:20%"></div></div><span class="inline-value">20 %</span></div>
+                <div class="inline-bar-row last"><span class="inline-label">빈집</span><div class="inline-bar-track"><div class="inline-bar-fill" style="width:32%"></div></div><span class="inline-value">32 %</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cycle-connector">분포의 가장 큰 누수가 어디 있는지 명확해졌다</div>
+          <div class="cycle-section insight">
+            <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
+            <span class="cycle-num-text">빈집 84 명 중 절반만 light 로 끌어올려도 활성 사용자 <strong>+20 %</strong> — <em>단일 최대 개선 변수</em>. 다른 어떤 기능 개선보다 이게 우선이다.</span>
+          </div>
+          <div class="cycle-connector">진입 직후 빈집을 light 로 변환하는 동선을 설계했다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">04</span>액션</span>
+            <span class="cycle-num-text">(예정) 온보딩 첫 단계에 블록 1 개 강제 생성 + 첫 화면 예시 카드 미리 채움. 가입 직후 *제품 표면을 무조건 한 번 만지게* 만드는 흐름.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 03-5 사이클 04 — 정보탭 진입 격차 ────────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">03-5</span>
+          <span class="ch-title">정보탭 진입 동선 — 활성률 격차 발견</span>
+        </div>
+        <span class="ch-tag">사이클 04</span>
+      </div>
+      <div class="cycle-grid">
+        <div class="cycle-card">
+          <div class="cycle-glossary">
+            <span class="cycle-glossary-label">정보탭</span>
+            <span class="cycle-glossary-body">큐레이션된 ADHD 노하우 + 다른 사용자 활용 사례를 모은 콘텐츠 탭. 사용자가 *제품의 가치를 명시적으로 발견하는* 동선.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">01</span>상황</span>
+            <span class="cycle-num-text">사용자별로 정보탭 진입 여부에 따라 활성률 격차가 큰 게 관찰됨.</span>
+          </div>
+          <div class="cycle-connector">진입자 / 미진입자 사이 활성률 차이가 어느 정도인지 측정했다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">02</span>데이터</span>
+            <div>
+              <span class="cycle-num-text">정보탭 진입자 활성률 <strong>86 %</strong> · 미진입자 <strong>48 %</strong> — 격차 <em>38.3 %p</em>.</span>
+              <div class="vs-chart">
+                <div class="vs-chart-bars">
+                  <div class="vs-bar-col">
+                    <div class="vs-bar-value" style="color:#888;">48 %</div>
+                    <div class="vs-bar left" style="height:55%;"></div>
+                  </div>
+                  <div class="vs-middle">VS</div>
+                  <div class="vs-bar-col">
+                    <div class="vs-bar-value" style="color:#c0392b;">86 %</div>
+                    <div class="vs-bar right" style="height:100%;"></div>
+                  </div>
+                </div>
+                <div class="vs-labels">
+                  <span class="vs-left">미진입자</span>
+                  <span></span>
+                  <span class="vs-right">진입자</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cycle-connector">이 격차가 의미하는 게 뭔지 정리했다</div>
+          <div class="cycle-section insight">
+            <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
+            <span class="cycle-num-text">정보탭 진입 자체가 <em>retention 의 강한 트리거</em>. 콘텐츠가 사용자의 *가치 발견 순간* 을 만든다. 진입 동선을 강화하면 전체 retention 끌어올림.</span>
+          </div>
+          <div class="cycle-connector">진입 유도 동선을 다른 탭과 결합해 설계했다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">04</span>액션</span>
+            <span class="cycle-num-text">(예정) Retention 높이는 팁 카드를 <em>일간탭에 의도적 노출</em> + 매일 자동으로 팁 1 개 띄워 정보탭 진입 유도 동선 강화.</span>
           </div>
         </div>
       </div>
