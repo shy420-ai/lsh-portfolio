@@ -338,6 +338,152 @@
       white-space: nowrap;
     }
 
+    /* ── Case 03 · Product Surface Mockup ─────────────────────────── */
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 48px 0 80px;
+    }
+    @media (max-width: 900px) {
+      .mockup-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .mockup-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .phone-frame {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 9 / 17;
+      background: #1a1a1a;
+      border-radius: 28px;
+      padding: 8px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 14px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 4px;
+      background: #000;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .phone-screen {
+      width: 100%; height: 100%;
+      background: #fafaf7;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-size: 10px;
+      color: #222;
+      padding: 28px 12px 12px;
+      box-sizing: border-box;
+      gap: 6px;
+    }
+    .mock-tab-header {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c0392b;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 4px;
+    }
+    .mock-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 8px;
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 6px;
+      font-size: 9px;
+    }
+    .mock-row.accent { background: #fdf3f1; border-color: #f3d6ce; }
+    .mock-row-tag { font-size: 8px; color: #888; }
+    .mock-row .check { color: #c0392b; font-weight: 700; }
+    .mock-row .pending { color: #aaa; }
+    .mock-block {
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 9px;
+      line-height: 1.4;
+    }
+    .mock-block .label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      color: #c0392b;
+      font-size: 9px;
+      margin-bottom: 2px;
+    }
+    .mock-bgm {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #000;
+      color: #fff;
+      border-radius: 4px;
+      padding: 3px 6px;
+      font-size: 8px;
+    }
+    .mock-chat-row {
+      display: flex;
+      gap: 6px;
+      padding: 4px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .mock-chat-row:last-child { border-bottom: none; }
+    .mock-chat-avatar {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f3d6ce, #c0392b);
+      flex-shrink: 0;
+      font-size: 9px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .mock-chat-body { flex: 1; min-width: 0; }
+    .mock-chat-nick { font-size: 8px; font-weight: 700; color: #555; }
+    .mock-chat-msg { font-size: 9px; color: #222; word-break: break-word; }
+    .mock-chat-photo {
+      margin-top: 3px;
+      height: 30px;
+      background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      color: #888;
+    }
+    .mockup-caption {
+      text-align: center;
+    }
+    .mockup-label {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #000;
+    }
+    .mockup-desc {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.55;
+    }
+
     /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
     .case-rebrand {
       display: grid;
@@ -1502,7 +1648,7 @@
         <p class="about-tagline">마케터이지만 SaaS를 직접 만들고, 그 안의 데이터를 분석합니다.</p>
         <p class="about-bio">
           콘텐츠 마케팅 실무를 B2C · B2B · 공공기관에서 쌓았고,<br>
-          직전 프로젝트에서는 신규 트위터 채널을 1주 만에 3,500 팔로워로 성장(오가닉, CAC ₩0)시켰습니다.<br>
+          직전 프로젝트에서는 회사 자체 트위터 채널을 1주 만에 3,400 팔로워로 성장(오가닉, CAC ₩0)시켰습니다.<br>
           현재는 여성 ADHD 사용자를 위한 PWA를 풀스택으로 빌드해 2주 만에 유저 270명을 확보했고,<br>
           Firebase · 자체 분석 대시보드로 사용자 데이터를 측정하며 운영 중입니다.
         </p>
@@ -1864,7 +2010,7 @@
     <div class="case-inner" style="margin-top: 60px;">
       <div class="case-meta">Case 02 · B2C Brand</div>
       <h3 class="case-title">B2C 브랜드 신규 트위터 채널 셋업 · 그로스</h3>
-      <p class="case-subtitle">1주 만에 팔로워 3,600 — 광고비 0원 오가닉 성장</p>
+      <p class="case-subtitle">1주 만에 회사 자체 채널 팔로워 3,400 — 광고비 ₩0 오가닉 성장</p>
       <div class="case-grid">
         <div class="case-cell">
           <h4>Context</h4>
@@ -1900,7 +2046,7 @@
           <div class="kpi-stack">
             <div class="kpi-item">
               <div class="kpi-label">Followers</div>
-              <div class="kpi-num">3,600<span>+</span></div>
+              <div class="kpi-num">3,400<span>+</span></div>
               <div class="kpi-sub">7일간 누적 팔로워<span class="delta">오가닉 · 광고비 ₩0</span></div>
             </div>
             <div class="kpi-item">
@@ -2090,6 +2236,120 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- ── 03-1 Product Surface — 차별 핵심 4 탭 ───────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">03-1</span>
+          <span class="ch-title">Product Surface — 차별 핵심 4 탭</span>
+        </div>
+        <span class="ch-tag">Mockup</span>
+      </div>
+      <div class="mockup-grid">
+
+        <div class="mockup-cell">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="mock-tab-header">건강</div>
+              <div class="mock-row accent"><span>콘서타 18mg</span><span class="check">✓ 08:30</span></div>
+              <div class="mock-row accent"><span>아빌리파이 1mg</span><span class="check">✓ 08:30</span></div>
+              <div class="mock-row"><span>메디키넷 20mg</span><span class="pending">⌛ 14:00</span></div>
+              <div class="mock-row"><span>인데놀 10mg</span><span class="pending">PRN</span></div>
+              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">오늘 복용 2 / 4</div>
+            </div>
+          </div>
+          <div class="mockup-caption">
+            <div class="mockup-label">건강 탭</div>
+            <div class="mockup-desc">ADHD 약 용량별 복용 기록 — 일반 생산성 앱이 안 다루는 niche</div>
+          </div>
+        </div>
+
+        <div class="mockup-cell">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="mock-tab-header">일기</div>
+              <div class="mock-bgm">🎵 lo-fi 비 오는 카페 ⏸</div>
+              <div class="mock-block">
+                <div class="label">W · Wish</div>
+                <div>오늘 운동 30 분</div>
+              </div>
+              <div class="mock-block">
+                <div class="label">O · Obstacle</div>
+                <div>퇴근 후 침대로 직행</div>
+              </div>
+              <div class="mock-block">
+                <div class="label">P · Plan</div>
+                <div>운동복부터 갈아입기</div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-caption">
+            <div class="mockup-label">일기 탭</div>
+            <div class="mockup-desc">감정 해소 일지 + WOOP 아침 루틴 + BGM — 일과 정서를 한 화면에</div>
+          </div>
+        </div>
+
+        <div class="mockup-cell">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="mock-tab-header">정보</div>
+              <div class="mock-block">
+                <div class="label">⭐ 시작 장벽 낮추기</div>
+                <div>5 분만 — 끝나도 그만 OK</div>
+              </div>
+              <div class="mock-block">
+                <div class="label">💊 약 골든타임</div>
+                <div>복용 후 30 분 안에 시작</div>
+              </div>
+              <div class="mock-block">
+                <div class="label">📷 활용 사례</div>
+                <div>"오늘 처음 책상 정리 했어요"</div>
+              </div>
+              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">큐레이션 노하우 + 사용자 글</div>
+            </div>
+          </div>
+          <div class="mockup-caption">
+            <div class="mockup-label">정보 탭</div>
+            <div class="mockup-desc">큐레이션된 ADHD 노하우 + 사용자 활용 사례 — 도구 + 콘텐츠 결합</div>
+          </div>
+        </div>
+
+        <div class="mockup-cell">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="mock-tab-header">애드업 1 기</div>
+              <div class="mock-chat-row">
+                <div class="mock-chat-avatar">행</div>
+                <div class="mock-chat-body">
+                  <div class="mock-chat-nick">행복하고파</div>
+                  <div class="mock-chat-msg">오늘 라이노 작업 30 분 ✓</div>
+                  <div class="mock-chat-photo">📷 인증샷</div>
+                </div>
+              </div>
+              <div class="mock-chat-row">
+                <div class="mock-chat-avatar">사</div>
+                <div class="mock-chat-body">
+                  <div class="mock-chat-nick">사과</div>
+                  <div class="mock-chat-msg">책상 정리 끝!</div>
+                </div>
+              </div>
+              <div class="mock-chat-row">
+                <div class="mock-chat-avatar">기</div>
+                <div class="mock-chat-body">
+                  <div class="mock-chat-nick">기니</div>
+                  <div class="mock-chat-msg">운동복 갈아입었어요</div>
+                </div>
+              </div>
+              <div style="margin-top:auto; font-size:8px; color:#999; text-align:center;">멤버 8 · 오늘 ✓ 3</div>
+            </div>
+          </div>
+          <div class="mockup-caption">
+            <div class="mockup-label">그룹 탭</div>
+            <div class="mockup-desc">동료 인증 바디더블링 — 혼자 못 하는 ADHD 코어 욕구 충족</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
