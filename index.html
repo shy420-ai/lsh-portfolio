@@ -1110,6 +1110,31 @@
       font-size: 12px;
       text-decoration: none;
     }
+    .tiktok-section {
+      padding: 48px 0 24px;
+    }
+    .tiktok-section-label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #c0392b;
+      font-weight: 600;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f0d8d3;
+    }
+    .tiktok-section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .tiktok-section-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+    .tiktok-section-grid .tiktok-cell .tiktok-embed {
+      max-width: 100%;
+    }
 
     /* ── Case 04 · 변곡점 (월별 성장 그래프) ─────────────────────── */
     .impact-section {
@@ -3373,22 +3398,6 @@
             <span class="finding-title">조회수 1위 영상 ≠ 팔로워 1위 영상</span>
           </div>
           <div class="finding-body"><strong>17.3만 뷰</strong> 영상이 <strong>3.1만 뷰</strong> 영상보다 <em>팔로워 7 배 더 적게</em> 데려옴.</div>
-          <div class="tiktok-compare">
-            <div class="tiktok-cell">
-              <div class="tiktok-cell-label">17.3 만 뷰 영상 — 14 초</div>
-              <div class="tiktok-cell-meta">팔로워 <strong>87 명</strong> · 전환율 0.05 %</div>
-              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7609645385249852693" data-video-id="7609645385249852693">
-                <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7609645385249852693">@yamae_official 영상 보기 →</a></section>
-              </blockquote>
-            </div>
-            <div class="tiktok-cell">
-              <div class="tiktok-cell-label">3.1 만 뷰 영상 — 그림 작업</div>
-              <div class="tiktok-cell-meta">팔로워 <strong>611 명</strong> · 전환율 1.97 %</div>
-              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7597065912985881864" data-video-id="7597065912985881864">
-                <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7597065912985881864">@yamae_official 영상 보기 →</a></section>
-              </blockquote>
-            </div>
-          </div>
           <div class="finding-action">
             <span class="lbl">그래서 →</span>조회수 한 지표로만 콘텐츠 평가 X. <em>전환율 (팔로워 증가)</em> 도 함께 측정으로 변경.
           </div>
@@ -3405,7 +3414,7 @@
             <div class="row accent">그림 강의 영상</div><div class="row accent">10 %</div><div class="row accent">1.248 % <span class="accent-tag">(6×)</span></div>
           </div>
           <div class="finding-action">
-            <span class="lbl">그래서 →</span>가장 많은 시간 쓴 카테고리가 전환율 최저. <em>그림 강의 영상 비중을 늘리는 방향</em> 으로 시간 재배분.
+            <span class="lbl">그래서 →</span>기존 컨셉 (단순 그림 작업) 은 더 많은 시간·노력·퀄리티를 들여도 결과가 약함. <em>그림 팁을 알려주는 강의 방식</em> 으로 콘텐츠 컨셉 자체 변경 — 시간 재배분.
           </div>
         </div>
 
@@ -3440,10 +3449,57 @@
 
       </div>
 
-      <!-- ── 04-2 변곡점 — 인사이트 기반 재설계로 평균 뷰 8× 성장 ─── -->
+      <!-- ── 04-2 실제 영상 비교 ────────────────────────────────── -->
       <div class="case-chapter">
         <div>
           <span class="ch-num">04-2</span>
+          <span class="ch-title">실제 영상 비교 — 발견 01·02 의 직접 증거</span>
+        </div>
+        <span class="ch-tag">EVIDENCE</span>
+      </div>
+
+      <div class="tiktok-section">
+        <div class="tiktok-section-label">발견 01 — 조회수 1위 ≠ 팔로워 1위</div>
+        <div class="tiktok-section-grid">
+          <div class="tiktok-cell">
+            <div class="tiktok-cell-label">17.3 만 뷰 영상 — 14 초</div>
+            <div class="tiktok-cell-meta">팔로워 <strong>87 명</strong> · 전환율 0.05 %</div>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7609645385249852693" data-video-id="7609645385249852693">
+              <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7609645385249852693">@yamae_official 영상 보기 →</a></section>
+            </blockquote>
+          </div>
+          <div class="tiktok-cell">
+            <div class="tiktok-cell-label">3.1 만 뷰 영상 — 그림 작업</div>
+            <div class="tiktok-cell-meta">팔로워 <strong>611 명</strong> · 전환율 1.97 %</div>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7597065912985881864" data-video-id="7597065912985881864">
+              <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7597065912985881864">@yamae_official 영상 보기 →</a></section>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="tiktok-section-label" style="margin-top:40px;">발견 02 — 기존 컨셉 vs 그림 강의 컨셉</div>
+        <div class="tiktok-section-grid">
+          <div class="tiktok-cell">
+            <div class="tiktok-cell-label">BEFORE — 기존 그림 작업 컨셉</div>
+            <div class="tiktok-cell-meta">팔로워 <strong>11 명</strong> · 808 뷰 · 25 초</div>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7594849050009111816" data-video-id="7594849050009111816">
+              <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7594849050009111816">@yamae_official 영상 보기 →</a></section>
+            </blockquote>
+          </div>
+          <div class="tiktok-cell">
+            <div class="tiktok-cell-label">AFTER — 그림 강의 컨셉 (머리채색법)</div>
+            <div class="tiktok-cell-meta">팔로워 <strong>352 명</strong> · 95K 뷰 · 41 초</div>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yamae_official/video/7622377080851811605" data-video-id="7622377080851811605">
+              <section><a target="_blank" href="https://www.tiktok.com/@yamae_official/video/7622377080851811605">@yamae_official 영상 보기 →</a></section>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 04-3 변곡점 — 인사이트 기반 재설계로 평균 뷰 8× 성장 ─── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">04-3</span>
           <span class="ch-title">변곡점 — 인사이트 기반 재설계로 평균 뷰 8 × 성장</span>
         </div>
         <span class="ch-tag">OPERATIONAL IMPACT</span>
