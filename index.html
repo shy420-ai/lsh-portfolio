@@ -503,6 +503,13 @@
       gap: 0;
       padding: 48px 0 24px;
     }
+    .cycle-grid.split-2 {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 900px) {
+      .cycle-grid.split-2 { grid-template-columns: 1fr; }
+    }
     .cycle-grid + .case-chapter { margin-top: 24px; }
     .cycle-card {
       background: #fff;
@@ -2922,109 +2929,97 @@
         </div>
       </div>
 
-      <!-- ── 03-4 사이클 03 — 빈집이 가장 큰 누수 ──────────────────── -->
+      <!-- ── 03-4 실험 중인 가설 — 빈집 변환 · 정보탭 진입 강화 ──── -->
       <div class="case-chapter">
         <div>
           <span class="ch-num">03-4</span>
-          <span class="ch-title">사용자 깊이 분포 — 빈집이 가장 큰 누수, 단일 최대 개선 변수</span>
+          <span class="ch-title">실험 중인 가설 — 빈집 변환 · 정보탭 진입 강화</span>
         </div>
-        <span class="ch-tag">사이클 03</span>
+        <span class="ch-tag">In Progress</span>
       </div>
-      <div class="cycle-grid">
+      <div class="cycle-grid split-2">
+
         <div class="cycle-card">
-          <div class="cycle-glossary">
-            <span class="cycle-glossary-label">빈집</span>
-            <span class="cycle-glossary-body">가입 후 어떤 탭에도 데이터를 1 개도 만들지 않은 사용자. 가입은 했지만 <em>제품을 한 번도 써 보지 않은</em> 그룹.</span>
+          <div class="cycle-head">
+            <span class="cycle-num">가설 A</span>
+            <span class="cycle-tag">ACTIVATION · 빈집 변환</span>
           </div>
+          <div class="cycle-title">빈집을 light 로 변환하는 게 단일 최대 변수</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">01</span>상황</span>
             <span class="cycle-num-text">사용자 <strong>31.8 %</strong> 가 데이터 하나도 만들지 않고 떠남 — 가장 큰 누수.</span>
           </div>
-          <div class="cycle-connector">사용자 깊이별 분포가 어떻게 나뉘는지 들여다봤다</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">02</span>데이터</span>
             <div>
-              <span class="cycle-num-text">사용자별 <em>활용한 탭 수</em> 를 기준으로 5 단계 분류 — 양극단 (빈집 + 가벼움) 이 절반 이상.</span>
+              <span class="cycle-num-text">사용자 깊이 5 단계 분류 — 양극단 (빈집 + 가벼움) 이 절반 이상.</span>
               <div class="inline-bars">
-                <div class="inline-bar-row"><span class="inline-label">최활성 (6 탭+)</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:8%"></div></div><span class="inline-value">8 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">활성 (4 ~ 5 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:15%"></div></div><span class="inline-value">15 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">중간 (2 ~ 3 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:25%"></div></div><span class="inline-value">25 %</span></div>
-                <div class="inline-bar-row"><span class="inline-label">가벼움 (1 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:20%"></div></div><span class="inline-value">20 %</span></div>
-                <div class="inline-bar-row last"><span class="inline-label">빈집 (0 탭)</span><div class="inline-bar-track"><div class="inline-bar-fill" style="width:32%"></div></div><span class="inline-value">32 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">최활성</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:8%"></div></div><span class="inline-value">8 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">활성</span><div class="inline-bar-track"><div class="inline-bar-fill muted" style="width:15%"></div></div><span class="inline-value">15 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">중간</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:25%"></div></div><span class="inline-value">25 %</span></div>
+                <div class="inline-bar-row"><span class="inline-label">가벼움</span><div class="inline-bar-track"><div class="inline-bar-fill medium" style="width:20%"></div></div><span class="inline-value">20 %</span></div>
+                <div class="inline-bar-row last"><span class="inline-label">빈집</span><div class="inline-bar-track"><div class="inline-bar-fill" style="width:32%"></div></div><span class="inline-value">32 %</span></div>
               </div>
             </div>
           </div>
-          <div class="cycle-connector">분포의 가장 큰 누수가 어디 있는지 명확해졌다</div>
           <div class="cycle-section insight">
             <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
-            <span class="cycle-num-text">빈집 84 명 중 절반만 한 탭이라도 써 보게 만들어도 활성 사용자 <strong>+20 %</strong> — <em>단일 최대 개선 변수</em>. 다른 어떤 기능 개선보다 이게 우선이다.</span>
+            <span class="cycle-num-text">빈집 86 명 중 절반만 한 탭이라도 써 보게 만들어도 활성 사용자 <strong>+12 %p</strong>. 다른 어떤 기능 개선보다 이게 우선.</span>
           </div>
-          <div class="cycle-connector">진입 직후 빈집을 light 로 변환하는 동선을 설계했다</div>
           <div class="cycle-section">
-            <span class="cycle-section-label"><span class="step">04</span>액션</span>
-            <span class="cycle-num-text">(예정) 온보딩 첫 단계에 블록 1 개 강제 생성 + 첫 화면 예시 카드 미리 채움. 가입 직후 <em>제품을 무조건 한 번 써 보게</em> 만드는 흐름.</span>
+            <span class="cycle-section-label"><span class="step">04</span>액션 (예정)</span>
+            <span class="cycle-num-text">온보딩 첫 단계에 블록 1 개 강제 생성 + 첫 화면 예시 카드 미리 채움. 도입 후 빈집 비율 코호트 비교로 측정.</span>
           </div>
         </div>
-      </div>
 
-      <!-- ── 03-5 사이클 04 — 정보탭 진입 격차 ────────────────────── -->
-      <div class="case-chapter">
-        <div>
-          <span class="ch-num">03-5</span>
-          <span class="ch-title">정보탭 진입 동선 — 활성률 격차 발견</span>
-        </div>
-        <span class="ch-tag">사이클 04</span>
-      </div>
-      <div class="cycle-grid">
         <div class="cycle-card">
-          <div class="cycle-glossary">
-            <span class="cycle-glossary-label">정보탭</span>
-            <span class="cycle-glossary-body">큐레이션된 ADHD 노하우 + 다른 사용자 활용 사례를 모은 콘텐츠 탭. 사용자가 <em>제품의 가치를 명시적으로 발견하는</em> 동선.</span>
+          <div class="cycle-head">
+            <span class="cycle-num">가설 B</span>
+            <span class="cycle-tag">ENGAGEMENT · 정보탭 진입</span>
           </div>
+          <div class="cycle-title">정보탭 진입이 retention 의 또 다른 큰 동선</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">01</span>상황</span>
-            <span class="cycle-num-text">사용자별로 정보탭 진입 여부에 따라 활성률 격차가 큰 게 관찰됨.</span>
+            <span class="cycle-num-text">정보탭 진입 여부에 따라 활성률 격차 관찰됨.</span>
           </div>
-          <div class="cycle-connector">진입자 / 미진입자 사이 활성률 차이가 어느 정도인지 측정했다</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">02</span>데이터</span>
             <div>
-              <span class="cycle-num-text">정보탭 진입자 활성률 <strong>86 %</strong> · 미진입자 <strong>48 %</strong> — 격차 <em>38.3 %p</em>.</span>
+              <span class="cycle-num-text">진입자 활성률 <strong>67.4 %</strong> · 미진입자 <strong>32.6 %</strong> — 격차 <em>~35 %p</em>.</span>
               <div class="vs-chart">
                 <div class="vs-chart-bars">
                   <div class="vs-bar-col">
-                    <div class="vs-bar-value" style="color:#888;">48 %</div>
-                    <div class="vs-bar left" style="height:55%;"></div>
+                    <div class="vs-bar-value" style="color:#888;">32.6 %</div>
+                    <div class="vs-bar left" style="height:48%;"></div>
                   </div>
                   <div class="vs-middle">VS</div>
                   <div class="vs-bar-col">
-                    <div class="vs-bar-value" style="color:#c0392b;">86 %</div>
+                    <div class="vs-bar-value" style="color:#c0392b;">67.4 %</div>
                     <div class="vs-bar right" style="height:100%;"></div>
                   </div>
                 </div>
                 <div class="vs-labels">
-                  <span class="vs-left">미진입자</span>
+                  <span class="vs-left">미진입자 (187명)</span>
                   <span></span>
-                  <span class="vs-right">진입자</span>
+                  <span class="vs-right">진입자 (89명)</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="cycle-connector">이 격차가 의미하는 게 뭔지 정리했다</div>
           <div class="cycle-section insight">
             <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
-            <span class="cycle-num-text">정보탭 진입 자체가 <em>유지율을 끌어올리는 강한 트리거</em>. 콘텐츠가 사용자의 <em>가치 발견 순간</em> 을 만든다. 진입 동선을 강화하면 전체 활성률 상승.</span>
+            <span class="cycle-num-text">정보탭 진입이 <em>유지율의 강한 트리거</em>. 콘텐츠가 사용자의 <em>가치 발견 순간</em> 을 만든다. 진입 동선 강화 시 retention 상승.</span>
           </div>
-          <div class="cycle-connector">진입 유도 동선을 다른 탭과 결합해 설계했다</div>
           <div class="cycle-section">
             <span class="cycle-section-label"><span class="step">04</span>액션</span>
-            <span class="cycle-num-text">유지율 높이는 팁 카드를 <em>일간탭에 의도적 노출</em> + 매일 자동으로 팁 1 개 띄워 정보탭 진입 유도 동선 강화.</span>
+            <span class="cycle-num-text">일간탭 상단에 "오늘의 팁" 카드 의도적 노출 + 정보탭 진입 CTA. 카드 클릭률·정보탭 진입률 측정 중.</span>
           </div>
           <div class="cycle-example">
-            <div class="cycle-example-label">실제 적용 — 일간탭 상단 "오늘의 팁" 카드 + 정보탭 진입 CTA</div>
-            <img src="case03-info-tip-card.jpg" alt="일간탭 상단에 노출되는 오늘의 팁 카드 — 더 자세히 보기 누르면 정보탭으로 이동" loading="lazy">
+            <div class="cycle-example-label">실제 적용 — 일간탭 "오늘의 팁" 카드</div>
+            <img src="case03-info-tip-card.jpg" alt="일간탭 상단에 노출되는 오늘의 팁 카드" loading="lazy">
           </div>
         </div>
+
       </div>
     </div>
   </section>
