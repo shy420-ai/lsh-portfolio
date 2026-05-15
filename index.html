@@ -666,61 +666,93 @@
       border-radius: 2px;
     }
 
-    /* 코호트 비교 차트 */
+    /* 코호트 비교 차트 — 모던 + 깔끔 톤 */
     .cohort-chart {
-      margin: 24px 0 16px;
-      padding: 24px;
-      background: #fafafa;
-      border: 1px solid #e6e6e6;
-      border-top: 3px solid #c0392b;
+      margin: 28px 0 16px;
+      padding: 36px 36px 32px;
+      background: #fff;
+      border: 1.5px solid #eaeaea;
       border-radius: 2px;
     }
     .cohort-chart-header {
       display: flex;
-      align-items: baseline;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid #000;
+    }
+    .cohort-chart-eyebrow {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 9.5px;
+      letter-spacing: 0.24em;
+      color: #888;
+      margin-bottom: 6px;
     }
     .cohort-chart-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #333;
-      line-height: 1.5;
+      font-size: 15px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.45;
     }
     .cohort-chart-delta {
       font-family: 'Libre Bodoni', serif;
       font-style: italic;
       font-weight: 700;
-      font-size: 22px;
+      font-size: 32px;
       color: #c0392b;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .cohort-chart-delta-sub {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-style: normal;
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 0.18em;
+      margin-top: 4px;
+      text-align: right;
     }
     .cohort-row {
       display: grid;
-      grid-template-columns: 100px 1fr 100px;
-      gap: 16px;
+      grid-template-columns: 120px 1fr;
+      column-gap: 24px;
+      row-gap: 6px;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
     }
+    .cohort-row:last-of-type { margin-bottom: 0; }
     .cohort-label {
-      font-size: 11px;
-      font-weight: 800;
-      color: #555;
-      line-height: 1.3;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 600;
+      color: #111;
+      line-height: 1;
     }
     .cohort-label span {
       display: block;
-      font-size: 9.5px;
-      font-weight: 400;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-style: normal;
+      font-size: 10.5px;
+      font-weight: 500;
       color: #888;
       letter-spacing: 0.02em;
-      margin-top: 2px;
+      margin-top: 6px;
+    }
+    .cohort-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
     .cohort-bar {
-      height: 32px;
-      background: #ececec;
-      border-radius: 2px;
+      height: 44px;
+      background: #f4f4f4;
+      border-radius: 0;
       overflow: hidden;
       position: relative;
     }
@@ -729,28 +761,61 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 10px;
+      padding-right: 14px;
       box-sizing: border-box;
       transition: width 0.6s ease;
     }
     .cohort-bar-value {
       color: #fff;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: 0.04em;
-    }
-    .cohort-meta {
-      font-size: 10px;
-      color: #888;
-      text-align: right;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 18px;
       letter-spacing: 0.02em;
     }
+    .cohort-bar-fill.muted .cohort-bar-value { color: #fff; }
+    .cohort-meta {
+      font-size: 10.5px;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+    .cohort-meta strong {
+      color: #111;
+      font-weight: 700;
+    }
+    .cohort-explain {
+      margin-top: 24px;
+      padding: 20px 22px;
+      background: #fafafa;
+      border-left: 2px solid #c0392b;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #333;
+    }
+    .cohort-explain-label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: #c0392b;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .cohort-explain p {
+      margin: 0 0 8px;
+    }
+    .cohort-explain p:last-child { margin-bottom: 0; }
+    .cohort-explain em {
+      color: #c0392b;
+      font-style: normal;
+      font-weight: 700;
+    }
     .cohort-note {
-      font-size: 10px;
-      color: #aaa;
-      line-height: 1.55;
-      margin-top: 12px;
-      padding-top: 12px;
+      font-size: 10.5px;
+      color: #999;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding-top: 16px;
       border-top: 1px dashed #ddd;
     }
 
@@ -2661,28 +2726,48 @@
           </div>
           <div class="cohort-chart">
             <div class="cohort-chart-header">
-              <span class="cohort-chart-title">측정 결과 — 노출 토글 ON / OFF 사용자 친구 1+ 보유율</span>
-              <span class="cohort-chart-delta">+ 92.5 %p</span>
-            </div>
-            <div class="cohort-row">
-              <div class="cohort-label">ON<br><span>노출 토글 켬</span></div>
-              <div class="cohort-bar">
-                <div class="cohort-bar-fill" style="width:100%; background:linear-gradient(90deg,#c0392b,#e85541);">
-                  <span class="cohort-bar-value">100 %</span>
-                </div>
+              <div>
+                <div class="cohort-chart-eyebrow">MEASUREMENT</div>
+                <div class="cohort-chart-title">노출 토글 ON / OFF 사용자 친구 1+ 보유율</div>
               </div>
-              <div class="cohort-meta">36명 / 36명</div>
-            </div>
-            <div class="cohort-row">
-              <div class="cohort-label">OFF<br><span>노출 토글 끔</span></div>
-              <div class="cohort-bar">
-                <div class="cohort-bar-fill" style="width:7.5%; background:#aaa;">
-                  <span class="cohort-bar-value">7.5 %</span>
-                </div>
+              <div>
+                <div class="cohort-chart-delta">+92.5%p</div>
+                <div class="cohort-chart-delta-sub">DELTA</div>
               </div>
-              <div class="cohort-meta">18명 / 240명</div>
             </div>
-            <div class="cohort-note">자체 분석 패널의 실측치 (2026-05-15 기준). 토글 ON 사용자는 자동 매칭 동선이 작동해 전원이 친구 1+ 보유. OFF 사용자는 친구 코드 공유 외 경로 없어 7.5 % 만 도달. 동선 자체가 친구 매칭에 결정적임을 보여줌. (selection bias 가능성: 적극 사용자가 토글을 켰을 수 있음 → 토글 default ON 변경 후 재측정 필요.)</div>
+
+            <div class="cohort-row">
+              <div class="cohort-label">ON<span>노출 토글 켬</span></div>
+              <div class="cohort-bar-wrap">
+                <div class="cohort-bar">
+                  <div class="cohort-bar-fill" style="width:100%; background:linear-gradient(90deg,#c0392b,#e85541);">
+                    <span class="cohort-bar-value">100 %</span>
+                  </div>
+                </div>
+                <div class="cohort-meta"><strong>36명 전원</strong> 친구 1+ 보유 · 표본 36명</div>
+              </div>
+            </div>
+
+            <div class="cohort-row">
+              <div class="cohort-label">OFF<span>노출 토글 끔</span></div>
+              <div class="cohort-bar-wrap">
+                <div class="cohort-bar">
+                  <div class="cohort-bar-fill muted" style="width:7.5%; background:#9ea0a3;">
+                    <span class="cohort-bar-value">7.5 %</span>
+                  </div>
+                </div>
+                <div class="cohort-meta"><strong>240명 중 18명</strong> 만 친구 1+ 보유 · 표본 240명</div>
+              </div>
+            </div>
+
+            <div class="cohort-explain">
+              <div class="cohort-explain-label">— 한 줄로 풀면</div>
+              <p>같은 시점에 가입한 신규 사용자 276 명 중, <em>토글을 켠 36 명 전원이 친구를 추가</em>했고, <em>토글을 끈 240 명 중에서는 18 명 (7.5 %) 만 친구를 추가</em>했다.</p>
+              <p>같은 신규 가입자임에도 <em>동선 하나가 13 배의 친구 보유율 차이</em>를 만들었다. 친구 매칭에서 *어떤 동선을 보여주는가* 가 사용자 의지보다 우선한다는 신호.</p>
+              <p style="color:#666; font-size:11.5px; margin-top:10px;">⚠ 한계 — 토글을 켠 사용자가 *원래 친구를 원하는 적극적 사용자*일 가능성 (selection bias). 인과를 더 정밀히 분리하려면 *토글 default ON 변경 후* 재측정 필요.</p>
+            </div>
+
+            <div class="cohort-note">출처 — 자체 분석 패널 (PortfolioAnalyticsPanel) 실측치. 2026-05-15 기준. friends 배열 길이 ≥ 1 · discoverable=true 기준 집계.</div>
           </div>
         </div>
       </div>
