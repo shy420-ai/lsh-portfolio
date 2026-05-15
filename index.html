@@ -1145,6 +1145,63 @@
       height: 740px !important;
     }
 
+    /* ── Case 04 · Why 카드 ─────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 48px 0 24px;
+    }
+    @media (max-width: 900px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    .why-card {
+      background: #fff;
+      border: 1.5px solid #e6e6e6;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .why-label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 12.5px;
+      color: #c0392b;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .why-image {
+      background: #fafafa;
+      border: 1px solid #ececec;
+      padding: 14px;
+      border-radius: 2px;
+    }
+    .why-image img {
+      width: 100%;
+      display: block;
+    }
+    .why-body {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: #444;
+    }
+    .why-body strong { color: #c0392b; }
+    .why-body em { color: #c0392b; font-style: normal; font-weight: 700; }
+    .why-body-large {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .why-body ul {
+      margin: 12px 0;
+      padding-left: 18px;
+    }
+    .why-body ul li {
+      margin-bottom: 6px;
+    }
+
     /* ── Case 04 · 변곡점 (월별 성장 그래프) ─────────────────────── */
     .impact-section {
       display: grid;
@@ -2414,7 +2471,7 @@
       <a href="javascript:go('04')">
         <span class="num">04</span>
         <div class="title-block">
-          <span class="title">틱톡 영상 단위 데이터 분석 — 4 달만에 팔로워 4,800</span>
+          <span class="title">틱톡 — 4 달에 팔로워 4,800</span>
           <span class="subtitle">평균 수치로 안 보이던 4 가지 비대칭 발견 → 콘텐츠 재설계로 월 평균 뷰 8 배 성장</span>
         </div>
         <span class="arrow">→</span>
@@ -3387,6 +3444,40 @@
               <div class="kpi-num">9<span>×</span></div>
               <div class="kpi-sub">평균 팔로워<span class="delta">11~20초 17명 → 31~45초 152명</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 04-0 Why — 왜 직접 대시보드를 만들었나 ─────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">04-0</span>
+          <span class="ch-title">왜 직접 분석 대시보드를 만들었나</span>
+        </div>
+        <span class="ch-tag">WHY</span>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-label">현상 — 틱톡 기본 분석 도구는</div>
+          <div class="why-image">
+            <img src="case04-tiktok-individual.jpg" alt="틱톡 기본 분석 — 한 영상의 조회수·재생시간·시청률·새 팔로워가 흩어져 표시됨" loading="lazy">
+          </div>
+          <div class="why-body">
+            영상 <strong>한 개씩</strong> 따로 데이터가 흩어져 보임 — 조회수 226K · 시청 시간 716 h · 평균 시청 11.27 s · 새 팔로워 110 …
+            <br><br>
+            여러 영상을 <em>한 화면에 모아 비교</em> 해서 어떤 컨셉이 진짜 효과 냈는지 판단할 외부 도구가 없었다.
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-label">해결 — 직접 빌드한 분석 환경</div>
+          <div class="why-body why-body-large">
+            모든 영상 데이터를 <strong>크롤링</strong> 해서 한 곳에 모으고, <em>비교 분석 가능한 대시보드</em> 를 직접 만들었다.
+            <ul>
+              <li>영상 단위 조회수 · 시청률 · 신규 팔로워 · 전환율 한 표에</li>
+              <li>카테고리별 · 시간대별 · 길이별 <em>비대칭 발견</em> 가능</li>
+              <li>이중 KPI (도달 + 전환) 프레임으로 평가</li>
+            </ul>
+            평균 수치 뒤에 숨은 <em>비대칭 4 가지</em> 가 이 환경에서 드러났다 (아래 04-1).
           </div>
         </div>
       </div>
