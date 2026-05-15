@@ -149,9 +149,21 @@
       font-style: italic;
       color: #aaa;
     }
+    .contents-list .title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
     .contents-list .title {
       font-size: clamp(24px, 3vw, 36px);
       font-weight: 700;
+    }
+    .contents-list .subtitle {
+      font-size: 13px;
+      color: #888;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
     }
     .contents-list .arrow {
       font-size: 24px;
@@ -1452,17 +1464,26 @@
       </a>
       <a href="javascript:go('01')">
         <span class="num">01</span>
-        <span class="title">서울 아리수 SNS 통합 운영</span>
+        <div class="title-block">
+          <span class="title">서울 아리수 SNS 통합 운영</span>
+          <span class="subtitle">4채널 브랜드 환경 재정의로 음용 신뢰 구축</span>
+        </div>
         <span class="arrow">→</span>
       </a>
       <a href="javascript:go('02')">
         <span class="num">02</span>
-        <span class="title">B2C 브랜드 트위터 채널 그로스</span>
+        <div class="title-block">
+          <span class="title">B2C 브랜드 트위터 채널 그로스</span>
+          <span class="subtitle">1주 만에 팔로워 3,600 — 광고비 ₩0 오가닉 성장</span>
+        </div>
         <span class="arrow">→</span>
       </a>
       <a href="javascript:go('03')">
         <span class="num">03</span>
-        <span class="title">———</span>
+        <div class="title-block">
+          <span class="title">Focus Flow — 특화 페르소나 PWA 그로스</span>
+          <span class="subtitle">혼자 개발한 앱이 2주 만에 ₩0 광고 · 채널 1 개로 360 명 커뮤니티가 되기까지</span>
+        </div>
         <span class="arrow">→</span>
       </a>
     </div>
@@ -2012,21 +2033,63 @@
     </div>
   </section>
 
-  <!-- ── 4 · Case 03 (blank template) ──────────────────────────── -->
+  <!-- ── 4 · Case 03 · Focus Flow ──────────────────────────────── -->
   <section class="page case" data-page="03">
     <div class="topbar">
       <a href="javascript:go('contents')">← Contents</a>
       <span>03 / 03</span>
     </div>
     <div class="case-inner" style="margin-top: 60px;">
-      <div class="case-meta">Case 03</div>
-      <h3 class="case-title">———</h3>
-      <p class="case-subtitle">———</p>
+      <div class="case-meta">Case 03 · 1-Person Build</div>
+      <h3 class="case-title">Focus Flow — 특화 페르소나 PWA 그로스</h3>
+      <p class="case-subtitle">혼자 개발한 앱이 2주 만에 ₩0 광고 · 채널 1 개로 360 명 커뮤니티가 되기까지</p>
       <div class="case-grid">
-        <div class="case-cell"><h4>Context</h4><div class="placeholder">상황</div></div>
-        <div class="case-cell"><h4>Insight</h4><div class="placeholder">인사이트</div></div>
-        <div class="case-cell"><h4>Action</h4><div class="placeholder">실행</div></div>
-        <div class="case-cell"><h4>Result</h4><div class="placeholder">성과</div></div>
+        <div class="case-cell">
+          <h4>Context</h4>
+          <div class="body">
+            <p>기록을 좋아하는 사용자들이 쓸 도구 중, 감정 해소(일지) · 정보 보관(스크랩) · 동료 인증(바디더블링) 을 한 번에 담는 도구가 시장에 없었다.</p>
+            <p>각 기능을 따로 쓰면서 흩어진 맥락은 사용자의 지속성을 깎고 있었음. 직접 빌드해 풀기로 했다.</p>
+          </div>
+        </div>
+        <div class="case-cell">
+          <h4>Insight</h4>
+          <div class="body">
+            <p>올인원 도구일수록 일반 시장에 알리기 어렵다. 특화 페르소나를 잡아야 한다.</p>
+            <p>시장 분석: 트위터에서 ADHD 콘텐츠가 강한 트래픽 + 여성 이용자 비중이 압도적.</p>
+            <p>활용 가능 자산: ADHD 콘텐츠로 자리 잡힌 트위터 계정 (팔로워 2,900+) → organic 도달 즉시 가능.</p>
+            <p>1차 타겟: <em>ADHD 여성 트위터 사용자</em>.</p>
+          </div>
+        </div>
+        <div class="case-cell">
+          <h4>Action</h4>
+          <div class="body">
+            <ol>
+              <li>채널 한 곳 · 페르소나 한 명에 자원 몰아 시작 — 트위터 단일 채널 + 운영 중인 계정으로 organic 도달</li>
+              <li>핵심 기능만 빌드 — 감정 일지 · 정보 스크랩 · 그룹 바디더블링. 결제 · 구독 · 일반인용 범용 기능 · 무거운 백엔드는 의도적으로 버렸음</li>
+              <li>1인 풀스택 빌드 — 제품 · 디자인 · 운영을 동시에 (Firebase + PWA)</li>
+            </ol>
+          </div>
+        </div>
+        <div class="case-cell">
+          <h4>Result</h4>
+          <div class="kpi-stack">
+            <div class="kpi-item">
+              <div class="kpi-label">Community</div>
+              <div class="kpi-num">360<span>명</span></div>
+              <div class="kpi-sub">2주 organic 형성<span class="delta">0 → 360</span></div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-label">Ad Cost</div>
+              <div class="kpi-num">₩0</div>
+              <div class="kpi-sub">광고비 0원 · CAC ₩0</div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-label">Channel</div>
+              <div class="kpi-num">1<span>개</span></div>
+              <div class="kpi-sub">트위터 단일 채널 운영</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
