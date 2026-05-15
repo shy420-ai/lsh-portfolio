@@ -972,6 +972,217 @@
       border-top: 1px dashed #ddd;
     }
 
+    /* ── Case 04 · 발견 카드 (2x2) ─────────────────────────────── */
+    .finding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 48px 0 24px;
+    }
+    @media (max-width: 900px) {
+      .finding-grid { grid-template-columns: 1fr; }
+    }
+    .finding-card {
+      background: #fff;
+      border: 1.5px solid #e6e6e6;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .finding-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .finding-num {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #c0392b;
+      font-size: 14px;
+    }
+    .finding-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.45;
+      flex: 1;
+    }
+    .finding-body {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: #444;
+      padding: 14px 16px;
+      background: #f7f5f5;
+      border-radius: 2px;
+    }
+    .finding-body strong { color: #c0392b; }
+    .finding-data-table {
+      display: grid;
+      grid-template-columns: 90px 1fr 1fr;
+      gap: 8px 14px;
+      font-size: 11.5px;
+      line-height: 1.7;
+      align-items: baseline;
+    }
+    .finding-data-table .head {
+      color: #888;
+      font-size: 10px;
+      letter-spacing: 0.02em;
+    }
+    .finding-data-table .row {
+      color: #555;
+    }
+    .finding-data-table .row.accent {
+      color: #c0392b;
+      font-weight: 700;
+    }
+    .finding-data-table .row.accent strong { color: #c0392b; }
+    .finding-data-table .accent-tag {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      color: #c0392b;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+    .finding-action {
+      margin-top: auto;
+      padding: 12px 16px;
+      border-left: 2px solid #c0392b;
+      font-size: 11.5px;
+      line-height: 1.7;
+      color: #444;
+      background: #fdf3f1;
+    }
+    .finding-action .lbl {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #c0392b;
+      margin-right: 6px;
+    }
+
+    /* ── Case 04 · 변곡점 (월별 성장 그래프) ─────────────────────── */
+    .impact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      padding: 48px 0;
+    }
+    @media (max-width: 900px) {
+      .impact-section { grid-template-columns: 1fr; }
+    }
+    .impact-chart-title {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: #c0392b;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .impact-chart-sub {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 24px;
+    }
+    .impact-bars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: end;
+      height: 200px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .impact-bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      position: relative;
+    }
+    .impact-bar-value {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 17px;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .impact-bar-sub {
+      font-size: 9.5px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .impact-bar {
+      width: 80%;
+      background: linear-gradient(180deg, #e85541, #c0392b);
+    }
+    .impact-bar.muted { background: linear-gradient(180deg, #f0d4ce, #e0a89e); }
+    .impact-bar.light { background: linear-gradient(180deg, #f8e7e2, #ecbab1); }
+    .impact-labels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+      font-size: 11px;
+      color: #888;
+    }
+    .impact-decisions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .impact-decision-row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      padding: 10px 14px;
+      background: #fafafa;
+      border: 1px solid #ececec;
+      border-radius: 2px;
+      font-size: 12px;
+    }
+    .impact-decision-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 0.04em;
+    }
+    .impact-decision-body {
+      color: #444;
+      line-height: 1.55;
+    }
+    .impact-decision-body em {
+      color: #c0392b;
+      font-style: normal;
+      font-weight: 700;
+    }
+    .impact-summary {
+      grid-column: 1 / -1;
+      margin-top: 12px;
+      padding: 20px 24px;
+      background: #c0392b;
+      color: #fff;
+      border-radius: 2px;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+    .impact-summary-label {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 12px;
+      opacity: 0.85;
+      margin-bottom: 6px;
+    }
+
     /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
     .case-rebrand {
       display: grid;
@@ -3097,6 +3308,140 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- ── 04-1 영상 단위 데이터로 발견한 4 가지 ────────────────── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">04-1</span>
+          <span class="ch-title">영상 단위 데이터로 발견한 4 가지 — 그리고 어떻게 행동을 바꿨나</span>
+        </div>
+        <span class="ch-tag">INSIGHT → ACTION</span>
+      </div>
+      <div class="finding-grid">
+
+        <div class="finding-card">
+          <div class="finding-head">
+            <span class="finding-num">발견 01</span>
+            <span class="finding-title">조회수 1위 영상 ≠ 팔로워 1위 영상</span>
+          </div>
+          <div class="finding-body"><strong>17.5만 뷰</strong> 영상이 <strong>3만 뷰</strong> 영상보다 팔로워 더 적게 데려옴.</div>
+          <div class="finding-action">
+            <span class="lbl">그래서 →</span>조회수 한 지표로만 콘텐츠 평가 X. <em>전환율 (팔로워 증가)</em> 도 함께 측정으로 변경.
+          </div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head">
+            <span class="finding-num">발견 02</span>
+            <span class="finding-title">시간 많이 쓴 콘텐츠가 효율 더 낮음</span>
+          </div>
+          <div class="finding-data-table">
+            <div class="head">카테고리</div><div class="head">시간 비중</div><div class="head">전환율</div>
+            <div class="row">밈 · 기타</div><div class="row">51 %</div><div class="row">0.198 %</div>
+            <div class="row accent">팬아트</div><div class="row accent">10 %</div><div class="row accent">1.248 % <span class="accent-tag">(6×)</span></div>
+          </div>
+          <div class="finding-action">
+            <span class="lbl">그래서 →</span>가장 많은 시간 쓴 카테고리가 ROI 최저. <em>팬아트 비중을 늘리는 방향</em> 으로 시간 재배분.
+          </div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head">
+            <span class="finding-num">발견 03</span>
+            <span class="finding-title">어떤 지표 보느냐에 따라 1 등이 바뀜</span>
+          </div>
+          <div class="finding-body" style="line-height:1.85;">
+            조회수만 보면 → <strong>주말 20시</strong> (17.3 만 뷰)<br>
+            조회수 + 팔로워 보면 → <strong>평일 22시</strong> (전환 1.122 %)
+          </div>
+          <div class="finding-action">
+            <span class="lbl">그래서 →</span>주말 20시 (뷰만 잘 나옴) X. <em>평일 22시</em> 로 업로드 시간 변경.
+          </div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head">
+            <span class="finding-num">발견 04</span>
+            <span class="finding-title">"짧을수록 좋다" — 거짓</span>
+          </div>
+          <div class="finding-data-table">
+            <div class="head">길이</div><div class="head">평균 뷰</div><div class="head">팔로워</div>
+            <div class="row">11~20초</div><div class="row">15 K</div><div class="row">17 명</div>
+            <div class="row accent">31~45초</div><div class="row accent">42 K</div><div class="row accent">152 명 <span class="accent-tag">(9×)</span></div>
+          </div>
+          <div class="finding-action">
+            <span class="lbl">그래서 →</span>짧은 영상 여러 개보다 <em>31~45초 한 개가 9 배 효율</em>. 영상 길이 표준 변경.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── 04-2 변곡점 — 인사이트 기반 재설계로 평균 뷰 8× 성장 ─── -->
+      <div class="case-chapter">
+        <div>
+          <span class="ch-num">04-2</span>
+          <span class="ch-title">변곡점 — 인사이트 기반 재설계로 평균 뷰 8 × 성장</span>
+        </div>
+        <span class="ch-tag">OPERATIONAL IMPACT</span>
+      </div>
+      <div class="impact-section">
+
+        <div>
+          <div class="impact-chart-title">Monthly Average Views</div>
+          <div class="impact-chart-sub">1 월 → 3 월 평균 뷰 8 × 성장</div>
+          <div class="impact-bars">
+            <div class="impact-bar-col">
+              <div class="impact-bar-value">3,690</div>
+              <div class="impact-bar-sub">14 개 영상</div>
+              <div class="impact-bar light" style="height:12%;"></div>
+            </div>
+            <div class="impact-bar-col">
+              <div class="impact-bar-value">16,270</div>
+              <div class="impact-bar-sub">23 개 영상</div>
+              <div class="impact-bar muted" style="height:53%;"></div>
+            </div>
+            <div class="impact-bar-col">
+              <div class="impact-bar-value">30,756</div>
+              <div class="impact-bar-sub">18 개 영상</div>
+              <div class="impact-bar" style="height:100%;"></div>
+            </div>
+          </div>
+          <div class="impact-labels">
+            <span>1 월</span>
+            <span>2 월</span>
+            <span>3 월</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="impact-chart-title">Decisions Reflected</div>
+          <div class="impact-chart-sub">인사이트 → 행동 변경</div>
+          <div class="impact-decisions">
+            <div class="impact-decision-row">
+              <span class="impact-decision-label">카테고리</span>
+              <span class="impact-decision-body">밈 · 기타 (51 %) → <em>팬아트 · 그림팁 중심</em></span>
+            </div>
+            <div class="impact-decision-row">
+              <span class="impact-decision-label">시간대</span>
+              <span class="impact-decision-body">주말 20시 (뷰만 좋음) → <em>평일 22시 (뷰 + 전환)</em></span>
+            </div>
+            <div class="impact-decision-row">
+              <span class="impact-decision-label">길이</span>
+              <span class="impact-decision-body">11 ~ 20초 위주 → <em>31 ~ 45초 중심</em></span>
+            </div>
+            <div class="impact-decision-row">
+              <span class="impact-decision-label">KPI</span>
+              <span class="impact-decision-body">단일 (조회수) → <em>이중 (도달 + 전환)</em></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-summary">
+          <div class="impact-summary-label">Portfolio Summary —</div>
+          평균 수치만 보면 안 보이는 <strong>4 가지 비대칭</strong> 을 영상 단위 데이터로 발견. <strong>이중 KPI 프레임</strong> 도입해 콘텐츠 포맷 · 시간대 · 길이 재설계.
+        </div>
+
       </div>
     </div>
   </section>
