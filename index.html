@@ -1064,6 +1064,37 @@
       color: #c0392b;
       margin-right: 6px;
     }
+    .tiktok-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 4px 0;
+    }
+    .tiktok-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tiktok-cell-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+    .tiktok-cell-meta {
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    .tiktok-cell-meta strong { color: #c0392b; }
+    .tiktok-cell iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      max-height: 580px;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      background: #000;
+    }
 
     /* ── Case 04 · 변곡점 (월별 성장 그래프) ─────────────────────── */
     .impact-section {
@@ -3326,7 +3357,19 @@
             <span class="finding-num">발견 01</span>
             <span class="finding-title">조회수 1위 영상 ≠ 팔로워 1위 영상</span>
           </div>
-          <div class="finding-body"><strong>17.5만 뷰</strong> 영상이 <strong>3만 뷰</strong> 영상보다 팔로워 더 적게 데려옴.</div>
+          <div class="finding-body"><strong>17.3만 뷰</strong> 영상이 <strong>3.1만 뷰</strong> 영상보다 <em>팔로워 7 배 더 적게</em> 데려옴.</div>
+          <div class="tiktok-compare">
+            <div class="tiktok-cell">
+              <div class="tiktok-cell-label">17.3 만 뷰 영상 — 14 초</div>
+              <div class="tiktok-cell-meta">팔로워 <strong>87 명</strong> · 전환율 0.05 %</div>
+              <iframe src="https://www.tiktok.com/embed/v2/7609645385249852693" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media;"></iframe>
+            </div>
+            <div class="tiktok-cell">
+              <div class="tiktok-cell-label">3.1 만 뷰 영상 — 그림 작업</div>
+              <div class="tiktok-cell-meta">팔로워 <strong>611 명</strong> · 전환율 1.97 %</div>
+              <iframe src="https://www.tiktok.com/embed/v2/7597065912985881864" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media;"></iframe>
+            </div>
+          </div>
           <div class="finding-action">
             <span class="lbl">그래서 →</span>조회수 한 지표로만 콘텐츠 평가 X. <em>전환율 (팔로워 증가)</em> 도 함께 측정으로 변경.
           </div>
