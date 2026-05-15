@@ -666,6 +666,94 @@
       border-radius: 2px;
     }
 
+    /* 코호트 비교 차트 */
+    .cohort-chart {
+      margin: 24px 0 16px;
+      padding: 24px;
+      background: #fafafa;
+      border: 1px solid #e6e6e6;
+      border-top: 3px solid #c0392b;
+      border-radius: 2px;
+    }
+    .cohort-chart-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .cohort-chart-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #333;
+      line-height: 1.5;
+    }
+    .cohort-chart-delta {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 22px;
+      color: #c0392b;
+    }
+    .cohort-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cohort-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #555;
+      line-height: 1.3;
+    }
+    .cohort-label span {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .cohort-bar {
+      height: 32px;
+      background: #ececec;
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .cohort-bar-fill {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+      box-sizing: border-box;
+      transition: width 0.6s ease;
+    }
+    .cohort-bar-value {
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .cohort-meta {
+      font-size: 10px;
+      color: #888;
+      text-align: right;
+      letter-spacing: 0.02em;
+    }
+    .cohort-note {
+      font-size: 10px;
+      color: #aaa;
+      line-height: 1.55;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed #ddd;
+    }
+
     /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
     .case-rebrand {
       display: grid;
@@ -2570,6 +2658,31 @@
               <div class="cycle-example-label">AFTER — 자동 친구 찾기 (노출 토글)</div>
               <img src="case03-friend-discovery.jpg" alt="개선 방식 — 노출 토글 ON 시 자동으로 검색·등록 가능" loading="lazy">
             </div>
+          </div>
+          <div class="cohort-chart">
+            <div class="cohort-chart-header">
+              <span class="cohort-chart-title">코호트 비교 — 자동 친구 찾기 도입 (2026-05-04) 전후 친구 1+ 보유율</span>
+              <span class="cohort-chart-delta">+ 38 %p</span>
+            </div>
+            <div class="cohort-row">
+              <div class="cohort-label">BEFORE<br><span>친구 코드 공유</span></div>
+              <div class="cohort-bar">
+                <div class="cohort-bar-fill" style="width:20%; background:#aaa;">
+                  <span class="cohort-bar-value">20 %</span>
+                </div>
+              </div>
+              <div class="cohort-meta">~70명 코호트</div>
+            </div>
+            <div class="cohort-row">
+              <div class="cohort-label">AFTER<br><span>자동 친구 찾기</span></div>
+              <div class="cohort-bar">
+                <div class="cohort-bar-fill" style="width:58%; background:linear-gradient(90deg,#c0392b,#e85541);">
+                  <span class="cohort-bar-value">58 %</span>
+                </div>
+              </div>
+              <div class="cohort-meta">~290명 코호트</div>
+            </div>
+            <div class="cohort-note">자체 분석 패널 (PortfolioAnalyticsPanel) 의 createdAt 기반 코호트 비교 — 가입 시점이 도입 전/후 인 사용자의 친구 1+ 보유율 차이.</div>
           </div>
           <div class="cycle-kpi-row">
             <div class="cycle-kpi-card">
