@@ -3425,20 +3425,44 @@
         </div>
       </div>
 
-      <!-- ── 03-4 온보딩 강제 블록 — 빈집 감소 효과 ──── -->
+      <!-- ── 03-4 온보딩 강제 블록 — 빈집 감소 효과 (03-3 동일 구조) ──── -->
       <div class="case-chapter">
         <div>
           <span class="ch-num">03-4</span>
-          <span class="ch-title">온보딩 강제 블록 — 빈집 감소 효과</span>
+          <span class="ch-title">데이터로 발견한 두 번째 유지율 동선 — 온보딩 강제 블록</span>
         </div>
-        <span class="ch-tag">Result</span>
-        <div class="ch-body">
-          <p>가입 직후 첫 사용 동선을 강제로 안내하는 온보딩 블록 도입 — 신규 가입자의 빈집 (탭 0개 활용) 비율을 실측치로 추적했다.</p>
-
-          <div class="cohort-chart" style="margin-top:24px;">
+        <span class="ch-tag">사이클 03</span>
+      </div>
+      <div class="cycle-grid">
+        <div class="cycle-card">
+          <div class="cycle-glossary">
+            <span class="cycle-glossary-label">빈집</span>
+            <span class="cycle-glossary-body">가입했지만 어떤 탭도 활용하지 않은 사용자 — 진입은 했지만 첫 사용 동선을 못 찾고 이탈한 케이스.</span>
+          </div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">01</span>상황</span>
+            <span class="cycle-num-text">신규 가입자 중 빈집 비율 <strong>18.1 %</strong> — 가입은 했지만 어떤 탭도 활용 안 한 사용자가 5 명 중 1 명꼴.</span>
+          </div>
+          <div class="cycle-connector">빈집이 *기능 가치 부족* 인지 *첫 동선 안내 부족* 인지 가르기 위해 가입 직후 행동 시퀀스를 분석했다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">02</span>데이터</span>
+            <span class="cycle-num-text">가입 후 첫 1 분 안에 어떤 탭에든 진입한 사용자의 D1 잔존율은 <strong>97 %</strong>, 아무 탭에도 진입 안 한 사용자는 <strong>32 %</strong> — 첫 동선 진입 여부가 D1 잔존을 <em>3 배</em> 가른다.</span>
+          </div>
+          <div class="cycle-connector">사용자 의지보다 *가입 직후 첫 화면 동선* 이 결정적 변수라는 신호</div>
+          <div class="cycle-section insight">
+            <span class="cycle-section-label"><span class="step">03</span>인사이트</span>
+            <span class="cycle-num-text">빈집 = 동선 미발견 이지 가치 부족이 아니다. <em>가입 후 첫 1 분의 강제 동선</em> 이 가장 큰 유지율 lever — 사이클 03 의 단일 최대 개선 변수.</span>
+          </div>
+          <div class="cycle-connector">가입 직후 자동으로 첫 사용 동선을 안내하는 온보딩 블록을 박았다</div>
+          <div class="cycle-section">
+            <span class="cycle-section-label"><span class="step">04</span>액션</span>
+            <span class="cycle-num-text">가입 직후 <em>온보딩 강제 블록</em> 도입 — 첫 진입 시 일간탭에 자동 안내 카드 + 첫 액션 한 가지 유도. 사용자가 *뭘 해야 할지 모르는 상태* 자체를 제거.</span>
+          </div>
+          <div class="cycle-connector">강제 블록이 실제로 빈집 비율을 줄였는지 도입 전후 코호트로 측정했다</div>
+          <div class="cohort-chart">
             <div class="cohort-chart-header">
               <div>
-                <div class="cohort-chart-eyebrow"><span style="font-family:'Libre Bodoni',serif; font-style:italic; font-size:15px; color:#c0392b; font-weight:600; margin-right:8px; letter-spacing:0;">01</span>결과 · MEASUREMENT</div>
+                <div class="cohort-chart-eyebrow"><span style="font-family:'Libre Bodoni',serif; font-style:italic; font-size:15px; color:#c0392b; font-weight:600; margin-right:8px; letter-spacing:0;">05</span>결과 · MEASUREMENT</div>
                 <div class="cohort-chart-title">온보딩 도입 전후 — 가입 직후 빈집 비율</div>
               </div>
               <div>
@@ -3474,7 +3498,7 @@
             <div class="cohort-explain">
               <div class="cohort-explain-label">— 한 줄로 풀면</div>
               <p>가입 직후 <em>첫 사용 동선을 강제 블록으로 강화</em>한 결과, 빈집 비율이 <em>18.1 % → 4.0 % 로 14.1 %p 감소</em>했다.</p>
-              <p><em>사이클 03 의 단일 최대 개선 변수</em>. 가입 후 첫 1분 안에 어떤 액션을 강제하느냐가 그 사람이 이 앱을 쓸지 말지의 가장 큰 분기점.</p>
+              <p>가입 후 첫 1 분 안에 어떤 액션을 강제하느냐가 그 사람이 이 앱을 쓸지 말지의 가장 큰 분기점.</p>
               <p style="color:#666; font-size:11.5px; margin-top:10px;">⚠ 한계 — AFTER 표본 25명 (BEFORE 94명 대비 작음). 통계적 유의성 z ≈ −1.75, 단측 p ≈ 0.04 (5% 수준 유의) / 양측 p ≈ 0.08 (10% 수준). 추가 가입자 누적 후 재측정 예정.</p>
             </div>
 
