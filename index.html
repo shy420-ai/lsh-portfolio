@@ -3422,6 +3422,53 @@
 
             <div class="cohort-note">출처 — 자체 분석 패널 (PortfolioAnalyticsPanel) 실측치. 2026-05-15 기준. friends 배열 길이 ≥ 1 · discoverable=true 기준 집계.</div>
           </div>
+
+          <!-- ── 두 번째 코호트 — 온보딩 강제 블록 효과 ──── -->
+          <div class="cohort-chart" style="margin-top:32px;">
+            <div class="cohort-chart-header">
+              <div>
+                <div class="cohort-chart-eyebrow"><span style="font-family:'Libre Bodoni',serif; font-style:italic; font-size:15px; color:#c0392b; font-weight:600; margin-right:8px; letter-spacing:0;">06</span>결과 · MEASUREMENT</div>
+                <div class="cohort-chart-title">온보딩 강제 블록 — 가입 직후 빈집 비율</div>
+              </div>
+              <div>
+                <div class="cohort-chart-delta">−14.1%p</div>
+                <div class="cohort-chart-delta-sub">DELTA</div>
+              </div>
+            </div>
+
+            <div class="cohort-row">
+              <div class="cohort-label">BEFORE<span>2026-05-14 이전 가입자</span></div>
+              <div class="cohort-bar-wrap">
+                <div class="cohort-bar">
+                  <div class="cohort-bar-fill muted" style="width:18.1%; background:#9ea0a3;">
+                    <span class="cohort-bar-value">18.1 %</span>
+                  </div>
+                </div>
+                <div class="cohort-meta"><strong>94명 중 17명</strong> 빈집 (탭 0개 활용) · 표본 94명</div>
+              </div>
+            </div>
+
+            <div class="cohort-row">
+              <div class="cohort-label">AFTER<span>온보딩 블록 도입 후 가입자</span></div>
+              <div class="cohort-bar-wrap">
+                <div class="cohort-bar">
+                  <div class="cohort-bar-fill" style="width:4%; background:linear-gradient(90deg,#c0392b,#e85541);">
+                    <span class="cohort-bar-value">4.0 %</span>
+                  </div>
+                </div>
+                <div class="cohort-meta"><strong>25명 중 1명</strong> 만 빈집 · 표본 25명</div>
+              </div>
+            </div>
+
+            <div class="cohort-explain">
+              <div class="cohort-explain-label">— 한 줄로 풀면</div>
+              <p>가입 직후 <em>첫 사용 동선을 강제 블록으로 강화</em>한 결과, 빈집 (= 가입 후 어떤 탭도 활용하지 않은 사용자) 비율이 <em>18.1 % → 4.0 % 로 14.1 %p 감소</em>했다.</p>
+              <p><em>사이클 03 의 단일 최대 개선 변수</em>. 가입 후 첫 1분 안에 어떤 액션을 강제하느냐가 *그 사람이 이 앱을 쓸지 말지*의 가장 큰 분기점.</p>
+              <p style="color:#666; font-size:11.5px; margin-top:10px;">⚠ 한계 — AFTER 표본 25명 (BEFORE 94명 대비 작음). 추가 가입자 누적되면 신뢰구간 좁혀질 예정.</p>
+            </div>
+
+            <div class="cohort-note">출처 — 자체 분석 패널 (PortfolioAnalyticsPanel) 실측치. 2026-05-17 기준. 빈집 = 가입 후 일간/주간/덤프/건강/그룹/친구/정보 탭 중 어느 것도 활용 안 한 사용자.</div>
+          </div>
         </div>
       </div>
 
