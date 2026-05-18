@@ -244,6 +244,8 @@
       line-height: 1.85;
       color: #1a1a1a;
       letter-spacing: -0.005em;
+      /* 한국어 단어 단위 wrap — '효율.' 같은 단어 한 음절이 다음 줄로 떨어지는 어색함 방지 */
+      word-break: keep-all;
     }
     .case-cell .body em {
       color: #c0392b;
