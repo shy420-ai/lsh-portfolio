@@ -2580,35 +2580,64 @@
     </div>
     <div class="hero-title">
       <h1 class="typewriter" data-text="MARKETING"></h1>
-      <h1 class="typewriter italic" data-text="PORTFOLIO" data-delay="900"></h1>
+      <h1 class="typewriter italic" data-text="PORTFOLIO" data-delay="900" data-pretext="GROWTH"></h1>
     </div>
   </section>
   <script>
-    // 타이핑 모션 — cover 페이지 첫 진입 시 한 번만 실행
+    // 타이핑 모션 — cover 페이지 첫 진입 시 한 번만 실행.
+    // data-pretext 있으면 그 단어 먼저 입력 → 잠시 멈춤 → 지움 → data-text 입력
     (function () {
       let typed = false
+      function typeText(el, text, speed, onDone) {
+        let i = 0
+        const tick = setInterval(() => {
+          el.textContent = text.slice(0, ++i)
+          if (i >= text.length) {
+            clearInterval(tick)
+            onDone && onDone()
+          }
+        }, speed)
+      }
+      function deleteText(el, speed, onDone) {
+        let cur = el.textContent || ''
+        const tick = setInterval(() => {
+          cur = cur.slice(0, -1)
+          el.textContent = cur
+          if (cur.length === 0) {
+            clearInterval(tick)
+            onDone && onDone()
+          }
+        }, speed)
+      }
       function runTyping() {
         if (typed) return
         typed = true
         const els = document.querySelectorAll('.hero-title .typewriter')
         els.forEach((el) => {
           const text = el.dataset.text || ''
+          const pretext = el.dataset.pretext || ''
           const delay = parseInt(el.dataset.delay || '0', 10)
           setTimeout(() => {
             el.classList.add('active')
-            let i = 0
-            const tick = setInterval(() => {
-              el.textContent = text.slice(0, ++i)
-              if (i >= text.length) {
-                clearInterval(tick)
+            const startFinal = () => {
+              typeText(el, text, 75, () => {
                 el.classList.add('done')
-                // 다음 줄로 active 넘기기
                 const next = el.nextElementSibling
-                if (next && next.classList.contains('typewriter')) {
-                  el.classList.remove('active')
-                }
-              }
-            }, 75)
+                if (next && next.classList.contains('typewriter')) el.classList.remove('active')
+              })
+            }
+            if (pretext) {
+              // pretext 입력 → 0.45 초 멈춤 → 지움 → 0.15 초 멈춤 → 진짜 text 입력
+              typeText(el, pretext, 80, () => {
+                setTimeout(() => {
+                  deleteText(el, 55, () => {
+                    setTimeout(startFinal, 150)
+                  })
+                }, 450)
+              })
+            } else {
+              startFinal()
+            }
           }, delay)
         })
       }
