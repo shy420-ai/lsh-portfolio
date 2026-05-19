@@ -2518,36 +2518,37 @@
       font-weight: 700;
       color: #c0392b;
     }
-    .about-shorts {
-      margin-bottom: 44px;
-      text-align: center;
+    /* ── About Shorts (별도 페이지) ─────────────────────────────── */
+    .about-shorts-wrap {
+      max-width: 1200px;
+      margin: 60px auto 0;
+      padding: 0 8px 80px;
     }
-    .about-shorts-label {
+    .about-shorts-title {
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 900;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: #888;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      color: var(--ink, #111);
+      text-align: center;
+      margin-bottom: 32px;
     }
-    .about-shorts-grid {
+    .about-shorts-row {
       display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .shorts-page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
+      align-items: flex-start;
     }
-    .about-shorts video {
+    .about-shorts-row video {
       display: block;
       width: 100%;
-      max-width: 360px;
+      max-width: 240px;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+    @media (max-width: 768px) {
+      .about-shorts-row video { max-width: 180px; }
     }
     .about-section {
       margin-bottom: 44px;
@@ -2770,56 +2771,6 @@
           그 확률을 높여 나가는 것에 관심이 있습니다.
         </p>
 
-        <div class="about-shorts">
-          <div class="about-shorts-label">직접 디자인한 쇼츠 프레임</div>
-          <div class="about-shorts-grid">
-            <div class="shorts-page">
-              <video
-                src="about-shorts-frame.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                controls
-              ></video>
-            </div>
-            <div class="shorts-page">
-              <video
-                src="about-shorts-2.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                controls
-              ></video>
-            </div>
-            <div class="shorts-page">
-              <video
-                src="about-shorts-3.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                controls
-              ></video>
-            </div>
-            <div class="shorts-page">
-              <video
-                src="about-insta-arisu.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                controls
-              ></video>
-            </div>
-          </div>
-        </div>
-
         <div class="about-section">
           <div class="sec-head">
             <h3>Softwares</h3>
@@ -2855,6 +2806,23 @@
             <dt>E-mail</dt><dd>shy420@naver.com</dd>
           </dl>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About Shorts — 직접 디자인한 쇼츠 프레임 (About Me 다음 별도 페이지) ── -->
+  <section class="page about-shorts-page" data-page="about-shorts">
+    <div class="topbar">
+      <a href="javascript:go('about')">← About</a>
+      <span>Shorts</span>
+    </div>
+    <div class="about-shorts-wrap">
+      <h2 class="about-shorts-title">직접 디자인한 쇼츠 프레임</h2>
+      <div class="about-shorts-row">
+        <video src="about-shorts-frame.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+        <video src="about-shorts-2.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+        <video src="about-shorts-3.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+        <video src="about-insta-arisu.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
       </div>
     </div>
   </section>
@@ -4171,7 +4139,7 @@
 
   <script>
     // Page order for prev/next navigation.
-    const ORDER = ['cover', 'contents', 'about', '01', '02', '03', '04', '05']
+    const ORDER = ['cover', 'contents', 'about', 'about-shorts', '01', '02', '03', '04', '05']
 
     function go(name) {
       document.querySelectorAll('.page').forEach((p) => {
@@ -4179,7 +4147,7 @@
       })
       // Pager only on case pages
       const pager = document.getElementById('pager')
-      const isCase = ['01', '02', '03', '04', '05', 'about'].includes(name)
+      const isCase = ['01', '02', '03', '04', '05', 'about', 'about-shorts'].includes(name)
       pager.classList.toggle('hidden', !isCase)
       // Update URL hash for shareable links + browser history
       if (location.hash !== '#' + name) {
