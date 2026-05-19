@@ -226,6 +226,7 @@
       grid-template-columns: 180px 1fr;
       gap: 0;
       padding-bottom: 40px;
+      counter-reset: ciar;
     }
     .case-grid .case-cell {
       grid-column: 1 / -1;
@@ -233,13 +234,13 @@
       grid-template-columns: subgrid;
       border-top: 1.5px solid #000;
       border-bottom: 0;
-      padding: 24px 0 28px;
+      padding: 26px 0 30px;
       align-items: center;
     }
     .case-grid .case-cell:last-child { border-bottom: 1.5px solid #000; }
     .case-grid .case-cell h4 {
       margin-bottom: 0;
-      padding-top: 2px;
+      padding-top: 0;
     }
     .case-cell {
       border-top: 1.5px solid #000;
@@ -247,11 +248,26 @@
     }
     .case-cell h4 {
       font-family: 'Noto Sans KR', sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      font-size: 15px;
+      letter-spacing: 0.02em;
       font-weight: 900;
-      color: #c0392b;
+      color: #111;
       margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .case-cell h4::before {
+      content: counter(ciar, decimal-leading-zero);
+      counter-increment: ciar;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: #c0392b;
+      letter-spacing: 0.02em;
+      line-height: 1;
     }
     .case-cell .placeholder {
       font-size: 16.5px;
@@ -3129,7 +3145,7 @@
           </div>
         </div>
         <div class="case-cell">
-          <h4>액션</h4>
+          <h4>행동</h4>
           <div class="body">
             <ol>
               <li><strong>비주얼 통일</strong> — <em>인스타 채널의 톤 · 레이아웃 · 컬러를 표준화하고 발행 주기를 설정</em>해 피드를 정돈.</li>
@@ -3395,7 +3411,7 @@
           </div>
         </div>
         <div class="case-cell">
-          <h4>액션</h4>
+          <h4>행동</h4>
           <div class="body">
             <ol>
               <li><em>페르소나 채널 운영</em> — '벼랑끝의 마케터' 캐릭터로 톤을 일관되게, 대행사 명의로 콘텐츠 발행.</li>
@@ -3580,7 +3596,7 @@
           </div>
         </div>
         <div class="case-cell">
-          <h4>액션</h4>
+          <h4>행동</h4>
           <div class="body">
             <ol>
               <li><em>공개 개발 — 만드는 과정을 콘텐츠로</em> : 매일 개발 진행을 트위터에 공유 → 사용자 반응이 곧 <em>마케팅 + 기능 가설 검증</em> 데이터.</li>
@@ -3934,7 +3950,7 @@
           </div>
         </div>
         <div class="case-cell">
-          <h4>액션</h4>
+          <h4>행동</h4>
           <div class="body">
             <p>4 가지 비대칭을 그대로 <em>4 가지 행동 변경</em> 으로 — 도달 + 전환 이중 지표, 그림 강의 중심 재배분, 평일 22 시 업로드, 영상 길이 31~45 초.</p>
             <p>콘텐츠 컨셉·시간·길이를 <em>측정한 결과대로</em> 재설계.</p>
@@ -4190,7 +4206,7 @@
           </div>
         </div>
         <div class="case-cell">
-          <h4>액션</h4>
+          <h4>행동</h4>
           <div class="body">
             <p><em>두 채널 양극 운영</em> — Viral (트위터, 자기개발 / 단일 임팩트) + Long-tail (블로그, 검색량 대비 발행량 낮은 키워드 / 누적). 두 결을 1 인이 동시.</p>
             <p><em>잘 된 형식을 AI 에 학습</em> → 매 발행마다 히트 확률 상승 (피드백 사이클).</p>
