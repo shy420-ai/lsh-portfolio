@@ -73,34 +73,21 @@
 
     /* ── Hero (Cover) ─────────────────────────────────────────── */
     .hero {
-      justify-content: center;
+      justify-content: space-between;
       cursor: pointer;
-      position: relative;
     }
     .hero-top {
       text-align: center;
       font-size: 13px;
       letter-spacing: 0.05em;
       font-weight: 700;
-      position: absolute;
-      top: 48px;
-      left: 50%;
-      transform: translateX(-50%);
     }
     .hero-top .name {
       font-weight: 400;
       margin-top: 4px;
       letter-spacing: 0.15em;
     }
-    .hero-title {
-      text-align: center;
-      padding: 32px 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-    }
+    .hero-title { text-align: center; padding: 32px 0; }
     .hero-title h1 {
       font-size: clamp(56px, 13vw, 200px);
       font-weight: 700;
@@ -2590,6 +2577,7 @@
       <h1 class="typewriter" data-text="MARKETING"></h1>
       <h1 class="typewriter italic" data-text="PORTFOLIO" data-delay="900" data-pretext="GROWTH"></h1>
     </div>
+    <div class="hero-bottom" aria-hidden="true" style="visibility: hidden;">·</div>
   </section>
   <script>
     // 타이핑 모션 — cover 페이지 첫 진입 시 한 번만 실행.
