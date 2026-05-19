@@ -93,8 +93,26 @@
       font-weight: 700;
       line-height: 0.92;
       letter-spacing: -0.02em;
+      display: inline-block;
+      min-height: 1em;
     }
     .hero-title h1.italic { font-style: italic; font-weight: 400; }
+    /* 타이핑 모션 — 커서 깜빡임. 입력 중·완료 후 모두 같이 깜빡. */
+    .hero-title h1.typewriter::after {
+      content: '|';
+      display: inline-block;
+      margin-left: 4px;
+      font-weight: 400;
+      animation: ff-blink 0.7s step-end infinite;
+      color: #000;
+    }
+    .hero-title h1.typewriter.done::after { animation-duration: 1s; }
+    @keyframes ff-blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    /* MARKETING 입력 중일 때 PORTFOLIO 커서 숨김 (한 줄씩 순차 typing) */
+    .hero-title h1.typewriter:not(.active)::after { content: none; }
     .hero-bottom {
       text-align: center;
       font-size: 11px;
@@ -2556,11 +2574,47 @@
       <div class="name">LEE SEOUNG HYEON</div>
     </div>
     <div class="hero-title">
-      <h1>MARKETING</h1>
-      <h1 class="italic">PORTFOLIO</h1>
+      <h1 class="typewriter" data-text="MARKETING"></h1>
+      <h1 class="typewriter italic" data-text="PORTFOLIO" data-delay="900"></h1>
     </div>
     <div class="hero-bottom">Content · Performance · AI</div>
   </section>
+  <script>
+    // 타이핑 모션 — cover 페이지 첫 진입 시 한 번만 실행
+    (function () {
+      let typed = false
+      function runTyping() {
+        if (typed) return
+        typed = true
+        const els = document.querySelectorAll('.hero-title .typewriter')
+        els.forEach((el) => {
+          const text = el.dataset.text || ''
+          const delay = parseInt(el.dataset.delay || '0', 10)
+          setTimeout(() => {
+            el.classList.add('active')
+            let i = 0
+            const tick = setInterval(() => {
+              el.textContent = text.slice(0, ++i)
+              if (i >= text.length) {
+                clearInterval(tick)
+                el.classList.add('done')
+                // 다음 줄로 active 넘기기
+                const next = el.nextElementSibling
+                if (next && next.classList.contains('typewriter')) {
+                  el.classList.remove('active')
+                }
+              }
+            }, 75)
+          }, delay)
+        })
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runTyping)
+      } else {
+        runTyping()
+      }
+    })()
+  </script>
 
   <!-- ── 1 · Contents ──────────────────────────────────────────── -->
   <section class="page contents" data-page="contents">
