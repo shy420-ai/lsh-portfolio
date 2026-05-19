@@ -1776,7 +1776,7 @@
       grid-template-columns: 1fr 1.05fr;
       gap: 72px;
       padding: 40px 0 100px;
-      align-items: start;
+      align-items: stretch;
     }
     .cc-eyebrow {
       font-family: 'Libre Bodoni', serif;
@@ -1976,6 +1976,8 @@
       align-items: center;
     }
     .cc-left > * { width: 100%; }
+    /* 오른쪽 BEFORE/AFTER 끝과 높이 맞춤 — 6× 콜아웃 박스를 맨 아래로 밀어냄 */
+    .cc-left .cc-callout { margin-top: auto; }
 
     /* ── Live Campaign Mini (합성 BEFORE/AFTER + 메타) ─────────── */
     /* 01-3 BEFORE/AFTER 2 col 카드 */
@@ -2143,6 +2145,63 @@
     .blog-n2 { top: 56%; left: 42%; }
     .blog-n3 { top: 80%; left: 60%; }
     .blog-n4 { top: 95%; left: 70%; }
+
+    /* Speech-bubble callouts (이미지 위 부분별 포인팅) */
+    .blog-callout {
+      position: absolute;
+      background: #fff;
+      border: 1.5px solid #c0392b;
+      border-radius: 22px;
+      padding: 9px 16px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #111;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      max-width: 240px;
+      z-index: 3;
+      white-space: normal;
+      text-decoration: none;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+    .blog-callout::before {
+      content: counter(bc, decimal-leading-zero) ' ';
+      counter-increment: bc;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: #c0392b;
+      margin-right: 4px;
+    }
+    .case-blog-figure { counter-reset: bc; }
+    .blog-callout::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-right: 1.5px solid #c0392b;
+      border-bottom: 1.5px solid #c0392b;
+    }
+    /* 01 — 인기 콘텐츠 (좌측 상단 박스 → 위쪽으로 띄움) */
+    .blog-c1 { top: 12%; left: 30%; }
+    .blog-c1::after { bottom: -6px; left: 16%; transform: rotate(45deg); }
+    /* 02 — YouTube/Instagram (가운데 → 위쪽) */
+    .blog-c2 { top: 38%; left: 62%; }
+    .blog-c2::after { bottom: -6px; left: 22%; transform: rotate(45deg); }
+    /* 03 — SNS 채널 아이콘 (하단 우측 → 상단으로) */
+    .blog-c3 { top: 65%; left: 78%; }
+    .blog-c3::after { bottom: -6px; left: 18%; transform: rotate(45deg); }
+    /* 04 — 카테고리 아이콘 (하단 → 위쪽) */
+    .blog-c4 { top: 78%; left: 86%; }
+    .blog-c4::after { bottom: -6px; left: 22%; transform: rotate(45deg); }
+
+    @media (max-width: 900px) {
+      .blog-callout { font-size: 11px; padding: 6px 11px; max-width: 180px; }
+    }
     .case-blog-figure figcaption {
       margin-top: 12px;
       font-size: 12px;
@@ -3274,35 +3333,13 @@
             <span class="blog-num blog-n2">02</span>
             <span class="blog-num blog-n3">03</span>
             <span class="blog-num blog-n4">04</span>
+            <span class="blog-callout blog-c1">주요 블로그글 바로가기 링크 연동</span>
+            <span class="blog-callout blog-c2">YouTube · Instagram 주요 콘텐츠 바로가기</span>
+            <span class="blog-callout blog-c3">아리수 SNS 채널 원클릭 이동</span>
+            <span class="blog-callout blog-c4">블로그 주요 카테고리 아이콘</span>
           </a>
           <figcaption>&lt; 블로그 PC 화면 · 섹션별 동선 설계 &gt; <a class="blog-naver-link" href="https://blog.naver.com/i-arisu-u" target="_blank" rel="noopener">실제 블로그 ↗</a></figcaption>
         </figure>
-        <ol class="case-blog-legend">
-          <li>
-            <div>
-              <div class="blog-leg-head">인기 콘텐츠 영역</div>
-              <div class="blog-leg-body">주요 블로그글 바로가기 링크 연동</div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div class="blog-leg-head">YouTube / Instagram 주요 글</div>
-              <div class="blog-leg-body">영상 · SNS 콘텐츠를 블로그에서 그대로 소비</div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div class="blog-leg-head">SNS 채널 바로가기 아이콘</div>
-              <div class="blog-leg-body">홈 · 인스타 · 네이버 채널 · 페이스북 원클릭 이동</div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div class="blog-leg-head">블로그 주요 카테고리 아이콘</div>
-              <div class="blog-leg-body">아리수 어때요 · 아리수 월드 · 아리수 TV · 이벤트 · 캠페인</div>
-            </div>
-          </li>
-        </ol>
       </div>
 
     </div>
