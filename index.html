@@ -1360,7 +1360,58 @@
       margin-bottom: 6px;
     }
 
-    /* ── Case · Rebrand 디테일 섹션 ──────────────────────────────── */
+    /* ── Case 01-1 Rebrand v2 (BEFORE/AFTER 2 column) ─────────────── */
+    .case-rebrand-v2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding-top: 32px;
+      border-top: 1.5px solid #000;
+    }
+    .rebrand-col { display: flex; flex-direction: column; gap: 18px; }
+    .rebrand-tag {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      padding: 4px 10px;
+      border-radius: 99px;
+      align-self: flex-start;
+      color: #fff;
+    }
+    .tag-before { background: #999; }
+    .tag-after { background: #c0392b; }
+    .rebrand-col img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+    .rebrand-block h4 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #c0392b;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .rebrand-block ul {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #333;
+      word-break: keep-all;
+    }
+    .rebrand-block ul em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    @media (max-width: 768px) {
+      .case-rebrand-v2 { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ── Case · Rebrand 디테일 섹션 (legacy) ─────────────────────── */
     .case-rebrand {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -2977,28 +3028,30 @@
         </div>
         <span class="ch-tag">Visual Identity</span>
       </div>
-      <div class="case-rebrand">
-        <div class="case-rebrand-img">
-          <img src="case01-feed.jpg" alt="Aritsu 인스타그램 피드 BEFORE / AFTER" onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;BEFORE / AFTER&lt;/div&gt;'">
-        </div>
-        <div class="case-rebrand-text">
-          <h3 class="why">Why rebranding?</h3>
-          <div class="block diagnosis">
+      <div class="case-rebrand-v2">
+        <div class="rebrand-col before">
+          <span class="rebrand-tag tag-before">BEFORE</span>
+          <img src="case01-feed-before.jpg" alt="기존 인스타 피드 — 톤·레이아웃 혼재">
+          <div class="rebrand-block">
             <h4>진단 — 기존 피드의 문제</h4>
             <ul>
               <li>콘텐츠 유형 · 비주얼 톤 혼재</li>
               <li>실사 · 일러스트 · 카드뉴스 무작위 배치</li>
-              <li>피드 단위에서 '아리수' 정체성 부재</li>
+              <li>피드 단위에서 <em>'아리수' 정체성 부재</em></li>
             </ul>
           </div>
-          <div class="block">
+        </div>
+        <div class="rebrand-col after">
+          <span class="rebrand-tag tag-after">AFTER</span>
+          <div class="rebrand-block">
             <h4>전략 — 브랜드 재정의</h4>
             <ul>
-              <li>피드 전체 비주얼 톤 재정의</li>
-              <li>콘텐츠 카테고리 분류: 정보성 · 이벤트성 · 홍보성</li>
+              <li>피드 전체 <em>비주얼 톤 재정의</em></li>
+              <li>콘텐츠 카테고리 분류 · 정보성 · 이벤트성 · 홍보성</li>
               <li>레이아웃 규칙 + 업로드 주기 시스템화</li>
             </ul>
           </div>
+          <img src="case01-feed-after.jpg" alt="재정의된 인스타 피드 — 일관 톤·레이아웃 시스템">
         </div>
       </div>
 
