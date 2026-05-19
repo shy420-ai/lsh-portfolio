@@ -2519,12 +2519,18 @@
       color: #c0392b;
     }
     /* ── About Shorts (별도 페이지) ─────────────────────────────── */
-    .about-shorts-inner { max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .about-shorts-inner {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-shorts-inner .case-subtitle { margin-bottom: 24px; }
     .about-shorts-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      margin-top: 48px;
+      gap: 28px;
+      padding-top: 32px;
+      border-top: 1.5px solid #000;
       align-items: start;
     }
     .about-shorts-item {
@@ -2534,37 +2540,45 @@
       align-items: stretch;
       min-width: 0;
     }
+    .about-shorts-item .shorts-num {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #c0392b;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
     .about-shorts-item video {
       display: block;
       width: 100%;
       aspect-ratio: 9 / 16;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
     }
     .about-shorts-item figcaption {
-      margin-top: 14px;
+      margin-top: 12px;
       font-size: 13px;
       line-height: 1.65;
-      color: #444;
+      color: #333;
       text-align: left;
       letter-spacing: -0.005em;
       word-break: keep-all;
     }
     .about-shorts-item figcaption .tool {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 11px;
-      font-weight: 700;
+      display: block;
+      margin-top: 8px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 10px;
+      font-weight: 900;
       color: #888;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
     @media (max-width: 980px) {
       .about-shorts-row { grid-template-columns: repeat(2, 1fr); gap: 28px; }
     }
     @media (max-width: 520px) {
-      .about-shorts-row { grid-template-columns: 1fr; gap: 32px; }
+      .about-shorts-row { grid-template-columns: 1fr; gap: 36px; }
     }
     .about-section {
       margin-bottom: 44px;
@@ -2832,20 +2846,24 @@
       <p class="case-subtitle">스스로 수치로 평가하기 어려운 감도와 툴 활용, 직접 보여드립니다.</p>
       <div class="about-shorts-row">
         <figure class="about-shorts-item">
+          <div class="shorts-num">01</div>
           <video src="about-shorts-frame.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>다이어리 컨셉의 소녀 감성 쇼츠 프레임 제작<br><span class="tool">Figma</span></figcaption>
+          <figcaption>다이어리 컨셉의 소녀 감성 쇼츠 프레임 제작<span class="tool">Figma</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
+          <div class="shorts-num">02</div>
           <video src="about-shorts-2.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>정사각 쇼츠 틀을 재구성해 LP 판 안에서 영상 재생, 가사 자막 포맷<br><span class="tool">Miricanvas</span></figcaption>
+          <figcaption>정사각 쇼츠 틀을 재구성해 LP 판 안에서 영상 재생, 가사 자막 포맷<span class="tool">Miricanvas</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
+          <div class="shorts-num">03</div>
           <video src="about-shorts-3.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>빈티지 톤·매너 프레임 + 기니피그 AI 애니메이션 제작<br><span class="tool">Gemini · Grok · Vrew</span></figcaption>
+          <figcaption>빈티지 톤·매너 프레임 + 기니피그 AI 애니메이션 제작<span class="tool">Gemini · Grok · Vrew</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
+          <div class="shorts-num">04</div>
           <video src="about-insta-arisu.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>이미지 생성 후 움직임 추가, 인스타 이벤트 영상<br><span class="tool">Midjourney · Runway</span></figcaption>
+          <figcaption>이미지 생성 후 움직임 추가, 인스타 이벤트 영상<span class="tool">Midjourney · Runway</span></figcaption>
         </figure>
       </div>
     </div>
