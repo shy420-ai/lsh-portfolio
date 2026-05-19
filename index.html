@@ -1776,7 +1776,7 @@
       grid-template-columns: 1fr 1.05fr;
       gap: 72px;
       padding: 40px 0 100px;
-      align-items: start;
+      align-items: stretch;
     }
     .cc-eyebrow {
       font-family: 'Libre Bodoni', serif;
@@ -1792,10 +1792,12 @@
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto 280px auto;
+      grid-template-rows: auto auto 1fr auto;
       column-gap: 36px;
       row-gap: 12px;
       margin-bottom: 28px;
+      flex: 1;
+      min-height: 360px;
     }
     /* overlay 는 grid 자식이 아니라 chart wrapper 의 absolute child — auto-flow 흐트러뜨리지 않음 */
     .cc-left { position: relative; }
@@ -1868,7 +1870,8 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      height: 280px;
+      height: 100%;
+      min-height: 280px;
     }
     .bar-fill {
       width: 100%;
@@ -1878,8 +1881,8 @@
       transform: scaleY(0);
       transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .bar-2024 { height: 50px; }
-    .bar-2025 { height: 280px; background: #c0392b; }
+    .bar-2024 { height: 16.67%; min-height: 50px; }
+    .bar-2025 { height: 100%; background: #c0392b; min-height: 280px; }
     .bar-chart.animate-in .bar-fill { transform: scaleY(1); }
     .bar-sublabel {
       font-size: 12px;
@@ -2148,26 +2151,25 @@
     .case-blog-figure { counter-reset: bc; }
     .blog-callout {
       position: absolute;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(20,20,20,0.12);
-      border-radius: 6px;
-      padding: 8px 12px 8px 10px;
+      background: #fff;
+      border: 1.5px solid #1a1a1a;
+      border-radius: 4px;
+      padding: 9px 14px 9px 12px;
       font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      font-size: 12px;
-      line-height: 1.45;
-      color: #1a1a1a;
-      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #111;
+      font-weight: 600;
       letter-spacing: -0.01em;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-      max-width: 220px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      max-width: 240px;
       z-index: 3;
       white-space: normal;
       text-decoration: none;
       pointer-events: none;
       display: flex;
       align-items: baseline;
-      gap: 6px;
+      gap: 8px;
       transform: translate(-50%, -50%);
     }
     .blog-callout::before {
@@ -2176,36 +2178,36 @@
       font-family: 'Libre Bodoni', serif;
       font-style: italic;
       font-weight: 500;
-      font-size: 13px;
+      font-size: 14px;
       color: #c0392b;
       letter-spacing: 0.02em;
       flex-shrink: 0;
     }
-    /* 작은 삼각 꼬리 — 카드 한쪽 변에 살짝 튀어나옴 */
+    /* 작은 삼각 꼬리 */
     .blog-callout::after {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
-      background: rgba(255,255,255,0.96);
-      border-right: 1px solid rgba(20,20,20,0.12);
-      border-bottom: 1px solid rgba(20,20,20,0.12);
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-right: 1.5px solid #1a1a1a;
+      border-bottom: 1.5px solid #1a1a1a;
     }
-    /* 01 — 인기 콘텐츠 박스 (이미지 좌측 상단 영역 위로) */
-    .blog-c1 { top: 8%; left: 24%; }
-    .blog-c1::after { bottom: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); }
-    /* 02 — Instagram seoul_arisu 게시물 (오른쪽 빈 물 영역에 박스, 꼬리는 왼쪽) */
-    .blog-c2 { top: 50%; left: 75%; }
-    .blog-c2::after { left: -5px; top: 50%; transform: translateY(-50%) rotate(135deg); }
-    /* 03 — 가운데 SNS 채널 아이콘 라인 (위쪽 빈 영역) */
-    .blog-c3 { top: 62%; left: 50%; }
-    .blog-c3::after { bottom: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); }
-    /* 04 — 하단 카테고리 바 (이미지 우측 하단에 박스, 꼬리는 왼쪽 아래) */
-    .blog-c4 { top: 82%; left: 80%; }
-    .blog-c4::after { bottom: -5px; left: 35%; transform: rotate(45deg); }
+    /* 01 — 인기 콘텐츠 박스 (위쪽 빈 영역으로 띄움, 꼬리 아래) */
+    .blog-c1 { top: 6%; left: 30%; }
+    .blog-c1::after { bottom: -6px; left: 18%; transform: rotate(45deg); }
+    /* 02 — Instagram 게시물 (오른쪽 물결 영역, 꼬리 왼쪽 아래) */
+    .blog-c2 { top: 40%; left: 78%; }
+    .blog-c2::after { left: -6px; top: 60%; transform: translateY(-50%) rotate(135deg); }
+    /* 03 — SNS 채널 아이콘 (위쪽 빈 영역으로 떠 있고 꼬리 아래) */
+    .blog-c3 { top: 60%; left: 50%; }
+    .blog-c3::after { bottom: -6px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+    /* 04 — 하단 카테고리 바 (위쪽 떠서 꼬리 아래) */
+    .blog-c4 { top: 80%; left: 78%; }
+    .blog-c4::after { bottom: -6px; left: 22%; transform: rotate(45deg); }
 
     @media (max-width: 900px) {
-      .blog-callout { font-size: 10.5px; padding: 6px 9px; max-width: 160px; }
+      .blog-callout { font-size: 11px; padding: 6px 10px; max-width: 170px; }
       .blog-c2, .blog-c3, .blog-c4 { display: none; }
     }
     .case-blog-figure figcaption {
