@@ -2531,11 +2531,16 @@
       text-transform: uppercase;
       margin-bottom: 12px;
     }
+    .about-shorts-grid {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     .about-shorts video {
       display: block;
-      margin: 0 auto;
       width: 100%;
-      max-width: 320px;
+      max-width: 280px;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
@@ -2762,15 +2767,26 @@
 
         <div class="about-shorts">
           <div class="about-shorts-label">직접 디자인한 쇼츠 프레임</div>
-          <video
-            src="about-shorts-frame.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            controls
-          ></video>
+          <div class="about-shorts-grid">
+            <video
+              src="about-shorts-frame.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              controls
+            ></video>
+            <video
+              src="about-shorts-2.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              controls
+            ></video>
+          </div>
         </div>
 
         <div class="about-section">
