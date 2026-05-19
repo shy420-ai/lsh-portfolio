@@ -2777,14 +2777,29 @@
       word-break: keep-all;
     }
     .about-shorts-item figcaption .tool {
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
       margin-top: 10px;
       font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       font-size: 12px;
       font-weight: 700;
       color: #c0392b;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+    .about-shorts-item figcaption .tool img {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .about-shorts-item figcaption .tool .sep {
+      color: #bbb;
+      margin: 0 2px;
+      font-weight: 500;
     }
     @media (max-width: 980px) {
       .about-shorts-row { grid-template-columns: repeat(2, 1fr); gap: 28px; }
@@ -3067,22 +3082,22 @@
         <figure class="about-shorts-item">
           <div class="shorts-num">01</div>
           <video src="about-shorts-frame.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>다이어리 컨셉의 소녀 감성 쇼츠 프레임 제작<span class="tool">Figma</span></figcaption>
+          <figcaption>다이어리 컨셉의 소녀 감성 쇼츠 프레임 제작<span class="tool"><img src="https://www.google.com/s2/favicons?domain=figma.com&amp;sz=64" alt="" loading="lazy">Figma</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
           <div class="shorts-num">02</div>
           <video src="about-shorts-2.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>정사각 쇼츠 틀을 재구성해 LP 판 안에서 영상 재생,<br><span style="white-space:nowrap">가사 자막 포맷</span><span class="tool">Miricanvas</span></figcaption>
+          <figcaption>정사각 쇼츠 틀을 재구성해 LP 판 안에서 영상 재생,<br><span style="white-space:nowrap">가사 자막 포맷</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=miricanvas.com&amp;sz=64" alt="" loading="lazy">Miricanvas</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
           <div class="shorts-num">03</div>
           <video src="about-shorts-3.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>빈티지 톤·매너 프레임 + 기니피그&nbsp;<span style="white-space:nowrap">AI 애니메이션 제작</span><span class="tool">Gemini · Grok · Vrew</span></figcaption>
+          <figcaption>빈티지 톤·매너 프레임 + 기니피그&nbsp;<span style="white-space:nowrap">AI 애니메이션 제작</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&amp;sz=64" alt="" loading="lazy">Gemini<span class="sep">·</span><img src="https://www.google.com/s2/favicons?domain=grok.com&amp;sz=64" alt="" loading="lazy">Grok<span class="sep">·</span><img src="https://www.google.com/s2/favicons?domain=vrew.voyagerx.com&amp;sz=64" alt="" loading="lazy">Vrew</span></figcaption>
         </figure>
         <figure class="about-shorts-item">
           <div class="shorts-num">04</div>
           <video src="about-insta-arisu.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-          <figcaption>이미지 생성 후 움직임 추가, 인스타 이벤트 영상<span class="tool">Midjourney · Runway</span></figcaption>
+          <figcaption>이미지 생성 후 움직임 추가, 인스타 이벤트 영상<span class="tool"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&amp;sz=64" alt="" loading="lazy">Midjourney<span class="sep">·</span><img src="https://www.google.com/s2/favicons?domain=runwayml.com&amp;sz=64" alt="" loading="lazy">Runway</span></figcaption>
         </figure>
       </div>
     </div>
