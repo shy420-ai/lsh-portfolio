@@ -45,8 +45,9 @@
       padding: 48px 64px;
       overflow-y: auto;
       animation: fadeIn 0.4s ease-out;
-      /* 전체적으로 폰트·요소 확대 — 약 +30%. zoom 은 layout 도 비례. */
-      zoom: 1.3;
+      /* 전체적으로 폰트·요소 확대 — 약 +17%. 사용자가 100% 배율에서 봐도
+         자연스럽게 정렬되게 (이전 1.3 → 90% 배율 의존 issue). */
+      zoom: 1.17;
     }
     .page.active { display: flex; }
     @keyframes fadeIn {
