@@ -2518,6 +2518,31 @@
       font-weight: 700;
       color: #c0392b;
     }
+    /* ── 스크롤 다운 cue (About Me → Self-Made) ─────────────────── */
+    .scroll-cue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin: 40px auto 0;
+      color: #888;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: ff-cue-bounce 1.6s ease-in-out infinite;
+    }
+    .scroll-cue .cue-arrow {
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    @keyframes ff-cue-bounce {
+      0%, 100% { transform: translateY(0); opacity: 0.7; }
+      50% { transform: translateY(8px); opacity: 1; }
+    }
+
     /* ── About Shorts (별도 페이지) ─────────────────────────────── */
     .about-shorts-inner {
       max-width: 1280px;
@@ -2851,8 +2876,14 @@
       </div>
     </div>
 
+    <!-- 아래로 더 있다는 신호 — bounce 모션 + 작은 라벨 -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span class="cue-label">아래로 더</span>
+      <span class="cue-arrow">↓</span>
+    </div>
+
     <!-- About Me 아래로 스크롤하면 자연스럽게 이어지는 Shorts 섹션 (별도 페이지 X) -->
-    <div class="case-inner about-shorts-inner" style="margin-top: 120px; padding-bottom: 80px;">
+    <div class="case-inner about-shorts-inner" style="margin-top: 80px; padding-bottom: 80px;">
       <div class="case-meta">About · Self-Made</div>
       <h3 class="case-title italic">SELF-MADE</h3>
       <p class="case-subtitle">컨셉 · 이미지 · 영상, 모두 직접 제작한 콘텐츠들</p>
