@@ -2928,13 +2928,13 @@
               })
             }
             if (pretext) {
-              // pretext 입력 → 0.45 초 멈춤 → 지움 → 0.15 초 멈춤 → 진짜 text 입력
-              typeText(el, pretext, 80, () => {
+              // pretext 입력 → 0.5 초 멈춤 → 지움 → 0.2 초 멈춤 → 진짜 text 입력
+              typeText(el, pretext, 160, () => {
                 setTimeout(() => {
-                  deleteText(el, 55, () => {
-                    setTimeout(startFinal, 150)
+                  deleteText(el, 80, () => {
+                    setTimeout(startFinal, 200)
                   })
-                }, 450)
+                }, 500)
               })
             } else {
               startFinal()
