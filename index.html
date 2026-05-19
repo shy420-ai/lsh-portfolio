@@ -2540,15 +2540,37 @@
       justify-content: center;
       align-items: flex-start;
     }
-    .about-shorts-row video {
+    .about-shorts-item {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 240px;
+    }
+    .about-shorts-item video {
       display: block;
       width: 100%;
       max-width: 240px;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
+    .about-shorts-item figcaption {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #555;
+      text-align: center;
+      letter-spacing: -0.005em;
+      word-break: keep-all;
+    }
+    .about-shorts-item figcaption em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
     @media (max-width: 768px) {
-      .about-shorts-row video { max-width: 180px; }
+      .about-shorts-item, .about-shorts-item video { max-width: 180px; }
     }
     .about-section {
       margin-bottom: 44px;
@@ -2819,10 +2841,22 @@
     <div class="about-shorts-wrap">
       <h2 class="about-shorts-title">직접 디자인한 쇼츠 프레임</h2>
       <div class="about-shorts-row">
-        <video src="about-shorts-frame.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-        <video src="about-shorts-2.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-        <video src="about-shorts-3.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
-        <video src="about-insta-arisu.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+        <figure class="about-shorts-item">
+          <video src="about-shorts-frame.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+          <figcaption>다이어리 컨셉의 <em>소녀 감성 쇼츠 프레임</em> 제작 (Figma)</figcaption>
+        </figure>
+        <figure class="about-shorts-item">
+          <video src="about-shorts-2.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+          <figcaption>정사각 쇼츠 틀을 재구성해 <em>LP 판 안에서 영상이 재생</em>되고 가사가 자막으로 나오는 포맷 (Miricanvas)</figcaption>
+        </figure>
+        <figure class="about-shorts-item">
+          <video src="about-shorts-3.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+          <figcaption>빈티지 톤·매너 프레임 + Canva 의 기니피그 레퍼런스를 <em>Gemini 로 이미지 생성 → Grok 으로 모션 → Vrew 로 편집</em></figcaption>
+        </figure>
+        <figure class="about-shorts-item">
+          <video src="about-insta-arisu.mp4" autoplay muted loop playsinline preload="metadata" controls></video>
+          <figcaption><em>Midjourney</em> 로 이미지 제작 → <em>Runway</em> 로 움직이게 한 영상</figcaption>
+        </figure>
       </div>
     </div>
   </section>
