@@ -1968,6 +1968,33 @@
     .cc-left > * { width: 100%; }
 
     /* ── Live Campaign Mini (합성 BEFORE/AFTER + 메타) ─────────── */
+    /* 01-3 BEFORE/AFTER 2 col 카드 */
+    .cc-live-mini-v2 .cc-live-ab {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .cc-live-mini-v2 .cc-live-ab-col { text-align: center; }
+    .cc-live-mini-v2 .cc-live-ab-cap {
+      font-size: 13px;
+      color: #555;
+      margin: 8px 0 14px;
+      letter-spacing: -0.005em;
+    }
+    .cc-live-mini-v2 .cc-live-ab-col img {
+      width: 100%;
+      max-width: 320px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+    @media (max-width: 768px) {
+      .cc-live-mini-v2 .cc-live-ab { grid-template-columns: 1fr; gap: 32px; }
+    }
+
     .cc-live-mini {
       display: flex;
       flex-direction: column;
@@ -3204,22 +3231,22 @@
               </div>
             </li>
           </ol>
-          <!-- 박을 자리 표시: cc-live-mini 는 그대로 남기되 아래 01-4 가 들어가기 전 마지막 블록 -->
-          <!-- Live Campaign — Strategy 아래에 넣어서 좌측 차트와 세로 길이 맞춤 -->
-          <div class="cc-live-mini">
-            <div class="cc-live-composite-labels">
-              <div class="composite-label">
+          <!-- BEFORE / AFTER 2 column (01-2 결로 통일) -->
+          <div class="cc-live-mini cc-live-mini-v2">
+            <div class="cc-live-ab">
+              <div class="cc-live-ab-col">
                 <span class="cc-live-tag">BEFORE</span>
-                <span class="composite-cap">타 공공기관 만족도 조사 레퍼런스</span>
+                <div class="cc-live-ab-cap">기존 만족도 조사 캠페인</div>
+                <img src="case01-3-before.jpg" alt="기존 만족도 조사 캠페인 — 일반 응모형 이벤트">
               </div>
-              <div class="composite-label is-after">
+              <div class="cc-live-ab-col">
                 <span class="cc-live-tag is-after">AFTER</span>
-                <span class="composite-cap">아리수 SNS 만족도 조사 (재설계) ↗</span>
+                <div class="cc-live-ab-cap">재설계된 아리수 SNS 만족도 조사 ↗</div>
+                <a href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="재설계 아리수 SNS 만족도 조사 인스타 게시물 열기">
+                  <img src="case01-survey-layout.jpg" alt="재설계 아리수 SNS 만족도 조사 게시물">
+                </a>
               </div>
             </div>
-            <a class="cc-live-composite" href="https://www.instagram.com/p/DPTMmCkEsev/" target="_blank" rel="noopener" aria-label="만족도 조사 BEFORE/AFTER 비교 인스타 게시물 열기">
-              <img src="case01-survey-layout.jpg" alt="공공기관 만족도 조사 BEFORE/AFTER 비교 — 좌측 타 공공기관 행정형 레퍼런스 2종, 우측 재설계 아리수 SNS 만족도 조사 게시물">
-            </a>
           </div>
         </div>
       </div>
