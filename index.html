@@ -1997,6 +1997,8 @@
       align-items: center;
     }
     .cc-left > * { width: 100%; }
+    /* pill 박스 (cc-eyebrow) 는 가로 늘어남 방지 — 내용 크기만큼만 */
+    .cc-left > .cc-eyebrow, .cc-right > .cc-eyebrow { width: max-content; max-width: 100%; }
 
     /* ── Live Campaign Mini (합성 BEFORE/AFTER + 메타) ─────────── */
     /* 01-3 BEFORE/AFTER 2 col 카드 */
