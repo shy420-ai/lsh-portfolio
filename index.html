@@ -2390,6 +2390,95 @@
       .bench-examples { grid-template-columns: 1fr; gap: 18px; }
     }
 
+    /* 02-2 Industry Contrast — 이노션 IMC vs 시밀러랩 비교 카드 */
+    .bench-contrast {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid #e5e5e5;
+    }
+    .bench-contrast-grid {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .bench-contrast-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 12px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+      display: block;
+    }
+    .bench-contrast-card:hover { transform: translateY(-2px); }
+    .bench-contrast-card img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .bench-contrast-card.is-after {
+      background: color-mix(in srgb, #c0392b 8%, #fff);
+      border-color: color-mix(in srgb, #c0392b 35%, #fff);
+      text-align: center;
+      padding: 24px 14px;
+    }
+    .bench-contrast-stat {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      color: #c0392b;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .bench-contrast-stat span { font-size: 28px; margin-left: 2px; }
+    .bench-contrast-cap {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #333;
+      letter-spacing: -0.005em;
+    }
+    .bench-contrast-cap em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    .bench-contrast-cap .muted {
+      font-size: 11.5px;
+      color: #888;
+    }
+    .bench-contrast-vs {
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: #999;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .bench-contrast-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+      text-align: center;
+      letter-spacing: -0.005em;
+    }
+    .bench-contrast-note em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    @media (max-width: 700px) {
+      .bench-contrast-grid { grid-template-columns: 1fr; gap: 12px; }
+      .bench-contrast-vs { font-size: 18px; }
+    }
+
     /* ── 02-3 Positioning · 앞광고 계정 ─────────────────────────── */
     .case-concept { padding: 24px 0 80px; }
     .concept-eyebrow {
@@ -3521,6 +3610,28 @@
             <p>광고대행사 마케터는 <em>직장인의 확장된 정체성</em> — 같은 공감 회로를 활용 가능하다고 판단.</p>
             <p><em>'벼랑끝의 마케터'</em> 컨셉 채택 — 콘텐츠 지속 생산 + 청중 공감 + 대행사 자체 자산 누적 세 가지를 한 번에.</p>
           </div>
+        </div>
+
+        <div class="bench-contrast">
+          <div class="bench-examples-label">Industry Contrast</div>
+          <div class="bench-contrast-grid">
+            <a class="bench-contrast-card" href="https://twitter.com/IMC_MENTORING" target="_blank" rel="noopener">
+              <img src="case02-innocean-imc.jpg" alt="이노션 IMC 트위터 — 가입 2011년 12월, 팔로워 23명">
+              <div class="bench-contrast-cap">
+                <em>이노션 IMC</em> — 광고대행사 자체 채널<br>
+                <span class="muted">2011년 12월 가입 · 14년 운영 · 팔로워 23명</span>
+              </div>
+            </a>
+            <div class="bench-contrast-vs">VS</div>
+            <div class="bench-contrast-card is-after">
+              <div class="bench-contrast-stat">3,400<span>+</span></div>
+              <div class="bench-contrast-cap">
+                <em>시밀러랩</em> — 광고대행사 자체 채널<br>
+                <span class="muted">1주 운영 · 광고비 0 원 · 팔로워 3,400+</span>
+              </div>
+            </div>
+          </div>
+          <p class="bench-contrast-note">대형 광고대행사도 자체 트위터 채널 운영 사례 자체가 거의 없음. <em>광고대행사 카테고리에서 활성 자체 채널을 가진다는 것 자체가 차별점.</em></p>
         </div>
       </div>
 
