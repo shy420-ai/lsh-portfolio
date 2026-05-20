@@ -2390,11 +2390,18 @@
       .bench-examples { grid-template-columns: 1fr; gap: 18px; }
     }
 
-    /* 02-2 Industry Contrast — 이노션 IMC vs 시밀러랩 비교 카드 */
+    /* 02-2 Industry Contrast — 3개 광고대행사 vs 시밀러랩 비교 카드 */
     .bench-contrast {
       margin-top: 36px;
       padding-top: 28px;
       border-top: 1px solid #e5e5e5;
+    }
+    .bench-contrast-samples {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+      margin-bottom: 18px;
     }
     .bench-contrast-grid {
       display: grid;
@@ -2425,7 +2432,9 @@
       background: color-mix(in srgb, #c0392b 8%, #fff);
       border-color: color-mix(in srgb, #c0392b 35%, #fff);
       text-align: center;
-      padding: 24px 14px;
+      padding: 32px 18px;
+      margin: 0 auto;
+      max-width: 480px;
     }
     .bench-contrast-stat {
       font-family: 'Noto Sans KR', sans-serif;
@@ -2460,6 +2469,7 @@
       color: #999;
       text-align: center;
       letter-spacing: 0.05em;
+      margin: 14px 0;
     }
     .bench-contrast-note {
       margin-top: 16px;
@@ -2476,7 +2486,9 @@
     }
     @media (max-width: 700px) {
       .bench-contrast-grid { grid-template-columns: 1fr; gap: 12px; }
+      .bench-contrast-samples { grid-template-columns: 1fr; gap: 12px; }
       .bench-contrast-vs { font-size: 18px; }
+      .bench-contrast-stat { font-size: 44px; }
     }
 
     /* ── 02-3 Positioning · 앞광고 계정 ─────────────────────────── */
@@ -3614,24 +3626,38 @@
 
         <div class="bench-contrast">
           <div class="bench-examples-label">Industry Contrast</div>
-          <div class="bench-contrast-grid">
+          <div class="bench-contrast-samples">
+            <a class="bench-contrast-card" href="https://twitter.com/CheilWorldwide" target="_blank" rel="noopener">
+              <img src="case02-cheil-profile.jpg" alt="제일기획 트위터 (@CheilWorldwide) — 가입 2010년 11월, 팔로워 1.3만">
+              <div class="bench-contrast-cap">
+                <em>제일기획</em><br>
+                <span class="muted">2010년 가입 · 15년 운영 · 팔로워 1.3만<br>최근 트윗 좋아요 1</span>
+              </div>
+            </a>
             <a class="bench-contrast-card" href="https://twitter.com/IMC_MENTORING" target="_blank" rel="noopener">
               <img src="case02-innocean-imc.jpg" alt="이노션 IMC 트위터 — 가입 2011년 12월, 팔로워 23명">
               <div class="bench-contrast-cap">
-                <em>이노션 IMC</em> — 광고대행사 자체 채널<br>
-                <span class="muted">2011년 12월 가입 · 14년 운영 · 팔로워 23명</span>
+                <em>이노션 IMC</em><br>
+                <span class="muted">2011년 가입 · 14년 운영 · 팔로워 23<br>활동 거의 없음</span>
               </div>
             </a>
-            <div class="bench-contrast-vs">VS</div>
-            <div class="bench-contrast-card is-after">
-              <div class="bench-contrast-stat">3,400<span>+</span></div>
+            <a class="bench-contrast-card" href="https://twitter.com/mezzomediatwitt" target="_blank" rel="noopener">
+              <img src="case02-mezzo-profile.jpg" alt="메조미디어 트위터 — 가입 2020년 1월, 팔로워 11명">
               <div class="bench-contrast-cap">
-                <em>시밀러랩</em> — 광고대행사 자체 채널<br>
-                <span class="muted">1주 운영 · 광고비 0 원 · 팔로워 3,400+</span>
+                <em>메조미디어</em><br>
+                <span class="muted">2020년 가입 · 5년 운영 · 팔로워 11<br>최근 트윗 좋아요 0 · 조회 169</span>
               </div>
+            </a>
+          </div>
+          <div class="bench-contrast-vs">VS</div>
+          <div class="bench-contrast-card is-after">
+            <div class="bench-contrast-stat">3,400<span>+</span></div>
+            <div class="bench-contrast-cap">
+              <em>시밀러랩</em> — 광고대행사 자체 채널<br>
+              <span class="muted">1주 운영 · 광고비 0 원 · 팔로워 3,400+ · 단일 트윗 11만 노출 · 134 RT</span>
             </div>
           </div>
-          <p class="bench-contrast-note">대형 광고대행사도 자체 트위터 채널 운영 사례 자체가 거의 없음. <em>광고대행사 카테고리에서 활성 자체 채널을 가진다는 것 자체가 차별점.</em></p>
+          <p class="bench-contrast-note"><em>광고대행사 정체성을 직접 내세우는 것 자체가 트위터에서 안 먹힌다는 패턴.</em><br>15년·14년·5년 — 운영 기간 무관, 광고대행사 카테고리 자체 채널은 거의 모두 침묵 상태. 시밀러랩이 <em>'벼랑끝의 마케터' 페르소나 + 앞광고 컨셉</em> 으로 카테고리 빈자리를 발견한 게 핵심.</p>
         </div>
       </div>
 
