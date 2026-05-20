@@ -1902,6 +1902,26 @@
     .bar-2024 { height: 16.67%; min-height: 50px; }
     .bar-2025 { height: 100%; background: #c0392b; min-height: 280px; }
     .bar-chart.animate-in .bar-fill { transform: scaleY(1); }
+    /* 올라간다는 시각 강조 — 두 막대 사이에 화살표가 아래에서 위로 떠오르며 fade. 무한 반복. */
+    .bar-rise-arrow {
+      position: absolute;
+      left: 50%;
+      bottom: 78px;
+      transform: translateX(-50%);
+      color: #c0392b;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .bar-chart.animate-in .bar-rise-arrow {
+      animation: bar-rise 2.4s 2.4s ease-out infinite;
+    }
+    @keyframes bar-rise {
+      0%   { transform: translate(-50%, 0);     opacity: 0; }
+      15%  { transform: translate(-50%, -20px); opacity: 1; }
+      75%  { transform: translate(-50%, -180px); opacity: 1; }
+      100% { transform: translate(-50%, -220px); opacity: 0; }
+    }
     .bar-sublabel {
       font-size: 12px;
       color: #999;
@@ -3331,6 +3351,12 @@
             <div class="bar-area"><div class="bar-fill bar-2025"></div></div>
             <div class="bar-sublabel">기존 행정형 메시지</div>
             <div class="bar-sublabel">후킹 카피 + 다중 진입</div>
+            <span class="bar-rise-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <polyline points="6 10 12 4 18 10"></polyline>
+              </svg>
+            </span>
           </div>
           <div class="cc-callout">
             <span class="cc-callout-num">6<span>×</span></span>
