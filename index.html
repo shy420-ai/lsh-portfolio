@@ -2491,6 +2491,95 @@
       .bench-contrast-stat { font-size: 44px; }
     }
 
+    /* 02-2 Our Channel — 실제 본 채널 (벼랑끝의 마케터) 카드 */
+    .bench-result {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5e5;
+    }
+    .bench-result-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .bench-result-card {
+      display: block;
+      background: #fff;
+      border: 1.5px solid color-mix(in srgb, #c0392b 30%, #fff);
+      border-radius: 6px;
+      padding: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 22px color-mix(in srgb, #c0392b 12%, transparent);
+      transition: transform 0.2s ease;
+    }
+    .bench-result-card:hover { transform: translateY(-2px); }
+    .bench-result-card img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+    .bench-result-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .bench-result-name em {
+      font-style: normal;
+      color: #c0392b;
+    }
+    .bench-result-name .muted {
+      font-size: 13px;
+      color: #999;
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    .bench-result-sub {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .bench-result-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 14px;
+    }
+    .bench-result-stat .lab {
+      display: block;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      color: #c0392b;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .bench-result-stat .val {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #c0392b;
+      letter-spacing: -0.01em;
+    }
+    .bench-result-note {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+      letter-spacing: -0.005em;
+      margin: 0;
+    }
+    .bench-result-note em {
+      font-style: normal;
+      font-weight: 700;
+      color: #c0392b;
+    }
+    @media (max-width: 700px) {
+      .bench-result-grid { grid-template-columns: 1fr; gap: 14px; }
+      .bench-result-card { max-width: 280px; margin: 0 auto; }
+    }
+
     /* ── 02-3 Positioning · 앞광고 계정 ─────────────────────────── */
     .case-concept { padding: 24px 0 80px; }
     .concept-eyebrow {
@@ -3590,6 +3679,35 @@
       </div>
       <div class="case-bench">
         <div class="bench-eyebrow">Step 3 — Benchmarking</div>
+
+        <div class="bench-contrast bench-contrast-top">
+          <div class="bench-examples-label">Industry Contrast</div>
+          <div class="bench-contrast-samples">
+            <a class="bench-contrast-card" href="https://twitter.com/CheilWorldwide" target="_blank" rel="noopener">
+              <img src="case02-cheil-profile.jpg" alt="제일기획 트위터 (@CheilWorldwide) — 가입 2010년 11월, 팔로워 1.3만">
+              <div class="bench-contrast-cap">
+                <em>제일기획</em><br>
+                <span class="muted">2010년 가입 · 15년 운영 · 팔로워 1.3만<br>최근 트윗 좋아요 1</span>
+              </div>
+            </a>
+            <a class="bench-contrast-card" href="https://twitter.com/IMC_MENTORING" target="_blank" rel="noopener">
+              <img src="case02-innocean-imc.jpg" alt="이노션 IMC 트위터 — 가입 2011년 12월, 팔로워 23명">
+              <div class="bench-contrast-cap">
+                <em>이노션 IMC</em><br>
+                <span class="muted">2011년 가입 · 14년 운영 · 팔로워 23<br>활동 거의 없음</span>
+              </div>
+            </a>
+            <a class="bench-contrast-card" href="https://twitter.com/mezzomediatwitt" target="_blank" rel="noopener">
+              <img src="case02-mezzo-profile.jpg" alt="메조미디어 트위터 — 가입 2020년 1월, 팔로워 11명">
+              <div class="bench-contrast-cap">
+                <em>메조미디어</em><br>
+                <span class="muted">2020년 가입 · 5년 운영 · 팔로워 11<br>최근 트윗 좋아요 0 · 조회 169</span>
+              </div>
+            </a>
+          </div>
+          <p class="bench-contrast-note"><em>광고대행사 정체성을 직접 내세우는 것 자체가 트위터에서 안 먹힌다는 패턴.</em><br>15년·14년·5년 — 운영 기간 무관, 광고대행사 카테고리 자체 채널은 거의 모두 침묵 상태. 그래서 <em>다른 페르소나로 우회</em> 가 필요.</p>
+        </div>
+
         <div class="bench-intro">
           <p>위트성 트윗으로 감에 의존해서 팔로워를 늘리는 방식은 <em>지속 불가능</em>. 콘텐츠를 매일 짜내야 하는데 그 부담을 낮추려면, <em>플랫폼의 공감 회로</em> 를 먼저 들여다보고 거기 맞춰 컨셉을 설계해야 한다.</p>
           <p>트위터에서 가장 공감대가 큰 카테고리 = <em>마케팅·취업 정보를 다루는 직장인 페르소나</em>. 범용적이라 도달이 넓고, 콘텐츠를 짜내기 쉬워 <em>지속 가능</em>하다는 판단.</p>
@@ -3624,40 +3742,24 @@
           </div>
         </div>
 
-        <div class="bench-contrast">
-          <div class="bench-examples-label">Industry Contrast</div>
-          <div class="bench-contrast-samples">
-            <a class="bench-contrast-card" href="https://twitter.com/CheilWorldwide" target="_blank" rel="noopener">
-              <img src="case02-cheil-profile.jpg" alt="제일기획 트위터 (@CheilWorldwide) — 가입 2010년 11월, 팔로워 1.3만">
-              <div class="bench-contrast-cap">
-                <em>제일기획</em><br>
-                <span class="muted">2010년 가입 · 15년 운영 · 팔로워 1.3만<br>최근 트윗 좋아요 1</span>
-              </div>
+        <!-- 실제 본 채널 — 벼랑끝의 마케터 프로필 / 위 industry contrast 와 직접 대비 -->
+        <div class="bench-result">
+          <div class="bench-examples-label">Our Channel</div>
+          <div class="bench-result-grid">
+            <a class="bench-result-card" href="https://twitter.com/edge_marketer" target="_blank" rel="noopener">
+              <img src="case02-edge-marketer.jpg" alt="벼랑끝의 마케터 트위터 — @edge_marketer, 2026년 4월 가입, 팔로워 3,429">
             </a>
-            <a class="bench-contrast-card" href="https://twitter.com/IMC_MENTORING" target="_blank" rel="noopener">
-              <img src="case02-innocean-imc.jpg" alt="이노션 IMC 트위터 — 가입 2011년 12월, 팔로워 23명">
-              <div class="bench-contrast-cap">
-                <em>이노션 IMC</em><br>
-                <span class="muted">2011년 가입 · 14년 운영 · 팔로워 23<br>활동 거의 없음</span>
+            <div class="bench-result-meta">
+              <div class="bench-result-name"><em>벼랑끝의 마케터</em> <span class="muted">@edge_marketer</span></div>
+              <div class="bench-result-sub">생산성 & 트렌드 · 직장인 생존기 · 위치 "절벽"</div>
+              <div class="bench-result-stats">
+                <div class="bench-result-stat"><span class="lab">팔로워</span><span class="val">3,429</span></div>
+                <div class="bench-result-stat"><span class="lab">운영</span><span class="val">1 주</span></div>
+                <div class="bench-result-stat"><span class="lab">광고비</span><span class="val">0 원</span></div>
               </div>
-            </a>
-            <a class="bench-contrast-card" href="https://twitter.com/mezzomediatwitt" target="_blank" rel="noopener">
-              <img src="case02-mezzo-profile.jpg" alt="메조미디어 트위터 — 가입 2020년 1월, 팔로워 11명">
-              <div class="bench-contrast-cap">
-                <em>메조미디어</em><br>
-                <span class="muted">2020년 가입 · 5년 운영 · 팔로워 11<br>최근 트윗 좋아요 0 · 조회 169</span>
-              </div>
-            </a>
-          </div>
-          <div class="bench-contrast-vs">VS</div>
-          <div class="bench-contrast-card is-after">
-            <div class="bench-contrast-stat">3,400<span>+</span></div>
-            <div class="bench-contrast-cap">
-              <em>시밀러랩</em> — 광고대행사 자체 채널<br>
-              <span class="muted">1주 운영 · 광고비 0 원 · 팔로워 3,400+ · 단일 트윗 11만 노출 · 134 RT</span>
+              <p class="bench-result-note">위 광고대행사 자체 채널 3개 (15년·14년·5년 운영) 합쳐 팔로워 ~1.3만, 활동 침묵. <em>벼랑끝의 마케터 = 같은 광고대행사 자체 채널인데 1주 만에 같은 규모 도달 + 활성도 유지.</em></p>
             </div>
           </div>
-          <p class="bench-contrast-note"><em>광고대행사 정체성을 직접 내세우는 것 자체가 트위터에서 안 먹힌다는 패턴.</em><br>15년·14년·5년 — 운영 기간 무관, 광고대행사 카테고리 자체 채널은 거의 모두 침묵 상태. 시밀러랩이 <em>'벼랑끝의 마케터' 페르소나 + 앞광고 컨셉</em> 으로 카테고리 빈자리를 발견한 게 핵심.</p>
         </div>
       </div>
 
