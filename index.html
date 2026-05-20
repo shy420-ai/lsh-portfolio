@@ -2420,15 +2420,21 @@
       color: inherit;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       transition: transform 0.2s ease;
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
     .bench-contrast-card:hover { transform: translateY(-2px); }
     .bench-contrast-card img {
       width: 100%;
+      aspect-ratio: 4 / 2.6;
+      object-fit: cover;
+      object-position: center top;
       border-radius: 4px;
       margin-bottom: 10px;
       display: block;
+      background: #f5f5f5;
     }
+    .bench-contrast-card .bench-contrast-cap { margin-top: auto; }
     .bench-contrast-card.is-after {
       background: color-mix(in srgb, #c0392b 8%, #fff);
       border-color: color-mix(in srgb, #c0392b 35%, #fff);
@@ -3688,7 +3694,7 @@
         <div class="bench-eyebrow">Step 3 — Benchmarking</div>
 
         <div class="bench-contrast bench-contrast-top">
-          <div class="bench-examples-label">Industry Contrast</div>
+          <div class="bench-examples-label">타 광고대행사 계정</div>
           <div class="bench-contrast-samples">
             <a class="bench-contrast-card" href="https://twitter.com/CheilWorldwide" target="_blank" rel="noopener">
               <img src="case02-cheil-profile.jpg" alt="제일기획 트위터 (@CheilWorldwide) — 가입 2010년 11월, 팔로워 1.3만">
