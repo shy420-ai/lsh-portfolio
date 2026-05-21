@@ -149,79 +149,104 @@
     }
     .contents-list a {
       display: grid;
-      grid-template-columns: 64px 1fr auto;
+      grid-template-columns: 1fr auto;
       gap: 24px;
-      padding: 24px 0;
-      border-top: 1.5px solid #000;
+      padding: 22px 0;
+      border-top: 1px solid #ececec;
       align-items: baseline;
       text-decoration: none;
       color: #000;
       transition: padding 0.25s ease, background 0.25s ease;
     }
-    .contents-list a:last-child { border-bottom: 1.5px solid #000; }
+    .contents-list a:last-child { border-bottom: 1px solid #ececec; }
     .contents-list a:hover {
-      padding-left: 16px;
-      padding-right: 16px;
+      padding-left: 12px;
+      padding-right: 12px;
       background: #fafafa;
     }
-    .contents-list .num {
-      font-size: 24px;
-      font-weight: 400;
-      font-style: italic;
-      color: #aaa;
-    }
+    .contents-list .num { display: none; }
     .contents-list .title-block {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
     .contents-list .title {
-      font-size: clamp(16px, 2vw, 24px);
+      font-size: clamp(15px, 1.9vw, 22px);
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.35;
+      letter-spacing: -0.005em;
     }
     .contents-list .subtitle {
-      font-size: 13px;
-      color: #888;
+      font-size: 12.5px;
+      color: #999;
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.55;
       letter-spacing: 0.01em;
+      margin-top: 4px;
     }
     .contents-list .arrow {
-      font-size: 24px;
-      color: #aaa;
+      font-size: 18px;
+      color: #ccc;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
-    /* 섹션 헤더 — 회사 작업 / 개인 작업 / 혼재 그룹 라벨 */
+    .contents-list a:hover .arrow {
+      color: #000;
+      transform: translateX(4px);
+    }
+    /* 섹션 헤더 — 그룹 라벨, 미니멀·세련된 결 */
     .contents-section-label {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      color: #888;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      color: #aaa;
       text-transform: uppercase;
-      padding: 28px 0 6px;
+      padding: 36px 0 6px;
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+    .contents-section-label:first-of-type {
+      padding-top: 8px;
     }
     .contents-section-label::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: #ddd;
+      background: #f0f0f0;
     }
     .contents-section-label .dot {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
     }
-    /* 좌측 컬러 인디케이터 — 케이스 행 분류 */
-    .contents-list a.case-work { border-left: 3px solid #c0392b; padding-left: 16px; }
-    .contents-list a.case-personal { border-left: 3px solid #5B9DF9; padding-left: 16px; }
-    .contents-list a.case-mixed { border-left: 3px solid #C4A6D7; padding-left: 16px; }
-    .contents-list a.case-work:hover,
-    .contents-list a.case-personal:hover,
-    .contents-list a.case-mixed:hover {
-      padding-left: 28px;
+    /* 좌측 컬러 인디케이터 — 케이스 행 좌측에 미니 dot (absolute positioning) */
+    .contents-list a.case-work,
+    .contents-list a.case-personal,
+    .contents-list a.case-mixed {
+      position: relative;
+      padding-left: 18px;
+    }
+    .contents-list a.case-work::before,
+    .contents-list a.case-personal::before,
+    .contents-list a.case-mixed::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.25s ease, width 0.25s ease, height 0.25s ease;
+    }
+    .contents-list a.case-work::before { background: #c0392b; }
+    .contents-list a.case-personal::before { background: #5B9DF9; }
+    .contents-list a.case-mixed::before { background: #C4A6D7; }
+    .contents-list a.case-work:hover::before,
+    .contents-list a.case-personal:hover::before,
+    .contents-list a.case-mixed:hover::before {
+      width: 7px;
+      height: 7px;
     }
 
     /* ── Case Page ────────────────────────────────────────────── */
