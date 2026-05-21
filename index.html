@@ -143,9 +143,20 @@
       letter-spacing: -0.02em;
     }
     .contents-list {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+    .contents-section {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: 900px) {
+      .contents-list { grid-template-columns: 1fr; gap: 0; max-width: 800px; }
     }
     .contents-list a {
       display: grid;
@@ -3349,56 +3360,62 @@
       <h2>Contents</h2>
     </div>
     <div class="contents-list">
-      <div class="contents-section-label"><span class="dot" style="background:#C4A6D7;"></span>About Me</div>
-      <a href="javascript:go('about')" class="case-mixed">
-        <span class="num">00</span>
-        <span class="title">About Me</span>
-        <span class="arrow">→</span>
-      </a>
-      <a href="javascript:go('05')" class="case-mixed">
-        <span class="num">05</span>
-        <div class="title-block">
-          <span class="title">마케터는 AI 를 어떻게 써야 할까</span>
-          <span class="subtitle">감 X — 잘 된 콘텐츠 형식을 AI 가 학습 · 트위터 138 만 노출 + 블로그 long-tail SEO 18+ 글</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+      <div class="contents-section">
+        <div class="contents-section-label"><span class="dot" style="background:#C4A6D7;"></span>About Me</div>
+        <a href="javascript:go('about')" class="case-mixed">
+          <span class="num">00</span>
+          <span class="title">About Me</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="javascript:go('05')" class="case-mixed">
+          <span class="num">05</span>
+          <div class="title-block">
+            <span class="title">마케터는 AI 를 어떻게 써야 할까</span>
+            <span class="subtitle">감 X — 잘 된 콘텐츠 형식을 AI 가 학습 · 트위터 138 만 노출 + 블로그 long-tail SEO 18+ 글</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
 
-      <div class="contents-section-label"><span class="dot" style="background:#c0392b;"></span>Agency Work</div>
-      <a href="javascript:go('01')" class="case-work">
-        <span class="num">01</span>
-        <div class="title-block">
-          <span class="title">공공기관 콘텐츠, 수동적·일방적 톤만 바꿔도 참여도 6배</span>
-          <span class="subtitle">콘텐츠 포맷만 바꿨는데 — 예산 -20 %, 인터랙션 4.4 배, 참여도 6 배</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="javascript:go('02')" class="case-work">
-        <span class="num">02</span>
-        <div class="title-block">
-          <span class="title">광고비 0 원 으로 1 주 만에 팔로워 3,400 회사 채널 만들기</span>
-          <span class="subtitle">1주 만에 회사 자체 채널 팔로워 3,400 — 광고비 0 원 오가닉</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+      <div class="contents-section">
+        <div class="contents-section-label"><span class="dot" style="background:#c0392b;"></span>Agency Work</div>
+        <a href="javascript:go('01')" class="case-work">
+          <span class="num">01</span>
+          <div class="title-block">
+            <span class="title">공공기관 콘텐츠, 수동적·일방적 톤만 바꿔도 참여도 6배</span>
+            <span class="subtitle">콘텐츠 포맷만 바꿨는데 — 예산 -20 %, 인터랙션 4.4 배, 참여도 6 배</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="javascript:go('02')" class="case-work">
+          <span class="num">02</span>
+          <div class="title-block">
+            <span class="title">광고비 0 원 으로 1 주 만에 팔로워 3,400 회사 채널 만들기</span>
+            <span class="subtitle">1주 만에 회사 자체 채널 팔로워 3,400 — 광고비 0 원 오가닉</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
 
-      <div class="contents-section-label"><span class="dot" style="background:#5B9DF9;"></span>Personal Project</div>
-      <a href="javascript:go('03')" class="case-personal">
-        <span class="num">03</span>
-        <div class="title-block">
-          <span class="title">혼자 개발한 투두 앱을 3 주 만에 700 명이 쓰게 된 방법</span>
-          <span class="subtitle">혼자 개발한 앱이 3주 만에 0 원 광고 · 채널 1 개로 700 명 커뮤니티가 되기까지</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="javascript:go('04')" class="case-personal">
-        <span class="num">04</span>
-        <div class="title-block">
-          <span class="title">틱톡 4 달 만에 팔로워 4,800 + 21 만 뷰 영상 만든 분석법</span>
-          <span class="subtitle">평균 수치로 안 보이던 4 가지 비대칭 발견 → 콘텐츠 재설계로 월 평균 뷰 8 배 성장</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+      <div class="contents-section">
+        <div class="contents-section-label"><span class="dot" style="background:#5B9DF9;"></span>Personal Project</div>
+        <a href="javascript:go('03')" class="case-personal">
+          <span class="num">03</span>
+          <div class="title-block">
+            <span class="title">혼자 개발한 투두 앱을 3 주 만에 700 명이 쓰게 된 방법</span>
+            <span class="subtitle">혼자 개발한 앱이 3주 만에 0 원 광고 · 채널 1 개로 700 명 커뮤니티가 되기까지</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="javascript:go('04')" class="case-personal">
+          <span class="num">04</span>
+          <div class="title-block">
+            <span class="title">틱톡 4 달 만에 팔로워 4,800 + 21 만 뷰 영상 만든 분석법</span>
+            <span class="subtitle">평균 수치로 안 보이던 4 가지 비대칭 발견 → 콘텐츠 재설계로 월 평균 뷰 8 배 성장</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
