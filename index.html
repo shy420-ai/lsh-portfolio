@@ -1349,9 +1349,52 @@
     .impact-bar {
       width: 80%;
       background: linear-gradient(180deg, #e85541, #c0392b);
+      animation: impactBarGrow 1.0s cubic-bezier(.4,1,.6,1) forwards;
+      transform-origin: bottom;
+      transform: scaleY(0);
     }
-    .impact-bar.muted { background: linear-gradient(180deg, #f0d4ce, #e0a89e); }
-    .impact-bar.light { background: linear-gradient(180deg, #f8e7e2, #ecbab1); }
+    .impact-bar.muted { background: linear-gradient(180deg, #f0d4ce, #e0a89e); animation-delay: .15s; }
+    .impact-bar.light { background: linear-gradient(180deg, #f8e7e2, #ecbab1); animation-delay: 0s; }
+    .impact-bar:not(.muted):not(.light) { animation-delay: .3s; }
+    @keyframes impactBarGrow {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+    /* 우상향 화살표 — 1월 → 3월 사이 8× 성장 시각화 */
+    .impact-arrow {
+      position: absolute;
+      pointer-events: none;
+      top: 8px; left: 8px; right: 8px; bottom: 8px;
+      overflow: visible;
+    }
+    .impact-arrow svg { width: 100%; height: 100%; display: block; }
+    .impact-arrow .arrow-line {
+      stroke: #c0392b;
+      stroke-width: 2.2;
+      stroke-dasharray: 6 4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dashoffset: 200;
+      animation: arrowDraw 1.4s ease-out .8s forwards;
+    }
+    .impact-arrow .arrow-head { fill: #c0392b; opacity: 0; animation: arrowHead .3s ease-out 2.0s forwards; }
+    .impact-arrow .arrow-multi {
+      fill: #c0392b;
+      font-family: 'Libre Bodoni', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 22px;
+      opacity: 0;
+      animation: arrowHead .4s ease-out 2.2s forwards;
+    }
+    @keyframes arrowDraw {
+      from { stroke-dashoffset: 200; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes arrowHead {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .impact-labels {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -4377,7 +4420,7 @@
         <div>
           <div class="impact-chart-title">Monthly Average Views</div>
           <div class="impact-chart-sub">1 월 → 3 월 평균 뷰 8 × 성장</div>
-          <div class="impact-bars">
+          <div class="impact-bars" style="position: relative;">
             <div class="impact-bar-col">
               <div class="impact-bar-value">3,690</div>
               <div class="impact-bar-sub">14 개 영상</div>
@@ -4392,6 +4435,19 @@
               <div class="impact-bar-value">30,756</div>
               <div class="impact-bar-sub">18 개 영상</div>
               <div class="impact-bar" style="height:100%;"></div>
+            </div>
+            <!-- 우상향 화살표 + 8× — 1월 → 3월 성장 시각화 -->
+            <div class="impact-arrow">
+              <svg viewBox="0 0 300 200" preserveAspectRatio="none">
+                <!-- 점선 곡선: 1월 (좌하단) → 3월 (우상단) -->
+                <path class="arrow-line" d="M 35 175 Q 130 160 170 90 T 270 25" />
+                <!-- 화살표 머리 -->
+                <polygon class="arrow-head" points="262,15 280,20 268,35" />
+              </svg>
+              <!-- 8× 배수 라벨 -->
+              <div style="position: absolute; top: 10%; right: 6%; pointer-events: none; opacity: 0; animation: arrowHead .4s ease-out 2.2s forwards;">
+                <span style="font-family: 'Libre Bodoni', serif; font-style: italic; font-weight: 700; font-size: 24px; color: #c0392b; background: rgba(255,255,255,0.9); padding: 2px 8px; border-radius: 4px; box-shadow: 0 2px 8px rgba(192,57,43,0.2);">8 ×</span>
+              </div>
             </div>
           </div>
           <div class="impact-labels">
