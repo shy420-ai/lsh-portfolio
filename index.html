@@ -208,12 +208,12 @@
     }
     /* 섹션 헤더 — 그룹 라벨, 미니멀·세련된 결 */
     .contents-section-label {
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      color: #aaa;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: #555;
       text-transform: uppercase;
-      padding: 36px 0 10px;
+      padding: 36px 0 12px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -232,32 +232,27 @@
       height: 6px;
       border-radius: 50%;
     }
-    /* 좌측 컬러 인디케이터 — 케이스 행 좌측에 미니 dot (absolute positioning) */
-    .contents-list a.case-work,
-    .contents-list a.case-personal,
-    .contents-list a.case-mixed {
-      position: relative;
-      padding-left: 18px;
-    }
-    .contents-list a.case-work::before,
-    .contents-list a.case-personal::before,
-    .contents-list a.case-mixed::before {
+    /* 좌측 컬러 인디케이터 — title 의 baseline 옆에 inline dot 으로 박음. 행의 가운데가 아니라 title 옆 정확히. */
+    .contents-list a.case-work .title::before,
+    .contents-list a.case-personal .title::before,
+    .contents-list a.case-mixed .title::before {
       content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
+      display: inline-block;
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.25s ease, width 0.25s ease, height 0.25s ease;
+      margin-right: 10px;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      transition: width 0.25s ease, height 0.25s ease;
     }
-    .contents-list a.case-work::before { background: #c0392b; }
-    .contents-list a.case-personal::before { background: #5B9DF9; }
-    .contents-list a.case-mixed::before { background: #C4A6D7; }
-    .contents-list a.case-work:hover::before,
-    .contents-list a.case-personal:hover::before,
-    .contents-list a.case-mixed:hover::before {
+    .contents-list a.case-work .title::before { background: #c0392b; }
+    .contents-list a.case-personal .title::before { background: #5B9DF9; }
+    .contents-list a.case-mixed .title::before { background: #C4A6D7; }
+    .contents-list a.case-work:hover .title::before,
+    .contents-list a.case-personal:hover .title::before,
+    .contents-list a.case-mixed:hover .title::before {
       width: 7px;
       height: 7px;
     }
@@ -3416,7 +3411,7 @@
         <a href="javascript:go('04')" class="case-personal">
           <span class="num">04</span>
           <div class="title-block">
-            <span class="title">틱톡 4달만에 팔로워 4,800 + 단일 21만 영상 분석법</span>
+            <span class="title">틱톡 4달 팔로워 4,800 + 단일 21만 영상 분석법</span>
             <span class="subtitle">평균 수치로 안 보이던 4 가지 비대칭 발견 → 콘텐츠 재설계로 월 평균 뷰 8 배 성장</span>
           </div>
           <span class="arrow">→</span>
@@ -4339,7 +4334,7 @@
     </div>
     <div class="case-inner" style="margin-top: 60px;">
       <div class="case-meta">Case 04 · TikTok Analytics</div>
-      <h3 class="case-title">틱톡 4달만에 팔로워 4,800 + 단일 21만 영상 분석법</h3>
+      <h3 class="case-title">틱톡 4달 팔로워 4,800 + 단일 21만 영상 분석법</h3>
       <p class="case-subtitle">평균 수치로 안 보이던 4 가지 비대칭 발견 → 콘텐츠 재설계로 월 평균 뷰 8 배 성장</p>
       <div class="case-grid">
         <div class="case-cell">
